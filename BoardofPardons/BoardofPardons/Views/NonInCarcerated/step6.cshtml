@@ -1,0 +1,193 @@
+﻿@model BoardofPardons.Entity.NonIncarceratedStep6
+@{
+    ViewBag.Title = "NonIncarcerated Step 6";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container">
+    <div class="well">
+        <div class="text-center">
+            <h4>Pennsylvania Board of Pardons Commonwealth of Pennsylvania Application for Clemency</h4>
+        </div>
+        <p><strong>Important:</strong>This application should be completed by non-incarcerated applicants only. All questions must be answered. Please answer "N/A" for questions that are not applicable to you. </p>
+        <div class="row" id="formContent">
+        </div>
+        @using (Html.BeginForm("step6", "NonInCarcerated", FormMethod.Post, new { novalidate = "novalidate", @id = "insertStep6" }))
+        {
+            <div class="panel panel-default">
+                <div class="panel-heading">SECTION 5: Purpose of Application</div>
+                <div class="panel-body">
+                    <div class="col-lg-12">
+                        <p>For what reason(s) are you seeking clemency? (Check all that apply.)</p>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="checkbox">
+                                    <label>
+                                        
+                                        @Html.CheckBoxFor(model => model.AquireCitizenship)
+                                        Aquire Citizenship
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        
+                                        @Html.CheckBoxFor(model => model.Adoption)
+
+                                        Adoption/Foster Care of a Child
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        
+                                        @Html.CheckBoxFor(model => model.CivicActivities)
+                                        Civic Activities/Volunteer Opportunities (i.e. Coaching, Boy/Girl Scouts, School Activities, Mentoring Programs)
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        
+                                        @Html.CheckBoxFor(model => model.Education)
+                                        Education
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        
+                                        @Html.CheckBoxFor(model => model.Employment)
+                                        Employment
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        
+                                        @Html.CheckBoxFor(model => model.GunPermit)
+                                        Gun Permit (i.e. Hunting, Safety, Protection)
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        
+                                        @Html.CheckBoxFor(model => model.Housing)
+                                        Housing
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        
+                                        @Html.CheckBoxFor(model => model.Licensures)
+                                        Licensures
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        
+                                        @Html.CheckBoxFor(model => model.MilitaryService)
+                                        Military Service
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        
+                                        @Html.CheckBoxFor(model => model.TravelingOutside)
+                                        Traveling Outside of the United States
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="checkbox">
+                                    <label>
+                                        
+                                        @Html.CheckBoxFor(model => model.Other)
+                                        Other (Please Specify)
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-lg-7">
+                                
+                                @Html.TextBoxFor(model => model.Specifications, new { @class = "form-control", id = "Specifications" })
+                            </div>
+                        </div>
+                        <div class="row mTop5">
+                            <div class="col-lg-8 mBottom10 form-group">
+                                <label>With regard to your slected reason(s), please specify in detail why you are seeking clemency.</label>
+                                
+                                @Html.TextAreaFor(model => model.Reason, new { @class = "form-control", id = "Reason" })
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="col-lg-8 mBottom10 form-group">
+                                <label>What efforts have you made to rehabilitate and improve yourself ?</label>
+                                
+                                @Html.TextAreaFor(model => model.Rehabilitations, new { rows = "3", @class = "form-control", id = "Rehabilitations" })
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="col-lg-8 mBottom10 form-group">
+                                <label>How have you contributed to the community ?</label>
+                                
+                                @Html.TextAreaFor(model => model.Contributions, new { rows = "3", @class = "form-control", id = "Contributions" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <hr>
+                </div>
+            </div>
+
+            <div class="col-lg-12">
+                <div class="col-sm-2 ">
+                    <button type="submit" name="Command" value="Back" class="btn btn-primary">Back</button>
+                </div>
+                <div class="col-sm-2  col-sm-offset-2">
+                    <button type="submit" name="Command" value="save" class="btn btn-success">Save &amp; Continue</button>
+                </div>
+                <div class="col-sm-2">
+                    <button type="submit" name="Command" value="submit" class="btn btn-warning">Save &amp; Quit</button>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+@section scripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //-- Date Validation Variables --
+            var currentDate = new Date();
+            var startDate = new Date();
+            var futureDate = new Date();
+
+            startDate.setDate(startDate.getDate() - (365 * 18));
+            futureDate.setDate(startDate.getDate() + 5);
+
+            $("#insertStep6").validate({
+
+                ignore: "",
+                rules: {
+                    chkother: { required: true },
+                    txtspecifications: {
+                        minlength: 3,
+                        required: true
+                    },
+                    txtrehabilitations: {
+                        minlength: 3,
+                        required: true
+                    },
+                    txtcontributions: {
+                        minlength: 3,
+                        required: true
+                    },
+                },
+                messages: {
+                    txtspecifications: "specifications is required",
+                    txtrehabilitations: "rehabilitations is required",
+                    txtcontributions: "contributions is required",
+                },
+                highlight: function (element) {
+                    $(element).closest('.form-group').addClass('has-error');
+                },
+                unhighlight: function (element) {
+                    $(element).closest('.form-group').removeClass('has-error');
+                }
+            });
+
+        });
+    </script>
+}

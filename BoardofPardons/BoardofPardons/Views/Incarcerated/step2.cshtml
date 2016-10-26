@@ -1,0 +1,358 @@
+﻿@model BoardofPardons.Entity.IncarceratedStep2
+    @{
+        ViewBag.Title = "IncarceratedStep 2";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+    <div class="container">
+        <div class="well">
+            <div class="text-center">
+                <h4>Pennsylvania Board of Pardons Commonwealth of Pennsylvania Application for Clemency</h4>
+            </div>
+            <p><strong>Important:</strong>This application should be completed by non-incarcerated applicants only. All questions must be answered. Please answer "N/A" for questions that are not applicable to you. </p>
+            <div class="row" id="formContent">
+            </div>
+            @using (Html.BeginForm("step2", "InCarcerated", FormMethod.Post, new { novalidate = "novalidate", @id = "insertInCarceratedStep2" }))
+            {
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h5> SECTION 3: Convictions For Which Clemency Requested</h5>
+                        <h6>Important: Only convictions referenced in section 3 will be considered for clemency. See filing instruction #9 for information regarding required attachments.</h6>
+
+                    </div>
+                    <div class="panel-body">
+                        <div class="col-lg-12">
+                            <div class="col-lg-1">
+                                <b>Your Case #1</b>
+                            </div>
+                            <div class="col-lg-3 form-group">
+                                <div class=" ">
+                                    <label>
+                                        Date of Incident
+                                    </label>
+
+                                    @Html.TextBoxFor(model => model.DateINC, new { type = "date", @class = "form-control", id = "DateINC" })
+                                </div>
+
+                            </div>
+                            <div class="col-lg-3 form-group">
+                                <label>
+                                    County
+                                </label>
+
+                                @Html.TextBoxFor(model => model.ConvictCounty, new { @class = "form-control", id = "ConvictCounty" })
+                            </div>
+                            <div class="col-lg-2 form-group">
+                                <label>
+                                    OTN#
+                                </label>
+
+                                @Html.TextBoxFor(model => model.ConvictOTN, new { @class = "form-control", id = "ConvictOTN" })
+                            </div>
+                            <div class="col-lg-3 form-group">
+                                <label>
+                                    Docket Number:
+                                </label>
+
+                                @Html.TextBoxFor(model => model.ConvictDocket, new { type = "date", @class = "form-control", id = "ConvictDocket" })
+                            </div>
+
+
+                        </div>
+                        <div class="clearfix"></div>
+                        <hr />
+                        <div class="col-lg-12">
+                            <div class="col-lg-4">
+                                <div class="radio">
+                                    <label>
+
+                                        @Html.RadioButtonFor(model => model.Guilty, "Found Guilty", new { @checked = "checked" })
+                                        Found Guilty
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+
+                                        @Html.RadioButtonFor(model => model.Guilty, "Pled Guilty", new { @checked = "checked" })
+                                        Pled Guilty
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+
+                                        @Html.RadioButtonFor(model => model.Guilty, "Pled Nolo Contendre (no contest)", new { @checked = "checked" })
+                                        Pled Nolo Contendre (no contest)
+                                    </label>
+                                </div>
+
+                            </div>
+                            <div class="col-lg-4 form-group">
+                                <label>
+                                    Date of Sentence
+                                </label>
+
+                                @Html.TextBoxFor(model => model.DateSentence, new { @class = "form-control", id = "DateSentence" })
+                            </div>
+                            <div class="col-lg-4 form-group">
+                                <label>
+                                    Judge
+                                </label>
+
+                                @Html.TextBoxFor(model => model.ConvictJudge, new { @class = "form-control", id = "ConvictJudge" })
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <hr />
+
+                        <div class="col-lg-12">
+                            <p>State the Offense(s) and Sentence(s) for this case. Sentences should include any ordered fines, costs and restitution: (list each offense and sentence on seperate lines)</p>
+                        </div>
+                        <div class="col-lg-12">
+
+                            <div class="col-lg-6 form-group">
+                                <label><strong>Offense(s)</strong> </label>
+
+                                @Html.TextAreaFor(model => model.Offenses, new { @class = "form-control", id = "Offenses" })
+                            </div>
+                            <div class="col-lg-6 form-group">
+                                <label><strong>Sentence(s)</strong> </label>
+
+                                @Html.TextAreaFor(model => model.Sentence, new { @class = "form-control", id = "Sentence" })
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <hr />
+                        <div class="col-lg-12">
+                            <p>Provide the offenses that were nolle prossed, withdrawn, dismissed, dropped or found not guilty: (enter N/A if this does not apply)</p>
+                        </div>
+                        <div class="col-lg-7 form-group">
+
+                            @Html.TextAreaFor(model => model.NotGuilty, new { @class = "form-control", id = "NotGuilty" })
+                        </div>
+                        <div class="clearfix"></div>
+                        <hr />
+                        <div class="col-lg-12">
+                            <p>In your own words, provide detailed facts of incident, which MUST include how you were involved:</p>
+                        </div>
+                        <div class="col-lg-7 form-group">
+
+                            @Html.TextAreaFor(model => model.Facts, new { @class = "form-control", id = "Facts" })
+                        </div>
+                        <div class="clearfix"></div>
+                        <hr />
+                        <div class="col-lg-6">
+                            <p class="lead">Have you paid fines and restitution?</p>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="radio-inline">
+                                <label>
+
+                                    @Html.RadioButtonFor(model => model.HavePaid, "True", new { @checked = "checked" })
+                                    Yes
+                                </label>
+                            </div>
+                            <div class="radio-inline">
+                                <label>
+
+                                    @Html.RadioButtonFor(model => model.HavePaid, "False", new { @checked = "checked" })
+                                    No
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <p>(If you answered yes, provide a statement from the Clerk of Courts office that indicates a zero balance) See filing instructions #9</p>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="form-inline form-group">
+                                <label>If you answered no, state outstanding balance</label>
+
+                                @Html.TextBoxFor(model => model.FinesBalance, new { @class = "form-control" })
+                                <label> Date of last payment   </label>
+
+                                @Html.TextBoxFor(model => model.LastPaymentDate, new { type = "date", @class = "form-control" })
+                            </div>
+
+                        </div>
+                        <div class="clearfix"></div>
+                        <hr />
+                        <div class="col-lg-6">
+                            <p class="lead">Have you ever violated probation?</p>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="radio-inline ">
+                                <label>
+
+                                    @Html.RadioButtonFor(model => model.ViolatedParole, "True")
+                                    Yes
+                                </label>
+                            </div>
+                            <div class="radio-inline">
+                                <label>
+
+                                    @Html.RadioButtonFor(model => model.ViolatedParole, "False")
+                                    No
+                                </label>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="col-lg-6">
+                            <p>If you answered yes, was your parole revoked? </p>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="radio-inline">
+                                <label>
+
+                                    @Html.RadioButtonFor(model => model.ParoleRevoked, "True", new { @checked = "checked" })
+                                    Yes
+                                </label>
+                            </div>
+                            <div class="radio-inline">
+                                <label>
+
+                                    @Html.RadioButtonFor(model => model.ParoleRevoked, "False")
+                                    No
+                                </label>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <hr />
+
+                        <div class="col-lg-6">
+                            <p>Is this case currently under appeal? </p>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="radio-inline">
+                                <label>
+
+                                    @Html.RadioButtonFor(model => model.RevokedAppeal, "True", new { @checked = "checked" })
+                                    Yes
+                                </label>
+                            </div>
+                            <div class="radio-inline">
+                                <label>
+
+                                    @Html.RadioButtonFor(model => model.RevokedAppeal, "False", new { @checked = "checked" })
+                                    No
+                                </label>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="col-lg-5">
+                            <p>If you answered yes, state court where your appeal is pending </p>
+                        </div>
+                        <div class="col-lg-7 form-group">
+
+                            @Html.TextBoxFor(model => model.CourtAppeal, new { @class = "form-control", id = "CourtAppeal" })
+                        </div>
+                        <div class="clearfix"></div>
+                        <hr />
+                        <div class="col-lg-12">
+                            <p class="">State the names of any co-defendants related to this incident (comma after each name"): </p>
+                        </div>
+                        <div class="col-lg-12 form-group">
+
+                            @Html.TextBoxFor(model => model.Codefendents, new { @class = "form-control", id = "Codefendents" })
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-12">
+                    <div class="col-sm-2 ">
+                        <button type="submit" name="Command" value="Back" class="btn btn-primary">Back</button>
+                    </div>
+                    <div class="col-sm-2  col-sm-offset-2">
+                        <button type="submit" name="Command" value="save" class="btn btn-success">Save &amp; Continue</button>
+                    </div>
+                    <div class="col-sm-2">
+                        <button type="submit" name="Command" value="submit" class="btn btn-warning">Save &amp; Quit</button>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+
+    @section scripts {
+        <script type="text/javascript">
+            $(document).ready(function () {
+               
+                //-- Date Validation Variables --
+                var currentDate = new Date();
+                var startDate = new Date();
+                var futureDate = new Date();
+
+                startDate.setDate(startDate.getDate() - (365 * 18));
+                futureDate.setDate(startDate.getDate() + 5);
+
+
+                $("#insertInCarceratedStep2").validate({
+                    ignore: "",
+                    rules: {
+                        Guilty: { required: true },
+                        NotGuilty: {
+                            required: true,
+                            minlength: 2
+                        },
+                        Facts: {
+                            required: true,
+                            minlength: 2
+                        },
+                        Offenses: {
+                            required: true,
+                            minlength: 2
+                        },
+                        Sentence: {
+                            required: true,
+                            minlength: 2
+                        },
+                        HavePaid: { required: true },
+                        ViolatedParole: { required: true },
+                        ParoleRevoked: { required: true },
+                        RevokedAppeal: { required: true },
+                        DateINC: { required: true },
+                        DateSentence: { required: true },
+                        CourtAppeal: { required: true },
+                        Codefendents: { required: true },
+                        FinesBalance: { required: true },
+                        LastPaymentDate: { required: true },
+                        ConvictCounty: {
+                            minlength: 1,
+                            maxlength: 25,
+                            required: true
+                        },
+                        ConvictOTN: {
+                            minlength: 3,
+                            maxlength: 15,
+                            required: true
+                        },
+                        ConvictDocket: {
+                            minlength: 3,
+                            maxlength: 20,
+                            required: true
+                        },
+                        ConvictJudge: {
+                            minlength: 3,
+                            maxlength: 25,
+                            required: true
+                        }
+                    },
+                    messages: {
+                        ConvictCounty: "County is required and limited to 25 characters!",
+                        ConvictOTN: "The OTN number is required!",
+                        ConvictDocket: "Docket number is required!",
+                        NotGuilty: "This is required and has a minimum of 2 characters",
+                        Facts: "This is required and has a minimum of 2 characters",
+                        Offenses: "This is required and has a minimum of 2 characters",
+                        Sentence: "This is required and has a minimum of 2 characters",
+                        FinesBalance: "if you answered yes, put in N/A"
+                    },
+                    highlight: function (element) {
+                        $(element).closest('.form-group').addClass('has-error');
+                    },
+                    unhighlight: function (element) {
+                        $(element).closest('.form-group').removeClass('has-error');
+                    }
+                });
+
+
+            });
+        </script>
+    }

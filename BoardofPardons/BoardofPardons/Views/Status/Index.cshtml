@@ -1,0 +1,63 @@
+﻿@model IEnumerable<BoardofPardons.Entity.FormStatus>
+@{
+    ViewBag.Title = "Status";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div class="container well">
+    <div class="row">
+        <div class="form-group text-center">
+            <h4 class="form-signin-heading">Form Status</h4>
+        </div>
+        <div class="col-lg-10 col-lg-offset-1 ">
+
+            <table id="myTable" class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>Form Type</th>
+                        <th>Form Status</th>
+                        <th>Form Created On</th>
+                        <th>Form Updated On</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model != null && Model.Count() > 0)
+                    {
+                        foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.Type</td>
+                                <td>@item.Status</td>
+                                <td>@(item.CreatedAt == null ? "" : item.CreatedAt.Value.ToShortDateString())</td>
+                                <td>@(item.UpdatedAt == null ? "" : item.UpdatedAt.Value.ToShortDateString())</td>
+                                @if (item.Type == "Not Incarcerated")
+                                {
+                                    <td><a href="@Url.Action("showstep", "NonInCarcerated", new { id = item.Id })" class="btn btn-primary">Edit</a> </td>
+                                }
+                                else
+                                {
+                                    <td><a href="@Url.Action("showstep", "InCarcerated", new { id = item.Id })" class="btn btn-primary">Edit</a> </td>
+                                }
+
+                                @*<td><a href="#" class="btn btn-danger">Delete</a> </td>*@
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>
+
+
+@section scripts {
+    <script>
+        $(document).ready(function () {
+            $('#myTable').DataTable();
+        });
+    </script>
+}

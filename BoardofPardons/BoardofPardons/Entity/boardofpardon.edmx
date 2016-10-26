@@ -1,0 +1,2415 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="BoardofPardonsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Forms">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="Type" Type="int" Nullable="false" />
+          <Property Name="CreatedAt" Type="datetime" />
+          <Property Name="UpdatedAt" Type="datetime" />
+          <Property Name="Status" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="IncarceratedStep1">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FormId" Type="int" Nullable="false" />
+          <Property Name="AplicationNumber" Type="varchar(max)" />
+          <Property Name="PardonNumber" Type="varchar(max)" />
+          <Property Name="SessionDate" Type="varchar(max)" />
+          <Property Name="ClemencyRequested" Type="varchar" MaxLength="50" />
+          <Property Name="Sentence" Type="varchar" MaxLength="50" />
+          <Property Name="MinimumDate" Type="datetime" />
+          <Property Name="MaximumDate" Type="datetime" />
+          <Property Name="HaveFiled" Type="bit" Nullable="false" />
+          <Property Name="Previous" Type="varchar(max)" Nullable="false" />
+          <Property Name="OtherState" Type="bit" Nullable="false" />
+          <Property Name="WhereFiled" Type="varchar(max)" />
+          <Property Name="GrantedOtherState" Type="bit" />
+          <Property Name="DateOtherStateGranted" Type="datetime" />
+          <Property Name="LastName" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="FirstName" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="MiddleName" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="Suffix" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="BirthDate" Type="datetime" Nullable="false" />
+          <Property Name="BirthPlace" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="Gender" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="SSN" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Race" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="ApplicantCity" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="ApplicantState" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="ApplicantZip" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Aliases" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="Title" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="Address" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="Address2" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="CityStateZip" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="Phone" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="InstName" Type="varchar" MaxLength="200" />
+          <Property Name="InmateNumber" Type="varchar" MaxLength="200" />
+          <Property Name="InstAddress" Type="varchar" MaxLength="200" />
+          <Property Name="paroleNumber" Type="varchar" MaxLength="200" />
+          <Property Name="CreatedAt" Type="datetime" />
+          <Property Name="UpdatedAt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="IncarceratedStep2">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FormId" Type="int" Nullable="false" />
+          <Property Name="DateINC" Type="datetime" Nullable="false" />
+          <Property Name="ConvictCounty" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="ConvictOTN" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ConvictDocket" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Guilty" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DateSentence" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ConvictJudge" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="Offenses" Type="varchar(max)" Nullable="false" />
+          <Property Name="Sentence" Type="varchar(max)" Nullable="false" />
+          <Property Name="NotGuilty" Type="varchar(max)" Nullable="false" />
+          <Property Name="Facts" Type="varchar(max)" Nullable="false" />
+          <Property Name="HavePaid" Type="bit" Nullable="false" />
+          <Property Name="FinesBalance" Type="varchar(max)" />
+          <Property Name="LastPaymentDate" Type="datetime" />
+          <Property Name="ViolatedParole" Type="bit" />
+          <Property Name="ParoleRevoked" Type="bit" />
+          <Property Name="RevokedAppeal" Type="bit" />
+          <Property Name="CourtAppeal" Type="varchar(max)" />
+          <Property Name="Codefendents" Type="varchar(max)" />
+          <Property Name="CreatedAt" Type="datetime" />
+          <Property Name="UpdatedAt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="IncarceratedStep3">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FormId" Type="int" Nullable="false" />
+          <Property Name="DateINC" Type="datetime" Nullable="false" />
+          <Property Name="ConvictCounty" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="ConvictOTN" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ConvictDocket" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Guilty" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DateSentence" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ConvictJudge" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="Offenses" Type="varchar(max)" Nullable="false" />
+          <Property Name="Sentence" Type="varchar(max)" Nullable="false" />
+          <Property Name="NotGuilty" Type="varchar(max)" Nullable="false" />
+          <Property Name="Facts" Type="varchar(max)" Nullable="false" />
+          <Property Name="HavePaid" Type="bit" Nullable="false" />
+          <Property Name="FinesBalance" Type="varchar(max)" />
+          <Property Name="LastPaymentDate" Type="datetime" />
+          <Property Name="ViolatedParole" Type="bit" />
+          <Property Name="ParoleRevoked" Type="bit" />
+          <Property Name="RevokedAppeal" Type="bit" />
+          <Property Name="CourtAppeal" Type="varchar(max)" />
+          <Property Name="Codefendents" Type="varchar(max)" />
+          <Property Name="CreatedAt" Type="datetime" />
+          <Property Name="UpdatedAt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="IncarceratedStep4">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FormId" Type="int" Nullable="false" />
+          <Property Name="DateINC" Type="datetime" Nullable="false" />
+          <Property Name="ConvictCounty" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="ConvictOTN" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ConvictDocket" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Guilty" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DateSentence" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ConvictJudge" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="Offenses" Type="varchar(max)" Nullable="false" />
+          <Property Name="Sentence" Type="varchar(max)" Nullable="false" />
+          <Property Name="NotGuilty" Type="varchar(max)" Nullable="false" />
+          <Property Name="Facts" Type="varchar(max)" Nullable="false" />
+          <Property Name="HavePaid" Type="bit" Nullable="false" />
+          <Property Name="FinesBalance" Type="varchar(max)" />
+          <Property Name="LastPaymentDate" Type="datetime" />
+          <Property Name="ViolatedParole" Type="bit" />
+          <Property Name="ParoleRevoked" Type="bit" />
+          <Property Name="RevokedAppeal" Type="bit" />
+          <Property Name="CourtAppeal" Type="varchar(max)" />
+          <Property Name="Codefendents" Type="varchar(max)" />
+          <Property Name="CreatedAt" Type="datetime" />
+          <Property Name="UpdatedAt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="IncarceratedStep5">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FormId" Type="int" Nullable="false" />
+          <Property Name="OtherCharges" Type="bit" Nullable="false" />
+          <Property Name="DateIncident1" Type="varchar" MaxLength="200" />
+          <Property Name="OtherSF1" Type="varchar" MaxLength="50" />
+          <Property Name="OffensesAdditional1" Type="varchar" MaxLength="200" />
+          <Property Name="DispositionAdditional1" Type="varchar" MaxLength="200" />
+          <Property Name="DateIncident2" Type="varchar" MaxLength="200" />
+          <Property Name="OtherSF2" Type="varchar" MaxLength="50" />
+          <Property Name="OffensesAdditional2" Type="varchar" MaxLength="200" />
+          <Property Name="DispositionAdditional2" Type="varchar" MaxLength="200" />
+          <Property Name="DateIncident3" Type="varchar" MaxLength="200" />
+          <Property Name="OtherSF3" Type="varchar" MaxLength="50" />
+          <Property Name="OffensesAdditional3" Type="varchar" MaxLength="200" />
+          <Property Name="DispositionAdditional3" Type="varchar" MaxLength="200" />
+          <Property Name="DateIncident4" Type="varchar" MaxLength="200" />
+          <Property Name="OtherSF4" Type="varchar" MaxLength="50" />
+          <Property Name="OffensesAdditional4" Type="varchar" MaxLength="200" />
+          <Property Name="DispositionAdditional4" Type="varchar" MaxLength="200" />
+          <Property Name="DateIncident5" Type="varchar" MaxLength="200" />
+          <Property Name="OtherSF5" Type="varchar" MaxLength="50" />
+          <Property Name="OffensesAdditional5" Type="varchar" MaxLength="200" />
+          <Property Name="DispositionAdditional5" Type="varchar" MaxLength="200" />
+          <Property Name="JuvineleCharges" Type="bit" Nullable="false" />
+          <Property Name="DateJuvenile1" Type="varchar" MaxLength="200" />
+          <Property Name="JuvenileCountyState1" Type="varchar" MaxLength="200" />
+          <Property Name="OffensesJuvenile1" Type="varchar" MaxLength="200" />
+          <Property Name="JuvenileDelinquent1" Type="bit" />
+          <Property Name="DispositionJuvenile1" Type="varchar" MaxLength="200" />
+          <Property Name="DateJuvenile2" Type="varchar" MaxLength="200" />
+          <Property Name="JuvenileCountyState2" Type="varchar" MaxLength="200" />
+          <Property Name="OffensesJuvenile2" Type="varchar" MaxLength="200" />
+          <Property Name="JuvenileDelinquent2" Type="bit" />
+          <Property Name="DispositionJuvenile2" Type="varchar" MaxLength="200" />
+          <Property Name="NonTraffic" Type="bit" Nullable="false" />
+          <Property Name="DatenNonTraffic1" Type="varchar" MaxLength="200" />
+          <Property Name="CountyNonTraffic1" Type="varchar" MaxLength="200" />
+          <Property Name="OffensesNonTraffic1" Type="varchar" MaxLength="200" />
+          <Property Name="DispositionNonTraffic1" Type="varchar" MaxLength="200" />
+          <Property Name="DatenNonTraffic2" Type="varchar" MaxLength="200" />
+          <Property Name="CountyNonTraffic2" Type="varchar" MaxLength="200" />
+          <Property Name="OffensesNonTraffic2" Type="varchar" MaxLength="200" />
+          <Property Name="DispositionNonTraffic2" Type="varchar" MaxLength="200" />
+          <Property Name="DatenNonTraffic3" Type="varchar" MaxLength="200" />
+          <Property Name="CountyNonTraffic3" Type="varchar" MaxLength="200" />
+          <Property Name="OffensesNonTraffic3" Type="varchar" MaxLength="200" />
+          <Property Name="DispositionNonTraffic3" Type="varchar" MaxLength="200" />
+          <Property Name="DatenNonTraffic4" Type="varchar" MaxLength="200" />
+          <Property Name="CountyNonTraffic4" Type="varchar" MaxLength="200" />
+          <Property Name="OffensesNonTraffic4" Type="varchar" MaxLength="200" />
+          <Property Name="DispositionNonTraffic4" Type="varchar" MaxLength="200" />
+          <Property Name="Traffic" Type="bit" Nullable="false" />
+          <Property Name="DateTraffic1" Type="varchar" MaxLength="200" />
+          <Property Name="CountyTraffic1" Type="varchar" MaxLength="200" />
+          <Property Name="OffensesTraffic1" Type="varchar" MaxLength="200" />
+          <Property Name="DispositionTraffic1" Type="varchar" MaxLength="200" />
+          <Property Name="DateTraffic2" Type="varchar" MaxLength="200" />
+          <Property Name="CountyTraffic2" Type="varchar" MaxLength="200" />
+          <Property Name="OffensesTraffic2" Type="varchar" MaxLength="200" />
+          <Property Name="DispositionTraffic2" Type="varchar" MaxLength="200" />
+          <Property Name="DateTraffic3" Type="varchar" MaxLength="200" />
+          <Property Name="CountyTraffic3" Type="varchar" MaxLength="200" />
+          <Property Name="OffensesTraffic3" Type="varchar" MaxLength="200" />
+          <Property Name="DispositionTraffic3" Type="varchar" MaxLength="200" />
+          <Property Name="DateTraffic4" Type="varchar" MaxLength="200" />
+          <Property Name="CountyTraffic4" Type="varchar" MaxLength="200" />
+          <Property Name="OffensesTraffic4" Type="varchar" MaxLength="200" />
+          <Property Name="DispositionTraffic4" Type="varchar" MaxLength="200" />
+          <Property Name="CreatedAt" Type="datetime" />
+          <Property Name="UpdatedAt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="IncarceratedStep6">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FormId" Type="int" Nullable="false" />
+          <Property Name="CreatedAt" Type="datetime" />
+          <Property Name="UpdatedAt" Type="datetime" />
+          <Property Name="AquireCitizenship" Type="bit" Nullable="false" />
+          <Property Name="Adoption" Type="bit" Nullable="false" />
+          <Property Name="CivicActivities" Type="bit" Nullable="false" />
+          <Property Name="Education" Type="bit" Nullable="false" />
+          <Property Name="Employment" Type="bit" Nullable="false" />
+          <Property Name="GunPermit" Type="bit" Nullable="false" />
+          <Property Name="Housing" Type="bit" Nullable="false" />
+          <Property Name="Licensures" Type="bit" Nullable="false" />
+          <Property Name="MilitaryService" Type="bit" Nullable="false" />
+          <Property Name="TravelingOutside" Type="bit" Nullable="false" />
+          <Property Name="Other" Type="bit" Nullable="false" />
+          <Property Name="Specifications" Type="varchar(max)" />
+          <Property Name="Reason" Type="varchar(max)" />
+          <Property Name="Rehabilitations" Type="varchar(max)" Nullable="false" />
+          <Property Name="Contributions" Type="varchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="IncarceratedStep7">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FormId" Type="int" Nullable="false" />
+          <Property Name="sign1" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="date1" Type="datetime" Nullable="false" />
+          <Property Name="date2" Type="datetime" Nullable="false" />
+          <Property Name="sign2" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="CreatedAt" Type="datetime" />
+          <Property Name="UpdatedAt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="NonIncarceratedStep1">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FormId" Type="int" Nullable="false" />
+          <Property Name="CreatedAt" Type="datetime" />
+          <Property Name="UpdatedAt" Type="datetime" />
+          <Property Name="ClemencyRequested" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="HaveFiled" Type="bit" Nullable="false" />
+          <Property Name="Previous" Type="varchar(max)" />
+          <Property Name="OtherState" Type="bit" />
+          <Property Name="WhereFiled" Type="varchar(max)" />
+          <Property Name="GrantedOtherState" Type="bit" />
+          <Property Name="DateOtherStateGranted" Type="datetime" />
+          <Property Name="LastName" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="FirstName" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="MiddleName" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="Suffix" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="BirthDate" Type="datetime" Nullable="false" />
+          <Property Name="BirthPlace" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="Gender" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="SSN" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Race" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="ApplicantAddress" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="Appartment" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="ApplicantCity" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="ApplicantState" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="ApplicantZip" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ApplicantPhone" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CellPhone" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="Aliases" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="WhoRep" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Title" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="Address" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="Address2" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="City" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="State" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="Zip" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="Phone" Type="varchar" MaxLength="200" Nullable="false" />
+        </EntityType>
+        <EntityType Name="NonIncarceratedStep2">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FormId" Type="int" Nullable="false" />
+          <Property Name="DateINC" Type="datetime" Nullable="false" />
+          <Property Name="ConvictCounty" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="ConvictOTN" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ConvictDocket" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Guilty" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DateSentence" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ConvictJudge" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="Offenses" Type="varchar(max)" Nullable="false" />
+          <Property Name="Sentence" Type="varchar(max)" Nullable="false" />
+          <Property Name="NotGuilty" Type="varchar(max)" Nullable="false" />
+          <Property Name="Facts" Type="varchar(max)" Nullable="false" />
+          <Property Name="HavePaid" Type="bit" Nullable="false" />
+          <Property Name="FinesBalance" Type="varchar(max)" />
+          <Property Name="LastPaymentDate" Type="datetime" />
+          <Property Name="ViolatedParole" Type="bit" />
+          <Property Name="ParoleRevoked" Type="bit" />
+          <Property Name="RevokedAppeal" Type="bit" />
+          <Property Name="CourtAppeal" Type="varchar(max)" />
+          <Property Name="Codefendents" Type="varchar(max)" />
+          <Property Name="CreatedAt" Type="datetime" />
+          <Property Name="UpdatedAt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="NonIncarceratedStep3">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FormId" Type="int" Nullable="false" />
+          <Property Name="DateINC" Type="datetime" Nullable="false" />
+          <Property Name="ConvictCounty" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="ConvictOTN" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ConvictDocket" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Guilty" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DateSentence" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ConvictJudge" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="Offenses" Type="varchar(max)" Nullable="false" />
+          <Property Name="Sentence" Type="varchar(max)" Nullable="false" />
+          <Property Name="NotGuilty" Type="varchar(max)" Nullable="false" />
+          <Property Name="Facts" Type="varchar(max)" Nullable="false" />
+          <Property Name="HavePaid" Type="bit" Nullable="false" />
+          <Property Name="FinesBalance" Type="varchar(max)" />
+          <Property Name="LastPaymentDate" Type="datetime" />
+          <Property Name="ViolatedParole" Type="bit" />
+          <Property Name="ParoleRevoked" Type="bit" />
+          <Property Name="RevokedAppeal" Type="bit" />
+          <Property Name="CourtAppeal" Type="varchar(max)" />
+          <Property Name="Codefendents" Type="varchar(max)" />
+          <Property Name="CreatedAt" Type="datetime" />
+          <Property Name="UpdatedAt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="NonIncarceratedStep4">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FormId" Type="int" Nullable="false" />
+          <Property Name="DateINC" Type="datetime" Nullable="false" />
+          <Property Name="ConvictCounty" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="ConvictOTN" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ConvictDocket" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Guilty" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DateSentence" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ConvictJudge" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="Offenses" Type="varchar(max)" Nullable="false" />
+          <Property Name="Sentence" Type="varchar(max)" Nullable="false" />
+          <Property Name="NotGuilty" Type="varchar(max)" Nullable="false" />
+          <Property Name="Facts" Type="varchar(max)" Nullable="false" />
+          <Property Name="HavePaid" Type="bit" Nullable="false" />
+          <Property Name="FinesBalance" Type="varchar(max)" />
+          <Property Name="LastPaymentDate" Type="datetime" />
+          <Property Name="ViolatedParole" Type="bit" />
+          <Property Name="ParoleRevoked" Type="bit" />
+          <Property Name="RevokedAppeal" Type="bit" />
+          <Property Name="CourtAppeal" Type="varchar(max)" />
+          <Property Name="Codefendents" Type="varchar(max)" />
+          <Property Name="CreatedAt" Type="datetime" />
+          <Property Name="UpdatedAt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="NonIncarceratedStep5">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FormId" Type="int" Nullable="false" />
+          <Property Name="OtherCharges" Type="bit" Nullable="false" />
+          <Property Name="DateIncident1" Type="varchar" MaxLength="200" />
+          <Property Name="OtherSF1" Type="varchar" MaxLength="50" />
+          <Property Name="OffensesAdditional1" Type="varchar" MaxLength="200" />
+          <Property Name="DispositionAdditional1" Type="varchar" MaxLength="200" />
+          <Property Name="DateIncident2" Type="varchar" MaxLength="200" />
+          <Property Name="OtherSF2" Type="varchar" MaxLength="50" />
+          <Property Name="OffensesAdditional2" Type="varchar" MaxLength="200" />
+          <Property Name="DispositionAdditional2" Type="varchar" MaxLength="200" />
+          <Property Name="DateIncident3" Type="varchar" MaxLength="200" />
+          <Property Name="OtherSF3" Type="varchar" MaxLength="50" />
+          <Property Name="OffensesAdditional3" Type="varchar" MaxLength="200" />
+          <Property Name="DispositionAdditional3" Type="varchar" MaxLength="200" />
+          <Property Name="DateIncident4" Type="varchar" MaxLength="200" />
+          <Property Name="OtherSF4" Type="varchar" MaxLength="50" />
+          <Property Name="OffensesAdditional4" Type="varchar" MaxLength="200" />
+          <Property Name="DispositionAdditional4" Type="varchar" MaxLength="200" />
+          <Property Name="DateIncident5" Type="varchar" MaxLength="200" />
+          <Property Name="OtherSF5" Type="varchar" MaxLength="50" />
+          <Property Name="OffensesAdditional5" Type="varchar" MaxLength="200" />
+          <Property Name="DispositionAdditional5" Type="varchar" MaxLength="200" />
+          <Property Name="JuvineleCharges" Type="bit" Nullable="false" />
+          <Property Name="DateJuvenile1" Type="varchar" MaxLength="200" />
+          <Property Name="JuvenileCountyState1" Type="varchar" MaxLength="200" />
+          <Property Name="OffensesJuvenile1" Type="varchar" MaxLength="200" />
+          <Property Name="JuvenileDelinquent1" Type="bit" />
+          <Property Name="DispositionJuvenile1" Type="varchar" MaxLength="200" />
+          <Property Name="DateJuvenile2" Type="varchar" MaxLength="200" />
+          <Property Name="JuvenileCountyState2" Type="varchar" MaxLength="200" />
+          <Property Name="OffensesJuvenile2" Type="varchar" MaxLength="200" />
+          <Property Name="JuvenileDelinquent2" Type="bit" />
+          <Property Name="DispositionJuvenile2" Type="varchar" MaxLength="200" />
+          <Property Name="NonTraffic" Type="bit" Nullable="false" />
+          <Property Name="DatenNonTraffic1" Type="varchar" MaxLength="200" />
+          <Property Name="CountyNonTraffic1" Type="varchar" MaxLength="200" />
+          <Property Name="OffensesNonTraffic1" Type="varchar" MaxLength="200" />
+          <Property Name="DispositionNonTraffic1" Type="varchar" MaxLength="200" />
+          <Property Name="DatenNonTraffic2" Type="varchar" MaxLength="200" />
+          <Property Name="CountyNonTraffic2" Type="varchar" MaxLength="200" />
+          <Property Name="OffensesNonTraffic2" Type="varchar" MaxLength="200" />
+          <Property Name="DispositionNonTraffic2" Type="varchar" MaxLength="200" />
+          <Property Name="DatenNonTraffic3" Type="varchar" MaxLength="200" />
+          <Property Name="CountyNonTraffic3" Type="varchar" MaxLength="200" />
+          <Property Name="OffensesNonTraffic3" Type="varchar" MaxLength="200" />
+          <Property Name="DispositionNonTraffic3" Type="varchar" MaxLength="200" />
+          <Property Name="DatenNonTraffic4" Type="varchar" MaxLength="200" />
+          <Property Name="CountyNonTraffic4" Type="varchar" MaxLength="200" />
+          <Property Name="OffensesNonTraffic4" Type="varchar" MaxLength="200" />
+          <Property Name="DispositionNonTraffic4" Type="varchar" MaxLength="200" />
+          <Property Name="Traffic" Type="bit" Nullable="false" />
+          <Property Name="DateTraffic1" Type="varchar" MaxLength="200" />
+          <Property Name="CountyTraffic1" Type="varchar" MaxLength="200" />
+          <Property Name="OffensesTraffic1" Type="varchar" MaxLength="200" />
+          <Property Name="DispositionTraffic1" Type="varchar" MaxLength="200" />
+          <Property Name="DateTraffic2" Type="varchar" MaxLength="200" />
+          <Property Name="CountyTraffic2" Type="varchar" MaxLength="200" />
+          <Property Name="OffensesTraffic2" Type="varchar" MaxLength="200" />
+          <Property Name="DispositionTraffic2" Type="varchar" MaxLength="200" />
+          <Property Name="DateTraffic3" Type="varchar" MaxLength="200" />
+          <Property Name="CountyTraffic3" Type="varchar" MaxLength="200" />
+          <Property Name="OffensesTraffic3" Type="varchar" MaxLength="200" />
+          <Property Name="DispositionTraffic3" Type="varchar" MaxLength="200" />
+          <Property Name="DateTraffic4" Type="varchar" MaxLength="200" />
+          <Property Name="CountyTraffic4" Type="varchar" MaxLength="200" />
+          <Property Name="OffensesTraffic4" Type="varchar" MaxLength="200" />
+          <Property Name="DispositionTraffic4" Type="varchar" MaxLength="200" />
+          <Property Name="CreatedAt" Type="datetime" />
+          <Property Name="UpdatedAt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="NonIncarceratedStep6">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FormId" Type="int" Nullable="false" />
+          <Property Name="CreatedAt" Type="datetime" />
+          <Property Name="UpdatedAt" Type="datetime" />
+          <Property Name="AquireCitizenship" Type="bit" Nullable="false" />
+          <Property Name="Adoption" Type="bit" Nullable="false" />
+          <Property Name="CivicActivities" Type="bit" Nullable="false" />
+          <Property Name="Education" Type="bit" Nullable="false" />
+          <Property Name="Employment" Type="bit" Nullable="false" />
+          <Property Name="GunPermit" Type="bit" Nullable="false" />
+          <Property Name="Housing" Type="bit" Nullable="false" />
+          <Property Name="Licensures" Type="bit" Nullable="false" />
+          <Property Name="MilitaryService" Type="bit" Nullable="false" />
+          <Property Name="TravelingOutside" Type="bit" Nullable="false" />
+          <Property Name="Other" Type="bit" Nullable="false" />
+          <Property Name="Specifications" Type="varchar(max)" />
+          <Property Name="Reason" Type="varchar(max)" />
+          <Property Name="Rehabilitations" Type="varchar(max)" Nullable="false" />
+          <Property Name="Contributions" Type="varchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="NonIncarceratedStep7">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FormId" Type="int" Nullable="false" />
+          <Property Name="sign1" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="date1" Type="datetime" Nullable="false" />
+          <Property Name="sign2" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="date2" Type="datetime" Nullable="false" />
+          <Property Name="CreatedAt" Type="datetime" />
+          <Property Name="UpdatedAt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Reviews">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FormId" Type="int" Nullable="false" />
+          <Property Name="ReviewerId" Type="int" Nullable="false" />
+          <Property Name="Status" Type="int" Nullable="false" />
+          <Property Name="ReviewedAt" Type="datetime" Nullable="false" />
+          <Property Name="Comment" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="56" Nullable="false" />
+          <Property Name="Suffix" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="FirstName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="MiddleName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="LastName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Gender" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="BirthDate" Type="datetime" Nullable="false" />
+          <Property Name="SSNumber" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Address" Type="varchar(max)" Nullable="false" />
+          <Property Name="Apartment" Type="varchar" MaxLength="100" />
+          <Property Name="City" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="State" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Zip" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Homephone" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CellPhone" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="PlaceOfBirth" Type="varchar" MaxLength="200" />
+          <Property Name="Status" Type="bit" />
+          <Property Name="CreatedAt" Type="datetime" />
+          <Property Name="UpdatedAt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="webpages_Membership">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="ConfirmationToken" Type="nvarchar" MaxLength="128" />
+          <Property Name="IsConfirmed" Type="bit" />
+          <Property Name="LastPasswordFailureDate" Type="datetime" />
+          <Property Name="PasswordFailuresSinceLastSuccess" Type="int" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="PasswordChangedDate" Type="datetime" />
+          <Property Name="PasswordSalt" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="PasswordVerificationToken" Type="nvarchar" MaxLength="128" />
+          <Property Name="PasswordVerificationTokenExpirationDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="webpages_OAuthMembership">
+          <Key>
+            <PropertyRef Name="Provider" />
+            <PropertyRef Name="ProviderUserId" />
+          </Key>
+          <Property Name="Provider" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="ProviderUserId" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="webpages_Roles">
+          <Key>
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="RoleId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RoleName" Type="nvarchar" MaxLength="256" Nullable="false" />
+        </EntityType>
+        <EntityType Name="webpages_UsersInRoles">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="RoleId" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Forms_webpages_Membership">
+          <End Role="webpages_Membership" Type="Self.webpages_Membership" Multiplicity="1" />
+          <End Role="Forms" Type="Self.Forms" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="webpages_Membership">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Forms">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IncarceratedStep1_Forms">
+          <End Role="Forms" Type="Self.Forms" Multiplicity="1" />
+          <End Role="IncarceratedStep1" Type="Self.IncarceratedStep1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Forms">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="IncarceratedStep1">
+              <PropertyRef Name="FormId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IncarceratedStep2_Forms">
+          <End Role="Forms" Type="Self.Forms" Multiplicity="1" />
+          <End Role="IncarceratedStep2" Type="Self.IncarceratedStep2" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Forms">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="IncarceratedStep2">
+              <PropertyRef Name="FormId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IncarceratedStep3_Forms">
+          <End Role="Forms" Type="Self.Forms" Multiplicity="1" />
+          <End Role="IncarceratedStep3" Type="Self.IncarceratedStep3" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Forms">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="IncarceratedStep3">
+              <PropertyRef Name="FormId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IncarceratedStep4_Forms">
+          <End Role="Forms" Type="Self.Forms" Multiplicity="1" />
+          <End Role="IncarceratedStep4" Type="Self.IncarceratedStep4" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Forms">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="IncarceratedStep4">
+              <PropertyRef Name="FormId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IncarceratedStep5_Forms">
+          <End Role="Forms" Type="Self.Forms" Multiplicity="1" />
+          <End Role="IncarceratedStep5" Type="Self.IncarceratedStep5" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Forms">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="IncarceratedStep5">
+              <PropertyRef Name="FormId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IncarceratedStep6_Forms">
+          <End Role="Forms" Type="Self.Forms" Multiplicity="1" />
+          <End Role="IncarceratedStep6" Type="Self.IncarceratedStep6" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Forms">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="IncarceratedStep6">
+              <PropertyRef Name="FormId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IncarceratedStep7_IncarceratedStep7">
+          <End Role="Forms" Type="Self.Forms" Multiplicity="1" />
+          <End Role="IncarceratedStep7" Type="Self.IncarceratedStep7" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Forms">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="IncarceratedStep7">
+              <PropertyRef Name="FormId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NonIncarceratedStep2_Forms">
+          <End Role="Forms" Type="Self.Forms" Multiplicity="1" />
+          <End Role="NonIncarceratedStep2" Type="Self.NonIncarceratedStep2" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Forms">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="NonIncarceratedStep2">
+              <PropertyRef Name="FormId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NonIncarceratedStep3_Forms">
+          <End Role="Forms" Type="Self.Forms" Multiplicity="1" />
+          <End Role="NonIncarceratedStep3" Type="Self.NonIncarceratedStep3" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Forms">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="NonIncarceratedStep3">
+              <PropertyRef Name="FormId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NonIncarceratedStep4_Forms">
+          <End Role="Forms" Type="Self.Forms" Multiplicity="1" />
+          <End Role="NonIncarceratedStep4" Type="Self.NonIncarceratedStep4" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Forms">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="NonIncarceratedStep4">
+              <PropertyRef Name="FormId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NonIncarceratedStep5_Forms">
+          <End Role="Forms" Type="Self.Forms" Multiplicity="1" />
+          <End Role="NonIncarceratedStep5" Type="Self.NonIncarceratedStep5" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Forms">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="NonIncarceratedStep5">
+              <PropertyRef Name="FormId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NonIncarceratedStep6_Forms">
+          <End Role="Forms" Type="Self.Forms" Multiplicity="1" />
+          <End Role="NonIncarceratedStep6" Type="Self.NonIncarceratedStep6" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Forms">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="NonIncarceratedStep6">
+              <PropertyRef Name="FormId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NonIncarceratedStep7_NonIncarceratedStep7">
+          <End Role="Forms" Type="Self.Forms" Multiplicity="1" />
+          <End Role="NonIncarceratedStep7" Type="Self.NonIncarceratedStep7" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Forms">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="NonIncarceratedStep7">
+              <PropertyRef Name="FormId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NotIncarceratedStep1_Forms">
+          <End Role="Forms" Type="Self.Forms" Multiplicity="1" />
+          <End Role="NonIncarceratedStep1" Type="Self.NonIncarceratedStep1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Forms">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="NonIncarceratedStep1">
+              <PropertyRef Name="FormId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reviews_Forms">
+          <End Role="Forms" Type="Self.Forms" Multiplicity="1" />
+          <End Role="Reviews" Type="Self.Reviews" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Forms">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Reviews">
+              <PropertyRef Name="FormId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reviews_webpages_Membership">
+          <End Role="webpages_Membership" Type="Self.webpages_Membership" Multiplicity="1" />
+          <End Role="Reviews" Type="Self.Reviews" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="webpages_Membership">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Reviews">
+              <PropertyRef Name="ReviewerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_RoleId">
+          <End Role="webpages_Roles" Type="Self.webpages_Roles" Multiplicity="1" />
+          <End Role="webpages_UsersInRoles" Type="Self.webpages_UsersInRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="webpages_Roles">
+              <PropertyRef Name="RoleId" />
+            </Principal>
+            <Dependent Role="webpages_UsersInRoles">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_UserId">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="webpages_UsersInRoles" Type="Self.webpages_UsersInRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="webpages_UsersInRoles">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="BoardofPardonsModelStoreContainer">
+          <EntitySet Name="Forms" EntityType="Self.Forms" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="IncarceratedStep1" EntityType="Self.IncarceratedStep1" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="IncarceratedStep2" EntityType="Self.IncarceratedStep2" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="IncarceratedStep3" EntityType="Self.IncarceratedStep3" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="IncarceratedStep4" EntityType="Self.IncarceratedStep4" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="IncarceratedStep5" EntityType="Self.IncarceratedStep5" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="IncarceratedStep6" EntityType="Self.IncarceratedStep6" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="IncarceratedStep7" EntityType="Self.IncarceratedStep7" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="NonIncarceratedStep1" EntityType="Self.NonIncarceratedStep1" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="NonIncarceratedStep2" EntityType="Self.NonIncarceratedStep2" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="NonIncarceratedStep3" EntityType="Self.NonIncarceratedStep3" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="NonIncarceratedStep4" EntityType="Self.NonIncarceratedStep4" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="NonIncarceratedStep5" EntityType="Self.NonIncarceratedStep5" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="NonIncarceratedStep6" EntityType="Self.NonIncarceratedStep6" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="NonIncarceratedStep7" EntityType="Self.NonIncarceratedStep7" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Reviews" EntityType="Self.Reviews" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="webpages_Membership" EntityType="Self.webpages_Membership" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="webpages_OAuthMembership" EntityType="Self.webpages_OAuthMembership" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="webpages_Roles" EntityType="Self.webpages_Roles" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="webpages_UsersInRoles" EntityType="Self.webpages_UsersInRoles" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <AssociationSet Name="FK_Forms_webpages_Membership" Association="Self.FK_Forms_webpages_Membership">
+            <End Role="webpages_Membership" EntitySet="webpages_Membership" />
+            <End Role="Forms" EntitySet="Forms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IncarceratedStep1_Forms" Association="Self.FK_IncarceratedStep1_Forms">
+            <End Role="Forms" EntitySet="Forms" />
+            <End Role="IncarceratedStep1" EntitySet="IncarceratedStep1" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IncarceratedStep2_Forms" Association="Self.FK_IncarceratedStep2_Forms">
+            <End Role="Forms" EntitySet="Forms" />
+            <End Role="IncarceratedStep2" EntitySet="IncarceratedStep2" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IncarceratedStep3_Forms" Association="Self.FK_IncarceratedStep3_Forms">
+            <End Role="Forms" EntitySet="Forms" />
+            <End Role="IncarceratedStep3" EntitySet="IncarceratedStep3" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IncarceratedStep4_Forms" Association="Self.FK_IncarceratedStep4_Forms">
+            <End Role="Forms" EntitySet="Forms" />
+            <End Role="IncarceratedStep4" EntitySet="IncarceratedStep4" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IncarceratedStep5_Forms" Association="Self.FK_IncarceratedStep5_Forms">
+            <End Role="Forms" EntitySet="Forms" />
+            <End Role="IncarceratedStep5" EntitySet="IncarceratedStep5" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IncarceratedStep6_Forms" Association="Self.FK_IncarceratedStep6_Forms">
+            <End Role="Forms" EntitySet="Forms" />
+            <End Role="IncarceratedStep6" EntitySet="IncarceratedStep6" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IncarceratedStep7_IncarceratedStep7" Association="Self.FK_IncarceratedStep7_IncarceratedStep7">
+            <End Role="Forms" EntitySet="Forms" />
+            <End Role="IncarceratedStep7" EntitySet="IncarceratedStep7" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NonIncarceratedStep2_Forms" Association="Self.FK_NonIncarceratedStep2_Forms">
+            <End Role="Forms" EntitySet="Forms" />
+            <End Role="NonIncarceratedStep2" EntitySet="NonIncarceratedStep2" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NonIncarceratedStep3_Forms" Association="Self.FK_NonIncarceratedStep3_Forms">
+            <End Role="Forms" EntitySet="Forms" />
+            <End Role="NonIncarceratedStep3" EntitySet="NonIncarceratedStep3" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NonIncarceratedStep4_Forms" Association="Self.FK_NonIncarceratedStep4_Forms">
+            <End Role="Forms" EntitySet="Forms" />
+            <End Role="NonIncarceratedStep4" EntitySet="NonIncarceratedStep4" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NonIncarceratedStep5_Forms" Association="Self.FK_NonIncarceratedStep5_Forms">
+            <End Role="Forms" EntitySet="Forms" />
+            <End Role="NonIncarceratedStep5" EntitySet="NonIncarceratedStep5" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NonIncarceratedStep6_Forms" Association="Self.FK_NonIncarceratedStep6_Forms">
+            <End Role="Forms" EntitySet="Forms" />
+            <End Role="NonIncarceratedStep6" EntitySet="NonIncarceratedStep6" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NonIncarceratedStep7_NonIncarceratedStep7" Association="Self.FK_NonIncarceratedStep7_NonIncarceratedStep7">
+            <End Role="Forms" EntitySet="Forms" />
+            <End Role="NonIncarceratedStep7" EntitySet="NonIncarceratedStep7" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NotIncarceratedStep1_Forms" Association="Self.FK_NotIncarceratedStep1_Forms">
+            <End Role="Forms" EntitySet="Forms" />
+            <End Role="NonIncarceratedStep1" EntitySet="NonIncarceratedStep1" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reviews_Forms" Association="Self.FK_Reviews_Forms">
+            <End Role="Forms" EntitySet="Forms" />
+            <End Role="Reviews" EntitySet="Reviews" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reviews_webpages_Membership" Association="Self.FK_Reviews_webpages_Membership">
+            <End Role="webpages_Membership" EntitySet="webpages_Membership" />
+            <End Role="Reviews" EntitySet="Reviews" />
+          </AssociationSet>
+          <AssociationSet Name="fk_RoleId" Association="Self.fk_RoleId">
+            <End Role="webpages_Roles" EntitySet="webpages_Roles" />
+            <End Role="webpages_UsersInRoles" EntitySet="webpages_UsersInRoles" />
+          </AssociationSet>
+          <AssociationSet Name="fk_UserId" Association="Self.fk_UserId">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="webpages_UsersInRoles" EntitySet="webpages_UsersInRoles" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BoardofPardonsModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+        <EntityContainer Name="BoardofPardonsEntities1" annotation:LazyLoadingEnabled="true" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+          <EntitySet Name="Forms" EntityType="BoardofPardonsModel.Form" />
+          <EntitySet Name="IncarceratedStep1" EntityType="BoardofPardonsModel.IncarceratedStep1" />
+          <EntitySet Name="IncarceratedStep2" EntityType="BoardofPardonsModel.IncarceratedStep2" />
+          <EntitySet Name="IncarceratedStep3" EntityType="BoardofPardonsModel.IncarceratedStep3" />
+          <EntitySet Name="IncarceratedStep4" EntityType="BoardofPardonsModel.IncarceratedStep4" />
+          <EntitySet Name="IncarceratedStep5" EntityType="BoardofPardonsModel.IncarceratedStep5" />
+          <EntitySet Name="IncarceratedStep6" EntityType="BoardofPardonsModel.IncarceratedStep6" />
+          <EntitySet Name="IncarceratedStep7" EntityType="BoardofPardonsModel.IncarceratedStep7" />
+          <EntitySet Name="NonIncarceratedStep1" EntityType="BoardofPardonsModel.NonIncarceratedStep1" />
+          <EntitySet Name="NonIncarceratedStep2" EntityType="BoardofPardonsModel.NonIncarceratedStep2" />
+          <EntitySet Name="NonIncarceratedStep3" EntityType="BoardofPardonsModel.NonIncarceratedStep3" />
+          <EntitySet Name="NonIncarceratedStep4" EntityType="BoardofPardonsModel.NonIncarceratedStep4" />
+          <EntitySet Name="NonIncarceratedStep5" EntityType="BoardofPardonsModel.NonIncarceratedStep5" />
+          <EntitySet Name="NonIncarceratedStep6" EntityType="BoardofPardonsModel.NonIncarceratedStep6" />
+          <EntitySet Name="NonIncarceratedStep7" EntityType="BoardofPardonsModel.NonIncarceratedStep7" />
+          <EntitySet Name="Reviews" EntityType="BoardofPardonsModel.Review" />
+          <EntitySet Name="Users" EntityType="BoardofPardonsModel.User" />
+          <EntitySet Name="webpages_Membership" EntityType="BoardofPardonsModel.webpages_Membership" />
+          <EntitySet Name="webpages_OAuthMembership" EntityType="BoardofPardonsModel.webpages_OAuthMembership" />
+          <EntitySet Name="webpages_Roles" EntityType="BoardofPardonsModel.webpages_Roles" />
+          <AssociationSet Name="FK_Forms_webpages_Membership" Association="BoardofPardonsModel.FK_Forms_webpages_Membership">
+            <End Role="webpages_Membership" EntitySet="webpages_Membership" />
+            <End Role="Form" EntitySet="Forms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IncarceratedStep1_Forms" Association="BoardofPardonsModel.FK_IncarceratedStep1_Forms">
+            <End Role="Form" EntitySet="Forms" />
+            <End Role="IncarceratedStep1" EntitySet="IncarceratedStep1" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IncarceratedStep2_Forms" Association="BoardofPardonsModel.FK_IncarceratedStep2_Forms">
+            <End Role="Form" EntitySet="Forms" />
+            <End Role="IncarceratedStep2" EntitySet="IncarceratedStep2" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IncarceratedStep3_Forms" Association="BoardofPardonsModel.FK_IncarceratedStep3_Forms">
+            <End Role="Form" EntitySet="Forms" />
+            <End Role="IncarceratedStep3" EntitySet="IncarceratedStep3" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IncarceratedStep4_Forms" Association="BoardofPardonsModel.FK_IncarceratedStep4_Forms">
+            <End Role="Form" EntitySet="Forms" />
+            <End Role="IncarceratedStep4" EntitySet="IncarceratedStep4" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IncarceratedStep5_Forms" Association="BoardofPardonsModel.FK_IncarceratedStep5_Forms">
+            <End Role="Form" EntitySet="Forms" />
+            <End Role="IncarceratedStep5" EntitySet="IncarceratedStep5" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IncarceratedStep6_Forms" Association="BoardofPardonsModel.FK_IncarceratedStep6_Forms">
+            <End Role="Form" EntitySet="Forms" />
+            <End Role="IncarceratedStep6" EntitySet="IncarceratedStep6" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IncarceratedStep7_IncarceratedStep7" Association="BoardofPardonsModel.FK_IncarceratedStep7_IncarceratedStep7">
+            <End Role="Form" EntitySet="Forms" />
+            <End Role="IncarceratedStep7" EntitySet="IncarceratedStep7" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NonIncarceratedStep2_Forms" Association="BoardofPardonsModel.FK_NonIncarceratedStep2_Forms">
+            <End Role="Form" EntitySet="Forms" />
+            <End Role="NonIncarceratedStep2" EntitySet="NonIncarceratedStep2" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NonIncarceratedStep3_Forms" Association="BoardofPardonsModel.FK_NonIncarceratedStep3_Forms">
+            <End Role="Form" EntitySet="Forms" />
+            <End Role="NonIncarceratedStep3" EntitySet="NonIncarceratedStep3" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NonIncarceratedStep4_Forms" Association="BoardofPardonsModel.FK_NonIncarceratedStep4_Forms">
+            <End Role="Form" EntitySet="Forms" />
+            <End Role="NonIncarceratedStep4" EntitySet="NonIncarceratedStep4" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NonIncarceratedStep5_Forms" Association="BoardofPardonsModel.FK_NonIncarceratedStep5_Forms">
+            <End Role="Form" EntitySet="Forms" />
+            <End Role="NonIncarceratedStep5" EntitySet="NonIncarceratedStep5" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NonIncarceratedStep6_Forms" Association="BoardofPardonsModel.FK_NonIncarceratedStep6_Forms">
+            <End Role="Form" EntitySet="Forms" />
+            <End Role="NonIncarceratedStep6" EntitySet="NonIncarceratedStep6" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NonIncarceratedStep7_NonIncarceratedStep7" Association="BoardofPardonsModel.FK_NonIncarceratedStep7_NonIncarceratedStep7">
+            <End Role="Form" EntitySet="Forms" />
+            <End Role="NonIncarceratedStep7" EntitySet="NonIncarceratedStep7" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NotIncarceratedStep1_Forms" Association="BoardofPardonsModel.FK_NotIncarceratedStep1_Forms">
+            <End Role="Form" EntitySet="Forms" />
+            <End Role="NonIncarceratedStep1" EntitySet="NonIncarceratedStep1" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reviews_Forms" Association="BoardofPardonsModel.FK_Reviews_Forms">
+            <End Role="Form" EntitySet="Forms" />
+            <End Role="Review" EntitySet="Reviews" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reviews_webpages_Membership" Association="BoardofPardonsModel.FK_Reviews_webpages_Membership">
+            <End Role="webpages_Membership" EntitySet="webpages_Membership" />
+            <End Role="Review" EntitySet="Reviews" />
+          </AssociationSet>
+          <AssociationSet Name="webpages_UsersInRoles" Association="BoardofPardonsModel.webpages_UsersInRoles">
+            <End Role="webpages_Roles" EntitySet="webpages_Roles" />
+            <End Role="User" EntitySet="Users" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Form">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="Type" Type="Int32" Nullable="false" />
+          <Property Name="CreatedAt" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedAt" Type="DateTime" Precision="3" />
+          <Property Name="Status" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="webpages_Membership" Relationship="BoardofPardonsModel.FK_Forms_webpages_Membership" FromRole="Form" ToRole="webpages_Membership" />
+          <NavigationProperty Name="IncarceratedStep1" Relationship="BoardofPardonsModel.FK_IncarceratedStep1_Forms" FromRole="Form" ToRole="IncarceratedStep1" />
+          <NavigationProperty Name="IncarceratedStep2" Relationship="BoardofPardonsModel.FK_IncarceratedStep2_Forms" FromRole="Form" ToRole="IncarceratedStep2" />
+          <NavigationProperty Name="IncarceratedStep3" Relationship="BoardofPardonsModel.FK_IncarceratedStep3_Forms" FromRole="Form" ToRole="IncarceratedStep3" />
+          <NavigationProperty Name="IncarceratedStep4" Relationship="BoardofPardonsModel.FK_IncarceratedStep4_Forms" FromRole="Form" ToRole="IncarceratedStep4" />
+          <NavigationProperty Name="IncarceratedStep5" Relationship="BoardofPardonsModel.FK_IncarceratedStep5_Forms" FromRole="Form" ToRole="IncarceratedStep5" />
+          <NavigationProperty Name="IncarceratedStep6" Relationship="BoardofPardonsModel.FK_IncarceratedStep6_Forms" FromRole="Form" ToRole="IncarceratedStep6" />
+          <NavigationProperty Name="IncarceratedStep7" Relationship="BoardofPardonsModel.FK_IncarceratedStep7_IncarceratedStep7" FromRole="Form" ToRole="IncarceratedStep7" />
+          <NavigationProperty Name="NonIncarceratedStep2" Relationship="BoardofPardonsModel.FK_NonIncarceratedStep2_Forms" FromRole="Form" ToRole="NonIncarceratedStep2" />
+          <NavigationProperty Name="NonIncarceratedStep3" Relationship="BoardofPardonsModel.FK_NonIncarceratedStep3_Forms" FromRole="Form" ToRole="NonIncarceratedStep3" />
+          <NavigationProperty Name="NonIncarceratedStep4" Relationship="BoardofPardonsModel.FK_NonIncarceratedStep4_Forms" FromRole="Form" ToRole="NonIncarceratedStep4" />
+          <NavigationProperty Name="NonIncarceratedStep5" Relationship="BoardofPardonsModel.FK_NonIncarceratedStep5_Forms" FromRole="Form" ToRole="NonIncarceratedStep5" />
+          <NavigationProperty Name="NonIncarceratedStep6" Relationship="BoardofPardonsModel.FK_NonIncarceratedStep6_Forms" FromRole="Form" ToRole="NonIncarceratedStep6" />
+          <NavigationProperty Name="NonIncarceratedStep7" Relationship="BoardofPardonsModel.FK_NonIncarceratedStep7_NonIncarceratedStep7" FromRole="Form" ToRole="NonIncarceratedStep7" />
+          <NavigationProperty Name="NonIncarceratedStep1" Relationship="BoardofPardonsModel.FK_NotIncarceratedStep1_Forms" FromRole="Form" ToRole="NonIncarceratedStep1" />
+          <NavigationProperty Name="Reviews" Relationship="BoardofPardonsModel.FK_Reviews_Forms" FromRole="Form" ToRole="Review" />
+        </EntityType>
+        <EntityType Name="IncarceratedStep1">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="FormId" Type="Int32" Nullable="false" />
+          <Property Name="AplicationNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="PardonNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="SessionDate" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ClemencyRequested" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Sentence" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MinimumDate" Type="DateTime" Precision="3" />
+          <Property Name="MaximumDate" Type="DateTime" Precision="3" />
+          <Property Name="HaveFiled" Type="Boolean" Nullable="false" />
+          <Property Name="Previous" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="OtherState" Type="Boolean" Nullable="false" />
+          <Property Name="WhereFiled" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="GrantedOtherState" Type="Boolean" />
+          <Property Name="DateOtherStateGranted" Type="DateTime" Precision="3" />
+          <Property Name="LastName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="MiddleName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Suffix" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="BirthDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="BirthPlace" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Gender" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="SSN" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Race" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="ApplicantCity" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="ApplicantState" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="ApplicantZip" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Aliases" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Address" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Address2" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="CityStateZip" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Phone" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="InstName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="InmateNumber" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="InstAddress" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="paroleNumber" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedAt" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedAt" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Form" Relationship="BoardofPardonsModel.FK_IncarceratedStep1_Forms" FromRole="IncarceratedStep1" ToRole="Form" />
+        </EntityType>
+        <EntityType Name="IncarceratedStep2">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="FormId" Type="Int32" Nullable="false" />
+          <Property Name="DateINC" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ConvictCounty" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="ConvictOTN" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ConvictDocket" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Guilty" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DateSentence" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ConvictJudge" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Offenses" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Sentence" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="NotGuilty" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Facts" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="HavePaid" Type="Boolean" Nullable="false" />
+          <Property Name="FinesBalance" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="LastPaymentDate" Type="DateTime" Precision="3" />
+          <Property Name="ViolatedParole" Type="Boolean" />
+          <Property Name="ParoleRevoked" Type="Boolean" />
+          <Property Name="RevokedAppeal" Type="Boolean" />
+          <Property Name="CourtAppeal" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Codefendents" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedAt" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedAt" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Form" Relationship="BoardofPardonsModel.FK_IncarceratedStep2_Forms" FromRole="IncarceratedStep2" ToRole="Form" />
+        </EntityType>
+        <EntityType Name="IncarceratedStep3">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="FormId" Type="Int32" Nullable="false" />
+          <Property Name="DateINC" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ConvictCounty" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="ConvictOTN" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ConvictDocket" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Guilty" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DateSentence" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ConvictJudge" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Offenses" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Sentence" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="NotGuilty" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Facts" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="HavePaid" Type="Boolean" Nullable="false" />
+          <Property Name="FinesBalance" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="LastPaymentDate" Type="DateTime" Precision="3" />
+          <Property Name="ViolatedParole" Type="Boolean" />
+          <Property Name="ParoleRevoked" Type="Boolean" />
+          <Property Name="RevokedAppeal" Type="Boolean" />
+          <Property Name="CourtAppeal" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Codefendents" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedAt" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedAt" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Form" Relationship="BoardofPardonsModel.FK_IncarceratedStep3_Forms" FromRole="IncarceratedStep3" ToRole="Form" />
+        </EntityType>
+        <EntityType Name="IncarceratedStep4">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="FormId" Type="Int32" Nullable="false" />
+          <Property Name="DateINC" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ConvictCounty" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="ConvictOTN" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ConvictDocket" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Guilty" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DateSentence" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ConvictJudge" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Offenses" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Sentence" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="NotGuilty" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Facts" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="HavePaid" Type="Boolean" Nullable="false" />
+          <Property Name="FinesBalance" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="LastPaymentDate" Type="DateTime" Precision="3" />
+          <Property Name="ViolatedParole" Type="Boolean" />
+          <Property Name="ParoleRevoked" Type="Boolean" />
+          <Property Name="RevokedAppeal" Type="Boolean" />
+          <Property Name="CourtAppeal" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Codefendents" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedAt" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedAt" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Form" Relationship="BoardofPardonsModel.FK_IncarceratedStep4_Forms" FromRole="IncarceratedStep4" ToRole="Form" />
+        </EntityType>
+        <EntityType Name="IncarceratedStep5">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="FormId" Type="Int32" Nullable="false" />
+          <Property Name="OtherCharges" Type="Boolean" Nullable="false" />
+          <Property Name="DateIncident1" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="OtherSF1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OffensesAdditional1" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="DispositionAdditional1" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="DateIncident2" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="OtherSF2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OffensesAdditional2" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="DispositionAdditional2" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="DateIncident3" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="OtherSF3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OffensesAdditional3" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="DispositionAdditional3" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="DateIncident4" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="OtherSF4" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OffensesAdditional4" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="DispositionAdditional4" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="DateIncident5" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="OtherSF5" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OffensesAdditional5" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="DispositionAdditional5" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="JuvineleCharges" Type="Boolean" Nullable="false" />
+          <Property Name="DateJuvenile1" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="JuvenileCountyState1" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="OffensesJuvenile1" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="JuvenileDelinquent1" Type="Boolean" />
+          <Property Name="DispositionJuvenile1" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="DateJuvenile2" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="JuvenileCountyState2" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="OffensesJuvenile2" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="JuvenileDelinquent2" Type="Boolean" />
+          <Property Name="DispositionJuvenile2" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="NonTraffic" Type="Boolean" Nullable="false" />
+          <Property Name="DatenNonTraffic1" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="CountyNonTraffic1" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="OffensesNonTraffic1" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="DispositionNonTraffic1" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="DatenNonTraffic2" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="CountyNonTraffic2" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="OffensesNonTraffic2" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="DispositionNonTraffic2" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="DatenNonTraffic3" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="CountyNonTraffic3" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="OffensesNonTraffic3" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="DispositionNonTraffic3" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="DatenNonTraffic4" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="CountyNonTraffic4" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="OffensesNonTraffic4" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="DispositionNonTraffic4" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Traffic" Type="Boolean" Nullable="false" />
+          <Property Name="DateTraffic1" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="CountyTraffic1" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="OffensesTraffic1" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="DispositionTraffic1" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="DateTraffic2" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="CountyTraffic2" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="OffensesTraffic2" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="DispositionTraffic2" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="DateTraffic3" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="CountyTraffic3" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="OffensesTraffic3" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="DispositionTraffic3" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="DateTraffic4" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="CountyTraffic4" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="OffensesTraffic4" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="DispositionTraffic4" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedAt" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedAt" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Form" Relationship="BoardofPardonsModel.FK_IncarceratedStep5_Forms" FromRole="IncarceratedStep5" ToRole="Form" />
+        </EntityType>
+        <EntityType Name="IncarceratedStep6">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="FormId" Type="Int32" Nullable="false" />
+          <Property Name="CreatedAt" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedAt" Type="DateTime" Precision="3" />
+          <Property Name="AquireCitizenship" Type="Boolean" Nullable="false" />
+          <Property Name="Adoption" Type="Boolean" Nullable="false" />
+          <Property Name="CivicActivities" Type="Boolean" Nullable="false" />
+          <Property Name="Education" Type="Boolean" Nullable="false" />
+          <Property Name="Employment" Type="Boolean" Nullable="false" />
+          <Property Name="GunPermit" Type="Boolean" Nullable="false" />
+          <Property Name="Housing" Type="Boolean" Nullable="false" />
+          <Property Name="Licensures" Type="Boolean" Nullable="false" />
+          <Property Name="MilitaryService" Type="Boolean" Nullable="false" />
+          <Property Name="TravelingOutside" Type="Boolean" Nullable="false" />
+          <Property Name="Other" Type="Boolean" Nullable="false" />
+          <Property Name="Specifications" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Reason" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Rehabilitations" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Contributions" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Form" Relationship="BoardofPardonsModel.FK_IncarceratedStep6_Forms" FromRole="IncarceratedStep6" ToRole="Form" />
+        </EntityType>
+        <EntityType Name="IncarceratedStep7">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="FormId" Type="Int32" Nullable="false" />
+          <Property Name="sign1" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="date1" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="date2" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="sign2" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedAt" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedAt" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Form" Relationship="BoardofPardonsModel.FK_IncarceratedStep7_IncarceratedStep7" FromRole="IncarceratedStep7" ToRole="Form" />
+        </EntityType>
+        <EntityType Name="NonIncarceratedStep1">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="FormId" Type="Int32" Nullable="false" />
+          <Property Name="CreatedAt" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedAt" Type="DateTime" Precision="3" />
+          <Property Name="ClemencyRequested" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="HaveFiled" Type="Boolean" Nullable="false" />
+          <Property Name="Previous" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="OtherState" Type="Boolean" />
+          <Property Name="WhereFiled" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="GrantedOtherState" Type="Boolean" />
+          <Property Name="DateOtherStateGranted" Type="DateTime" Precision="3" />
+          <Property Name="LastName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="MiddleName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Suffix" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="BirthDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="BirthPlace" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Gender" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="SSN" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Race" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="ApplicantAddress" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Appartment" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="ApplicantCity" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="ApplicantState" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="ApplicantZip" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ApplicantPhone" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CellPhone" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Aliases" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="WhoRep" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Address" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Address2" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="City" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="State" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Zip" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Phone" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Form" Relationship="BoardofPardonsModel.FK_NotIncarceratedStep1_Forms" FromRole="NonIncarceratedStep1" ToRole="Form" />
+        </EntityType>
+        <EntityType Name="NonIncarceratedStep2">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="FormId" Type="Int32" Nullable="false" />
+          <Property Name="DateINC" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ConvictCounty" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="ConvictOTN" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ConvictDocket" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Guilty" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DateSentence" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ConvictJudge" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Offenses" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Sentence" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="NotGuilty" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Facts" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="HavePaid" Type="Boolean" Nullable="false" />
+          <Property Name="FinesBalance" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="LastPaymentDate" Type="DateTime" Precision="3" />
+          <Property Name="ViolatedParole" Type="Boolean" />
+          <Property Name="ParoleRevoked" Type="Boolean" />
+          <Property Name="RevokedAppeal" Type="Boolean" />
+          <Property Name="CourtAppeal" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Codefendents" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedAt" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedAt" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Form" Relationship="BoardofPardonsModel.FK_NonIncarceratedStep2_Forms" FromRole="NonIncarceratedStep2" ToRole="Form" />
+        </EntityType>
+        <EntityType Name="NonIncarceratedStep3">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="FormId" Type="Int32" Nullable="false" />
+          <Property Name="DateINC" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ConvictCounty" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="ConvictOTN" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ConvictDocket" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Guilty" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DateSentence" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ConvictJudge" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Offenses" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Sentence" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="NotGuilty" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Facts" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="HavePaid" Type="Boolean" Nullable="false" />
+          <Property Name="FinesBalance" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="LastPaymentDate" Type="DateTime" Precision="3" />
+          <Property Name="ViolatedParole" Type="Boolean" />
+          <Property Name="ParoleRevoked" Type="Boolean" />
+          <Property Name="RevokedAppeal" Type="Boolean" />
+          <Property Name="CourtAppeal" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Codefendents" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedAt" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedAt" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Form" Relationship="BoardofPardonsModel.FK_NonIncarceratedStep3_Forms" FromRole="NonIncarceratedStep3" ToRole="Form" />
+        </EntityType>
+        <EntityType Name="NonIncarceratedStep4">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="FormId" Type="Int32" Nullable="false" />
+          <Property Name="DateINC" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ConvictCounty" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="ConvictOTN" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ConvictDocket" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Guilty" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DateSentence" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ConvictJudge" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Offenses" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Sentence" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="NotGuilty" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Facts" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="HavePaid" Type="Boolean" Nullable="false" />
+          <Property Name="FinesBalance" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="LastPaymentDate" Type="DateTime" Precision="3" />
+          <Property Name="ViolatedParole" Type="Boolean" />
+          <Property Name="ParoleRevoked" Type="Boolean" />
+          <Property Name="RevokedAppeal" Type="Boolean" />
+          <Property Name="CourtAppeal" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Codefendents" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedAt" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedAt" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Form" Relationship="BoardofPardonsModel.FK_NonIncarceratedStep4_Forms" FromRole="NonIncarceratedStep4" ToRole="Form" />
+        </EntityType>
+        <EntityType Name="NonIncarceratedStep5">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="FormId" Type="Int32" Nullable="false" />
+          <Property Name="OtherCharges" Type="Boolean" Nullable="false" />
+          <Property Name="DateIncident1" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="OtherSF1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OffensesAdditional1" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="DispositionAdditional1" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="DateIncident2" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="OtherSF2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OffensesAdditional2" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="DispositionAdditional2" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="DateIncident3" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="OtherSF3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OffensesAdditional3" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="DispositionAdditional3" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="DateIncident4" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="OtherSF4" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OffensesAdditional4" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="DispositionAdditional4" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="DateIncident5" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="OtherSF5" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OffensesAdditional5" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="DispositionAdditional5" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="JuvineleCharges" Type="Boolean" Nullable="false" />
+          <Property Name="DateJuvenile1" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="JuvenileCountyState1" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="OffensesJuvenile1" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="JuvenileDelinquent1" Type="Boolean" />
+          <Property Name="DispositionJuvenile1" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="DateJuvenile2" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="JuvenileCountyState2" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="OffensesJuvenile2" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="JuvenileDelinquent2" Type="Boolean" />
+          <Property Name="DispositionJuvenile2" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="NonTraffic" Type="Boolean" Nullable="false" />
+          <Property Name="DatenNonTraffic1" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="CountyNonTraffic1" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="OffensesNonTraffic1" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="DispositionNonTraffic1" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="DatenNonTraffic2" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="CountyNonTraffic2" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="OffensesNonTraffic2" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="DispositionNonTraffic2" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="DatenNonTraffic3" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="CountyNonTraffic3" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="OffensesNonTraffic3" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="DispositionNonTraffic3" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="DatenNonTraffic4" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="CountyNonTraffic4" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="OffensesNonTraffic4" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="DispositionNonTraffic4" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Traffic" Type="Boolean" Nullable="false" />
+          <Property Name="DateTraffic1" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="CountyTraffic1" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="OffensesTraffic1" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="DispositionTraffic1" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="DateTraffic2" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="CountyTraffic2" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="OffensesTraffic2" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="DispositionTraffic2" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="DateTraffic3" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="CountyTraffic3" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="OffensesTraffic3" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="DispositionTraffic3" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="DateTraffic4" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="CountyTraffic4" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="OffensesTraffic4" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="DispositionTraffic4" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedAt" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedAt" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Form" Relationship="BoardofPardonsModel.FK_NonIncarceratedStep5_Forms" FromRole="NonIncarceratedStep5" ToRole="Form" />
+        </EntityType>
+        <EntityType Name="NonIncarceratedStep6">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="FormId" Type="Int32" Nullable="false" />
+          <Property Name="CreatedAt" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedAt" Type="DateTime" Precision="3" />
+          <Property Name="AquireCitizenship" Type="Boolean" Nullable="false" />
+          <Property Name="Adoption" Type="Boolean" Nullable="false" />
+          <Property Name="CivicActivities" Type="Boolean" Nullable="false" />
+          <Property Name="Education" Type="Boolean" Nullable="false" />
+          <Property Name="Employment" Type="Boolean" Nullable="false" />
+          <Property Name="GunPermit" Type="Boolean" Nullable="false" />
+          <Property Name="Housing" Type="Boolean" Nullable="false" />
+          <Property Name="Licensures" Type="Boolean" Nullable="false" />
+          <Property Name="MilitaryService" Type="Boolean" Nullable="false" />
+          <Property Name="TravelingOutside" Type="Boolean" Nullable="false" />
+          <Property Name="Other" Type="Boolean" Nullable="false" />
+          <Property Name="Specifications" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Reason" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Rehabilitations" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Contributions" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Form" Relationship="BoardofPardonsModel.FK_NonIncarceratedStep6_Forms" FromRole="NonIncarceratedStep6" ToRole="Form" />
+        </EntityType>
+        <EntityType Name="NonIncarceratedStep7">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="FormId" Type="Int32" Nullable="false" />
+          <Property Name="sign1" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="date1" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="sign2" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="date2" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatedAt" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedAt" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Form" Relationship="BoardofPardonsModel.FK_NonIncarceratedStep7_NonIncarceratedStep7" FromRole="NonIncarceratedStep7" ToRole="Form" />
+        </EntityType>
+        <EntityType Name="Review">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="FormId" Type="Int32" Nullable="false" />
+          <Property Name="ReviewerId" Type="Int32" Nullable="false" />
+          <Property Name="Status" Type="Int32" Nullable="false" />
+          <Property Name="ReviewedAt" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Form" Relationship="BoardofPardonsModel.FK_Reviews_Forms" FromRole="Review" ToRole="Form" />
+          <NavigationProperty Name="webpages_Membership" Relationship="BoardofPardonsModel.FK_Reviews_webpages_Membership" FromRole="Review" ToRole="webpages_Membership" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="56" FixedLength="false" Unicode="true" />
+          <Property Name="Suffix" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="MiddleName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="LastName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Gender" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="BirthDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="SSNumber" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Address" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Apartment" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="City" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="State" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Zip" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Homephone" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CellPhone" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="PlaceOfBirth" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="Boolean" />
+          <Property Name="CreatedAt" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedAt" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="webpages_Roles" Relationship="BoardofPardonsModel.webpages_UsersInRoles" FromRole="User" ToRole="webpages_Roles" />
+        </EntityType>
+        <EntityType Name="webpages_Membership">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="ConfirmationToken" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="IsConfirmed" Type="Boolean" />
+          <Property Name="LastPasswordFailureDate" Type="DateTime" Precision="3" />
+          <Property Name="PasswordFailuresSinceLastSuccess" Type="Int32" Nullable="false" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="PasswordChangedDate" Type="DateTime" Precision="3" />
+          <Property Name="PasswordSalt" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="PasswordVerificationToken" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="PasswordVerificationTokenExpirationDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Forms" Relationship="BoardofPardonsModel.FK_Forms_webpages_Membership" FromRole="webpages_Membership" ToRole="Form" />
+          <NavigationProperty Name="Reviews" Relationship="BoardofPardonsModel.FK_Reviews_webpages_Membership" FromRole="webpages_Membership" ToRole="Review" />
+        </EntityType>
+        <EntityType Name="webpages_OAuthMembership">
+          <Key>
+            <PropertyRef Name="Provider" />
+            <PropertyRef Name="ProviderUserId" />
+          </Key>
+          <Property Name="Provider" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="ProviderUserId" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="webpages_Roles">
+          <Key>
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="RoleId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="RoleName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Users" Relationship="BoardofPardonsModel.webpages_UsersInRoles" FromRole="webpages_Roles" ToRole="User" />
+        </EntityType>
+        <Association Name="FK_Forms_webpages_Membership">
+          <End Type="BoardofPardonsModel.webpages_Membership" Role="webpages_Membership" Multiplicity="1" />
+          <End Type="BoardofPardonsModel.Form" Role="Form" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="webpages_Membership">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Form">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IncarceratedStep1_Forms">
+          <End Type="BoardofPardonsModel.Form" Role="Form" Multiplicity="1" />
+          <End Type="BoardofPardonsModel.IncarceratedStep1" Role="IncarceratedStep1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Form">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="IncarceratedStep1">
+              <PropertyRef Name="FormId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IncarceratedStep2_Forms">
+          <End Type="BoardofPardonsModel.Form" Role="Form" Multiplicity="1" />
+          <End Type="BoardofPardonsModel.IncarceratedStep2" Role="IncarceratedStep2" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Form">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="IncarceratedStep2">
+              <PropertyRef Name="FormId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IncarceratedStep3_Forms">
+          <End Type="BoardofPardonsModel.Form" Role="Form" Multiplicity="1" />
+          <End Type="BoardofPardonsModel.IncarceratedStep3" Role="IncarceratedStep3" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Form">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="IncarceratedStep3">
+              <PropertyRef Name="FormId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IncarceratedStep4_Forms">
+          <End Type="BoardofPardonsModel.Form" Role="Form" Multiplicity="1" />
+          <End Type="BoardofPardonsModel.IncarceratedStep4" Role="IncarceratedStep4" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Form">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="IncarceratedStep4">
+              <PropertyRef Name="FormId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IncarceratedStep5_Forms">
+          <End Type="BoardofPardonsModel.Form" Role="Form" Multiplicity="1" />
+          <End Type="BoardofPardonsModel.IncarceratedStep5" Role="IncarceratedStep5" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Form">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="IncarceratedStep5">
+              <PropertyRef Name="FormId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IncarceratedStep6_Forms">
+          <End Type="BoardofPardonsModel.Form" Role="Form" Multiplicity="1" />
+          <End Type="BoardofPardonsModel.IncarceratedStep6" Role="IncarceratedStep6" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Form">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="IncarceratedStep6">
+              <PropertyRef Name="FormId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IncarceratedStep7_IncarceratedStep7">
+          <End Type="BoardofPardonsModel.Form" Role="Form" Multiplicity="1" />
+          <End Type="BoardofPardonsModel.IncarceratedStep7" Role="IncarceratedStep7" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Form">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="IncarceratedStep7">
+              <PropertyRef Name="FormId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NonIncarceratedStep2_Forms">
+          <End Type="BoardofPardonsModel.Form" Role="Form" Multiplicity="1" />
+          <End Type="BoardofPardonsModel.NonIncarceratedStep2" Role="NonIncarceratedStep2" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Form">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="NonIncarceratedStep2">
+              <PropertyRef Name="FormId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NonIncarceratedStep3_Forms">
+          <End Type="BoardofPardonsModel.Form" Role="Form" Multiplicity="1" />
+          <End Type="BoardofPardonsModel.NonIncarceratedStep3" Role="NonIncarceratedStep3" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Form">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="NonIncarceratedStep3">
+              <PropertyRef Name="FormId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NonIncarceratedStep4_Forms">
+          <End Type="BoardofPardonsModel.Form" Role="Form" Multiplicity="1" />
+          <End Type="BoardofPardonsModel.NonIncarceratedStep4" Role="NonIncarceratedStep4" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Form">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="NonIncarceratedStep4">
+              <PropertyRef Name="FormId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NonIncarceratedStep5_Forms">
+          <End Type="BoardofPardonsModel.Form" Role="Form" Multiplicity="1" />
+          <End Type="BoardofPardonsModel.NonIncarceratedStep5" Role="NonIncarceratedStep5" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Form">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="NonIncarceratedStep5">
+              <PropertyRef Name="FormId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NonIncarceratedStep6_Forms">
+          <End Type="BoardofPardonsModel.Form" Role="Form" Multiplicity="1" />
+          <End Type="BoardofPardonsModel.NonIncarceratedStep6" Role="NonIncarceratedStep6" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Form">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="NonIncarceratedStep6">
+              <PropertyRef Name="FormId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NonIncarceratedStep7_NonIncarceratedStep7">
+          <End Type="BoardofPardonsModel.Form" Role="Form" Multiplicity="1" />
+          <End Type="BoardofPardonsModel.NonIncarceratedStep7" Role="NonIncarceratedStep7" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Form">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="NonIncarceratedStep7">
+              <PropertyRef Name="FormId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NotIncarceratedStep1_Forms">
+          <End Type="BoardofPardonsModel.Form" Role="Form" Multiplicity="1" />
+          <End Type="BoardofPardonsModel.NonIncarceratedStep1" Role="NonIncarceratedStep1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Form">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="NonIncarceratedStep1">
+              <PropertyRef Name="FormId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reviews_Forms">
+          <End Type="BoardofPardonsModel.Form" Role="Form" Multiplicity="1" />
+          <End Type="BoardofPardonsModel.Review" Role="Review" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Form">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Review">
+              <PropertyRef Name="FormId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reviews_webpages_Membership">
+          <End Type="BoardofPardonsModel.webpages_Membership" Role="webpages_Membership" Multiplicity="1" />
+          <End Type="BoardofPardonsModel.Review" Role="Review" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="webpages_Membership">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Review">
+              <PropertyRef Name="ReviewerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="webpages_UsersInRoles">
+          <End Type="BoardofPardonsModel.webpages_Roles" Role="webpages_Roles" Multiplicity="*" />
+          <End Type="BoardofPardonsModel.User" Role="User" Multiplicity="*" />
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BoardofPardonsModelStoreContainer" CdmEntityContainer="BoardofPardonsEntities1">
+          <EntitySetMapping Name="Forms">
+            <EntityTypeMapping TypeName="BoardofPardonsModel.Form">
+              <MappingFragment StoreEntitySet="Forms">
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IncarceratedStep1">
+            <EntityTypeMapping TypeName="BoardofPardonsModel.IncarceratedStep1">
+              <MappingFragment StoreEntitySet="IncarceratedStep1">
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="paroleNumber" ColumnName="paroleNumber" />
+                <ScalarProperty Name="InstAddress" ColumnName="InstAddress" />
+                <ScalarProperty Name="InmateNumber" ColumnName="InmateNumber" />
+                <ScalarProperty Name="InstName" ColumnName="InstName" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="CityStateZip" ColumnName="CityStateZip" />
+                <ScalarProperty Name="Address2" ColumnName="Address2" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Aliases" ColumnName="Aliases" />
+                <ScalarProperty Name="ApplicantZip" ColumnName="ApplicantZip" />
+                <ScalarProperty Name="ApplicantState" ColumnName="ApplicantState" />
+                <ScalarProperty Name="ApplicantCity" ColumnName="ApplicantCity" />
+                <ScalarProperty Name="Race" ColumnName="Race" />
+                <ScalarProperty Name="SSN" ColumnName="SSN" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="BirthPlace" ColumnName="BirthPlace" />
+                <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+                <ScalarProperty Name="Suffix" ColumnName="Suffix" />
+                <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="DateOtherStateGranted" ColumnName="DateOtherStateGranted" />
+                <ScalarProperty Name="GrantedOtherState" ColumnName="GrantedOtherState" />
+                <ScalarProperty Name="WhereFiled" ColumnName="WhereFiled" />
+                <ScalarProperty Name="OtherState" ColumnName="OtherState" />
+                <ScalarProperty Name="Previous" ColumnName="Previous" />
+                <ScalarProperty Name="HaveFiled" ColumnName="HaveFiled" />
+                <ScalarProperty Name="MaximumDate" ColumnName="MaximumDate" />
+                <ScalarProperty Name="MinimumDate" ColumnName="MinimumDate" />
+                <ScalarProperty Name="Sentence" ColumnName="Sentence" />
+                <ScalarProperty Name="ClemencyRequested" ColumnName="ClemencyRequested" />
+                <ScalarProperty Name="SessionDate" ColumnName="SessionDate" />
+                <ScalarProperty Name="PardonNumber" ColumnName="PardonNumber" />
+                <ScalarProperty Name="AplicationNumber" ColumnName="AplicationNumber" />
+                <ScalarProperty Name="FormId" ColumnName="FormId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IncarceratedStep2">
+            <EntityTypeMapping TypeName="BoardofPardonsModel.IncarceratedStep2">
+              <MappingFragment StoreEntitySet="IncarceratedStep2">
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="Codefendents" ColumnName="Codefendents" />
+                <ScalarProperty Name="CourtAppeal" ColumnName="CourtAppeal" />
+                <ScalarProperty Name="RevokedAppeal" ColumnName="RevokedAppeal" />
+                <ScalarProperty Name="ParoleRevoked" ColumnName="ParoleRevoked" />
+                <ScalarProperty Name="ViolatedParole" ColumnName="ViolatedParole" />
+                <ScalarProperty Name="LastPaymentDate" ColumnName="LastPaymentDate" />
+                <ScalarProperty Name="FinesBalance" ColumnName="FinesBalance" />
+                <ScalarProperty Name="HavePaid" ColumnName="HavePaid" />
+                <ScalarProperty Name="Facts" ColumnName="Facts" />
+                <ScalarProperty Name="NotGuilty" ColumnName="NotGuilty" />
+                <ScalarProperty Name="Sentence" ColumnName="Sentence" />
+                <ScalarProperty Name="Offenses" ColumnName="Offenses" />
+                <ScalarProperty Name="ConvictJudge" ColumnName="ConvictJudge" />
+                <ScalarProperty Name="DateSentence" ColumnName="DateSentence" />
+                <ScalarProperty Name="Guilty" ColumnName="Guilty" />
+                <ScalarProperty Name="ConvictDocket" ColumnName="ConvictDocket" />
+                <ScalarProperty Name="ConvictOTN" ColumnName="ConvictOTN" />
+                <ScalarProperty Name="ConvictCounty" ColumnName="ConvictCounty" />
+                <ScalarProperty Name="DateINC" ColumnName="DateINC" />
+                <ScalarProperty Name="FormId" ColumnName="FormId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IncarceratedStep3">
+            <EntityTypeMapping TypeName="BoardofPardonsModel.IncarceratedStep3">
+              <MappingFragment StoreEntitySet="IncarceratedStep3">
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="Codefendents" ColumnName="Codefendents" />
+                <ScalarProperty Name="CourtAppeal" ColumnName="CourtAppeal" />
+                <ScalarProperty Name="RevokedAppeal" ColumnName="RevokedAppeal" />
+                <ScalarProperty Name="ParoleRevoked" ColumnName="ParoleRevoked" />
+                <ScalarProperty Name="ViolatedParole" ColumnName="ViolatedParole" />
+                <ScalarProperty Name="LastPaymentDate" ColumnName="LastPaymentDate" />
+                <ScalarProperty Name="FinesBalance" ColumnName="FinesBalance" />
+                <ScalarProperty Name="HavePaid" ColumnName="HavePaid" />
+                <ScalarProperty Name="Facts" ColumnName="Facts" />
+                <ScalarProperty Name="NotGuilty" ColumnName="NotGuilty" />
+                <ScalarProperty Name="Sentence" ColumnName="Sentence" />
+                <ScalarProperty Name="Offenses" ColumnName="Offenses" />
+                <ScalarProperty Name="ConvictJudge" ColumnName="ConvictJudge" />
+                <ScalarProperty Name="DateSentence" ColumnName="DateSentence" />
+                <ScalarProperty Name="Guilty" ColumnName="Guilty" />
+                <ScalarProperty Name="ConvictDocket" ColumnName="ConvictDocket" />
+                <ScalarProperty Name="ConvictOTN" ColumnName="ConvictOTN" />
+                <ScalarProperty Name="ConvictCounty" ColumnName="ConvictCounty" />
+                <ScalarProperty Name="DateINC" ColumnName="DateINC" />
+                <ScalarProperty Name="FormId" ColumnName="FormId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IncarceratedStep4">
+            <EntityTypeMapping TypeName="BoardofPardonsModel.IncarceratedStep4">
+              <MappingFragment StoreEntitySet="IncarceratedStep4">
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="Codefendents" ColumnName="Codefendents" />
+                <ScalarProperty Name="CourtAppeal" ColumnName="CourtAppeal" />
+                <ScalarProperty Name="RevokedAppeal" ColumnName="RevokedAppeal" />
+                <ScalarProperty Name="ParoleRevoked" ColumnName="ParoleRevoked" />
+                <ScalarProperty Name="ViolatedParole" ColumnName="ViolatedParole" />
+                <ScalarProperty Name="LastPaymentDate" ColumnName="LastPaymentDate" />
+                <ScalarProperty Name="FinesBalance" ColumnName="FinesBalance" />
+                <ScalarProperty Name="HavePaid" ColumnName="HavePaid" />
+                <ScalarProperty Name="Facts" ColumnName="Facts" />
+                <ScalarProperty Name="NotGuilty" ColumnName="NotGuilty" />
+                <ScalarProperty Name="Sentence" ColumnName="Sentence" />
+                <ScalarProperty Name="Offenses" ColumnName="Offenses" />
+                <ScalarProperty Name="ConvictJudge" ColumnName="ConvictJudge" />
+                <ScalarProperty Name="DateSentence" ColumnName="DateSentence" />
+                <ScalarProperty Name="Guilty" ColumnName="Guilty" />
+                <ScalarProperty Name="ConvictDocket" ColumnName="ConvictDocket" />
+                <ScalarProperty Name="ConvictOTN" ColumnName="ConvictOTN" />
+                <ScalarProperty Name="ConvictCounty" ColumnName="ConvictCounty" />
+                <ScalarProperty Name="DateINC" ColumnName="DateINC" />
+                <ScalarProperty Name="FormId" ColumnName="FormId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IncarceratedStep5">
+            <EntityTypeMapping TypeName="BoardofPardonsModel.IncarceratedStep5">
+              <MappingFragment StoreEntitySet="IncarceratedStep5">
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="DispositionTraffic4" ColumnName="DispositionTraffic4" />
+                <ScalarProperty Name="OffensesTraffic4" ColumnName="OffensesTraffic4" />
+                <ScalarProperty Name="CountyTraffic4" ColumnName="CountyTraffic4" />
+                <ScalarProperty Name="DateTraffic4" ColumnName="DateTraffic4" />
+                <ScalarProperty Name="DispositionTraffic3" ColumnName="DispositionTraffic3" />
+                <ScalarProperty Name="OffensesTraffic3" ColumnName="OffensesTraffic3" />
+                <ScalarProperty Name="CountyTraffic3" ColumnName="CountyTraffic3" />
+                <ScalarProperty Name="DateTraffic3" ColumnName="DateTraffic3" />
+                <ScalarProperty Name="DispositionTraffic2" ColumnName="DispositionTraffic2" />
+                <ScalarProperty Name="OffensesTraffic2" ColumnName="OffensesTraffic2" />
+                <ScalarProperty Name="CountyTraffic2" ColumnName="CountyTraffic2" />
+                <ScalarProperty Name="DateTraffic2" ColumnName="DateTraffic2" />
+                <ScalarProperty Name="DispositionTraffic1" ColumnName="DispositionTraffic1" />
+                <ScalarProperty Name="OffensesTraffic1" ColumnName="OffensesTraffic1" />
+                <ScalarProperty Name="CountyTraffic1" ColumnName="CountyTraffic1" />
+                <ScalarProperty Name="DateTraffic1" ColumnName="DateTraffic1" />
+                <ScalarProperty Name="Traffic" ColumnName="Traffic" />
+                <ScalarProperty Name="DispositionNonTraffic4" ColumnName="DispositionNonTraffic4" />
+                <ScalarProperty Name="OffensesNonTraffic4" ColumnName="OffensesNonTraffic4" />
+                <ScalarProperty Name="CountyNonTraffic4" ColumnName="CountyNonTraffic4" />
+                <ScalarProperty Name="DatenNonTraffic4" ColumnName="DatenNonTraffic4" />
+                <ScalarProperty Name="DispositionNonTraffic3" ColumnName="DispositionNonTraffic3" />
+                <ScalarProperty Name="OffensesNonTraffic3" ColumnName="OffensesNonTraffic3" />
+                <ScalarProperty Name="CountyNonTraffic3" ColumnName="CountyNonTraffic3" />
+                <ScalarProperty Name="DatenNonTraffic3" ColumnName="DatenNonTraffic3" />
+                <ScalarProperty Name="DispositionNonTraffic2" ColumnName="DispositionNonTraffic2" />
+                <ScalarProperty Name="OffensesNonTraffic2" ColumnName="OffensesNonTraffic2" />
+                <ScalarProperty Name="CountyNonTraffic2" ColumnName="CountyNonTraffic2" />
+                <ScalarProperty Name="DatenNonTraffic2" ColumnName="DatenNonTraffic2" />
+                <ScalarProperty Name="DispositionNonTraffic1" ColumnName="DispositionNonTraffic1" />
+                <ScalarProperty Name="OffensesNonTraffic1" ColumnName="OffensesNonTraffic1" />
+                <ScalarProperty Name="CountyNonTraffic1" ColumnName="CountyNonTraffic1" />
+                <ScalarProperty Name="DatenNonTraffic1" ColumnName="DatenNonTraffic1" />
+                <ScalarProperty Name="NonTraffic" ColumnName="NonTraffic" />
+                <ScalarProperty Name="DispositionJuvenile2" ColumnName="DispositionJuvenile2" />
+                <ScalarProperty Name="JuvenileDelinquent2" ColumnName="JuvenileDelinquent2" />
+                <ScalarProperty Name="OffensesJuvenile2" ColumnName="OffensesJuvenile2" />
+                <ScalarProperty Name="JuvenileCountyState2" ColumnName="JuvenileCountyState2" />
+                <ScalarProperty Name="DateJuvenile2" ColumnName="DateJuvenile2" />
+                <ScalarProperty Name="DispositionJuvenile1" ColumnName="DispositionJuvenile1" />
+                <ScalarProperty Name="JuvenileDelinquent1" ColumnName="JuvenileDelinquent1" />
+                <ScalarProperty Name="OffensesJuvenile1" ColumnName="OffensesJuvenile1" />
+                <ScalarProperty Name="JuvenileCountyState1" ColumnName="JuvenileCountyState1" />
+                <ScalarProperty Name="DateJuvenile1" ColumnName="DateJuvenile1" />
+                <ScalarProperty Name="JuvineleCharges" ColumnName="JuvineleCharges" />
+                <ScalarProperty Name="DispositionAdditional5" ColumnName="DispositionAdditional5" />
+                <ScalarProperty Name="OffensesAdditional5" ColumnName="OffensesAdditional5" />
+                <ScalarProperty Name="OtherSF5" ColumnName="OtherSF5" />
+                <ScalarProperty Name="DateIncident5" ColumnName="DateIncident5" />
+                <ScalarProperty Name="DispositionAdditional4" ColumnName="DispositionAdditional4" />
+                <ScalarProperty Name="OffensesAdditional4" ColumnName="OffensesAdditional4" />
+                <ScalarProperty Name="OtherSF4" ColumnName="OtherSF4" />
+                <ScalarProperty Name="DateIncident4" ColumnName="DateIncident4" />
+                <ScalarProperty Name="DispositionAdditional3" ColumnName="DispositionAdditional3" />
+                <ScalarProperty Name="OffensesAdditional3" ColumnName="OffensesAdditional3" />
+                <ScalarProperty Name="OtherSF3" ColumnName="OtherSF3" />
+                <ScalarProperty Name="DateIncident3" ColumnName="DateIncident3" />
+                <ScalarProperty Name="DispositionAdditional2" ColumnName="DispositionAdditional2" />
+                <ScalarProperty Name="OffensesAdditional2" ColumnName="OffensesAdditional2" />
+                <ScalarProperty Name="OtherSF2" ColumnName="OtherSF2" />
+                <ScalarProperty Name="DateIncident2" ColumnName="DateIncident2" />
+                <ScalarProperty Name="DispositionAdditional1" ColumnName="DispositionAdditional1" />
+                <ScalarProperty Name="OffensesAdditional1" ColumnName="OffensesAdditional1" />
+                <ScalarProperty Name="OtherSF1" ColumnName="OtherSF1" />
+                <ScalarProperty Name="DateIncident1" ColumnName="DateIncident1" />
+                <ScalarProperty Name="OtherCharges" ColumnName="OtherCharges" />
+                <ScalarProperty Name="FormId" ColumnName="FormId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IncarceratedStep6">
+            <EntityTypeMapping TypeName="BoardofPardonsModel.IncarceratedStep6">
+              <MappingFragment StoreEntitySet="IncarceratedStep6">
+                <ScalarProperty Name="Contributions" ColumnName="Contributions" />
+                <ScalarProperty Name="Rehabilitations" ColumnName="Rehabilitations" />
+                <ScalarProperty Name="Reason" ColumnName="Reason" />
+                <ScalarProperty Name="Specifications" ColumnName="Specifications" />
+                <ScalarProperty Name="Other" ColumnName="Other" />
+                <ScalarProperty Name="TravelingOutside" ColumnName="TravelingOutside" />
+                <ScalarProperty Name="MilitaryService" ColumnName="MilitaryService" />
+                <ScalarProperty Name="Licensures" ColumnName="Licensures" />
+                <ScalarProperty Name="Housing" ColumnName="Housing" />
+                <ScalarProperty Name="GunPermit" ColumnName="GunPermit" />
+                <ScalarProperty Name="Employment" ColumnName="Employment" />
+                <ScalarProperty Name="Education" ColumnName="Education" />
+                <ScalarProperty Name="CivicActivities" ColumnName="CivicActivities" />
+                <ScalarProperty Name="Adoption" ColumnName="Adoption" />
+                <ScalarProperty Name="AquireCitizenship" ColumnName="AquireCitizenship" />
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="FormId" ColumnName="FormId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IncarceratedStep7">
+            <EntityTypeMapping TypeName="BoardofPardonsModel.IncarceratedStep7">
+              <MappingFragment StoreEntitySet="IncarceratedStep7">
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="sign2" ColumnName="sign2" />
+                <ScalarProperty Name="date2" ColumnName="date2" />
+                <ScalarProperty Name="date1" ColumnName="date1" />
+                <ScalarProperty Name="sign1" ColumnName="sign1" />
+                <ScalarProperty Name="FormId" ColumnName="FormId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NonIncarceratedStep1">
+            <EntityTypeMapping TypeName="BoardofPardonsModel.NonIncarceratedStep1">
+              <MappingFragment StoreEntitySet="NonIncarceratedStep1">
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Zip" ColumnName="Zip" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Address2" ColumnName="Address2" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="WhoRep" ColumnName="WhoRep" />
+                <ScalarProperty Name="Aliases" ColumnName="Aliases" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="CellPhone" ColumnName="CellPhone" />
+                <ScalarProperty Name="ApplicantPhone" ColumnName="ApplicantPhone" />
+                <ScalarProperty Name="ApplicantZip" ColumnName="ApplicantZip" />
+                <ScalarProperty Name="ApplicantState" ColumnName="ApplicantState" />
+                <ScalarProperty Name="ApplicantCity" ColumnName="ApplicantCity" />
+                <ScalarProperty Name="Appartment" ColumnName="Appartment" />
+                <ScalarProperty Name="ApplicantAddress" ColumnName="ApplicantAddress" />
+                <ScalarProperty Name="Race" ColumnName="Race" />
+                <ScalarProperty Name="SSN" ColumnName="SSN" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="BirthPlace" ColumnName="BirthPlace" />
+                <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+                <ScalarProperty Name="Suffix" ColumnName="Suffix" />
+                <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="DateOtherStateGranted" ColumnName="DateOtherStateGranted" />
+                <ScalarProperty Name="GrantedOtherState" ColumnName="GrantedOtherState" />
+                <ScalarProperty Name="WhereFiled" ColumnName="WhereFiled" />
+                <ScalarProperty Name="OtherState" ColumnName="OtherState" />
+                <ScalarProperty Name="Previous" ColumnName="Previous" />
+                <ScalarProperty Name="HaveFiled" ColumnName="HaveFiled" />
+                <ScalarProperty Name="ClemencyRequested" ColumnName="ClemencyRequested" />
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="FormId" ColumnName="FormId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NonIncarceratedStep2">
+            <EntityTypeMapping TypeName="BoardofPardonsModel.NonIncarceratedStep2">
+              <MappingFragment StoreEntitySet="NonIncarceratedStep2">
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="Codefendents" ColumnName="Codefendents" />
+                <ScalarProperty Name="CourtAppeal" ColumnName="CourtAppeal" />
+                <ScalarProperty Name="RevokedAppeal" ColumnName="RevokedAppeal" />
+                <ScalarProperty Name="ParoleRevoked" ColumnName="ParoleRevoked" />
+                <ScalarProperty Name="ViolatedParole" ColumnName="ViolatedParole" />
+                <ScalarProperty Name="LastPaymentDate" ColumnName="LastPaymentDate" />
+                <ScalarProperty Name="FinesBalance" ColumnName="FinesBalance" />
+                <ScalarProperty Name="HavePaid" ColumnName="HavePaid" />
+                <ScalarProperty Name="Facts" ColumnName="Facts" />
+                <ScalarProperty Name="NotGuilty" ColumnName="NotGuilty" />
+                <ScalarProperty Name="Sentence" ColumnName="Sentence" />
+                <ScalarProperty Name="Offenses" ColumnName="Offenses" />
+                <ScalarProperty Name="ConvictJudge" ColumnName="ConvictJudge" />
+                <ScalarProperty Name="DateSentence" ColumnName="DateSentence" />
+                <ScalarProperty Name="Guilty" ColumnName="Guilty" />
+                <ScalarProperty Name="ConvictDocket" ColumnName="ConvictDocket" />
+                <ScalarProperty Name="ConvictOTN" ColumnName="ConvictOTN" />
+                <ScalarProperty Name="ConvictCounty" ColumnName="ConvictCounty" />
+                <ScalarProperty Name="DateINC" ColumnName="DateINC" />
+                <ScalarProperty Name="FormId" ColumnName="FormId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NonIncarceratedStep3">
+            <EntityTypeMapping TypeName="BoardofPardonsModel.NonIncarceratedStep3">
+              <MappingFragment StoreEntitySet="NonIncarceratedStep3">
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="Codefendents" ColumnName="Codefendents" />
+                <ScalarProperty Name="CourtAppeal" ColumnName="CourtAppeal" />
+                <ScalarProperty Name="RevokedAppeal" ColumnName="RevokedAppeal" />
+                <ScalarProperty Name="ParoleRevoked" ColumnName="ParoleRevoked" />
+                <ScalarProperty Name="ViolatedParole" ColumnName="ViolatedParole" />
+                <ScalarProperty Name="LastPaymentDate" ColumnName="LastPaymentDate" />
+                <ScalarProperty Name="FinesBalance" ColumnName="FinesBalance" />
+                <ScalarProperty Name="HavePaid" ColumnName="HavePaid" />
+                <ScalarProperty Name="Facts" ColumnName="Facts" />
+                <ScalarProperty Name="NotGuilty" ColumnName="NotGuilty" />
+                <ScalarProperty Name="Sentence" ColumnName="Sentence" />
+                <ScalarProperty Name="Offenses" ColumnName="Offenses" />
+                <ScalarProperty Name="ConvictJudge" ColumnName="ConvictJudge" />
+                <ScalarProperty Name="DateSentence" ColumnName="DateSentence" />
+                <ScalarProperty Name="Guilty" ColumnName="Guilty" />
+                <ScalarProperty Name="ConvictDocket" ColumnName="ConvictDocket" />
+                <ScalarProperty Name="ConvictOTN" ColumnName="ConvictOTN" />
+                <ScalarProperty Name="ConvictCounty" ColumnName="ConvictCounty" />
+                <ScalarProperty Name="DateINC" ColumnName="DateINC" />
+                <ScalarProperty Name="FormId" ColumnName="FormId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NonIncarceratedStep4">
+            <EntityTypeMapping TypeName="BoardofPardonsModel.NonIncarceratedStep4">
+              <MappingFragment StoreEntitySet="NonIncarceratedStep4">
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="Codefendents" ColumnName="Codefendents" />
+                <ScalarProperty Name="CourtAppeal" ColumnName="CourtAppeal" />
+                <ScalarProperty Name="RevokedAppeal" ColumnName="RevokedAppeal" />
+                <ScalarProperty Name="ParoleRevoked" ColumnName="ParoleRevoked" />
+                <ScalarProperty Name="ViolatedParole" ColumnName="ViolatedParole" />
+                <ScalarProperty Name="LastPaymentDate" ColumnName="LastPaymentDate" />
+                <ScalarProperty Name="FinesBalance" ColumnName="FinesBalance" />
+                <ScalarProperty Name="HavePaid" ColumnName="HavePaid" />
+                <ScalarProperty Name="Facts" ColumnName="Facts" />
+                <ScalarProperty Name="NotGuilty" ColumnName="NotGuilty" />
+                <ScalarProperty Name="Sentence" ColumnName="Sentence" />
+                <ScalarProperty Name="Offenses" ColumnName="Offenses" />
+                <ScalarProperty Name="ConvictJudge" ColumnName="ConvictJudge" />
+                <ScalarProperty Name="DateSentence" ColumnName="DateSentence" />
+                <ScalarProperty Name="Guilty" ColumnName="Guilty" />
+                <ScalarProperty Name="ConvictDocket" ColumnName="ConvictDocket" />
+                <ScalarProperty Name="ConvictOTN" ColumnName="ConvictOTN" />
+                <ScalarProperty Name="ConvictCounty" ColumnName="ConvictCounty" />
+                <ScalarProperty Name="DateINC" ColumnName="DateINC" />
+                <ScalarProperty Name="FormId" ColumnName="FormId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NonIncarceratedStep5">
+            <EntityTypeMapping TypeName="BoardofPardonsModel.NonIncarceratedStep5">
+              <MappingFragment StoreEntitySet="NonIncarceratedStep5">
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="DispositionTraffic4" ColumnName="DispositionTraffic4" />
+                <ScalarProperty Name="OffensesTraffic4" ColumnName="OffensesTraffic4" />
+                <ScalarProperty Name="CountyTraffic4" ColumnName="CountyTraffic4" />
+                <ScalarProperty Name="DateTraffic4" ColumnName="DateTraffic4" />
+                <ScalarProperty Name="DispositionTraffic3" ColumnName="DispositionTraffic3" />
+                <ScalarProperty Name="OffensesTraffic3" ColumnName="OffensesTraffic3" />
+                <ScalarProperty Name="CountyTraffic3" ColumnName="CountyTraffic3" />
+                <ScalarProperty Name="DateTraffic3" ColumnName="DateTraffic3" />
+                <ScalarProperty Name="DispositionTraffic2" ColumnName="DispositionTraffic2" />
+                <ScalarProperty Name="OffensesTraffic2" ColumnName="OffensesTraffic2" />
+                <ScalarProperty Name="CountyTraffic2" ColumnName="CountyTraffic2" />
+                <ScalarProperty Name="DateTraffic2" ColumnName="DateTraffic2" />
+                <ScalarProperty Name="DispositionTraffic1" ColumnName="DispositionTraffic1" />
+                <ScalarProperty Name="OffensesTraffic1" ColumnName="OffensesTraffic1" />
+                <ScalarProperty Name="CountyTraffic1" ColumnName="CountyTraffic1" />
+                <ScalarProperty Name="DateTraffic1" ColumnName="DateTraffic1" />
+                <ScalarProperty Name="Traffic" ColumnName="Traffic" />
+                <ScalarProperty Name="DispositionNonTraffic4" ColumnName="DispositionNonTraffic4" />
+                <ScalarProperty Name="OffensesNonTraffic4" ColumnName="OffensesNonTraffic4" />
+                <ScalarProperty Name="CountyNonTraffic4" ColumnName="CountyNonTraffic4" />
+                <ScalarProperty Name="DatenNonTraffic4" ColumnName="DatenNonTraffic4" />
+                <ScalarProperty Name="DispositionNonTraffic3" ColumnName="DispositionNonTraffic3" />
+                <ScalarProperty Name="OffensesNonTraffic3" ColumnName="OffensesNonTraffic3" />
+                <ScalarProperty Name="CountyNonTraffic3" ColumnName="CountyNonTraffic3" />
+                <ScalarProperty Name="DatenNonTraffic3" ColumnName="DatenNonTraffic3" />
+                <ScalarProperty Name="DispositionNonTraffic2" ColumnName="DispositionNonTraffic2" />
+                <ScalarProperty Name="OffensesNonTraffic2" ColumnName="OffensesNonTraffic2" />
+                <ScalarProperty Name="CountyNonTraffic2" ColumnName="CountyNonTraffic2" />
+                <ScalarProperty Name="DatenNonTraffic2" ColumnName="DatenNonTraffic2" />
+                <ScalarProperty Name="DispositionNonTraffic1" ColumnName="DispositionNonTraffic1" />
+                <ScalarProperty Name="OffensesNonTraffic1" ColumnName="OffensesNonTraffic1" />
+                <ScalarProperty Name="CountyNonTraffic1" ColumnName="CountyNonTraffic1" />
+                <ScalarProperty Name="DatenNonTraffic1" ColumnName="DatenNonTraffic1" />
+                <ScalarProperty Name="NonTraffic" ColumnName="NonTraffic" />
+                <ScalarProperty Name="DispositionJuvenile2" ColumnName="DispositionJuvenile2" />
+                <ScalarProperty Name="JuvenileDelinquent2" ColumnName="JuvenileDelinquent2" />
+                <ScalarProperty Name="OffensesJuvenile2" ColumnName="OffensesJuvenile2" />
+                <ScalarProperty Name="JuvenileCountyState2" ColumnName="JuvenileCountyState2" />
+                <ScalarProperty Name="DateJuvenile2" ColumnName="DateJuvenile2" />
+                <ScalarProperty Name="DispositionJuvenile1" ColumnName="DispositionJuvenile1" />
+                <ScalarProperty Name="JuvenileDelinquent1" ColumnName="JuvenileDelinquent1" />
+                <ScalarProperty Name="OffensesJuvenile1" ColumnName="OffensesJuvenile1" />
+                <ScalarProperty Name="JuvenileCountyState1" ColumnName="JuvenileCountyState1" />
+                <ScalarProperty Name="DateJuvenile1" ColumnName="DateJuvenile1" />
+                <ScalarProperty Name="JuvineleCharges" ColumnName="JuvineleCharges" />
+                <ScalarProperty Name="DispositionAdditional5" ColumnName="DispositionAdditional5" />
+                <ScalarProperty Name="OffensesAdditional5" ColumnName="OffensesAdditional5" />
+                <ScalarProperty Name="OtherSF5" ColumnName="OtherSF5" />
+                <ScalarProperty Name="DateIncident5" ColumnName="DateIncident5" />
+                <ScalarProperty Name="DispositionAdditional4" ColumnName="DispositionAdditional4" />
+                <ScalarProperty Name="OffensesAdditional4" ColumnName="OffensesAdditional4" />
+                <ScalarProperty Name="OtherSF4" ColumnName="OtherSF4" />
+                <ScalarProperty Name="DateIncident4" ColumnName="DateIncident4" />
+                <ScalarProperty Name="DispositionAdditional3" ColumnName="DispositionAdditional3" />
+                <ScalarProperty Name="OffensesAdditional3" ColumnName="OffensesAdditional3" />
+                <ScalarProperty Name="OtherSF3" ColumnName="OtherSF3" />
+                <ScalarProperty Name="DateIncident3" ColumnName="DateIncident3" />
+                <ScalarProperty Name="DispositionAdditional2" ColumnName="DispositionAdditional2" />
+                <ScalarProperty Name="OffensesAdditional2" ColumnName="OffensesAdditional2" />
+                <ScalarProperty Name="OtherSF2" ColumnName="OtherSF2" />
+                <ScalarProperty Name="DateIncident2" ColumnName="DateIncident2" />
+                <ScalarProperty Name="DispositionAdditional1" ColumnName="DispositionAdditional1" />
+                <ScalarProperty Name="OffensesAdditional1" ColumnName="OffensesAdditional1" />
+                <ScalarProperty Name="OtherSF1" ColumnName="OtherSF1" />
+                <ScalarProperty Name="DateIncident1" ColumnName="DateIncident1" />
+                <ScalarProperty Name="OtherCharges" ColumnName="OtherCharges" />
+                <ScalarProperty Name="FormId" ColumnName="FormId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NonIncarceratedStep6">
+            <EntityTypeMapping TypeName="BoardofPardonsModel.NonIncarceratedStep6">
+              <MappingFragment StoreEntitySet="NonIncarceratedStep6">
+                <ScalarProperty Name="Contributions" ColumnName="Contributions" />
+                <ScalarProperty Name="Rehabilitations" ColumnName="Rehabilitations" />
+                <ScalarProperty Name="Reason" ColumnName="Reason" />
+                <ScalarProperty Name="Specifications" ColumnName="Specifications" />
+                <ScalarProperty Name="Other" ColumnName="Other" />
+                <ScalarProperty Name="TravelingOutside" ColumnName="TravelingOutside" />
+                <ScalarProperty Name="MilitaryService" ColumnName="MilitaryService" />
+                <ScalarProperty Name="Licensures" ColumnName="Licensures" />
+                <ScalarProperty Name="Housing" ColumnName="Housing" />
+                <ScalarProperty Name="GunPermit" ColumnName="GunPermit" />
+                <ScalarProperty Name="Employment" ColumnName="Employment" />
+                <ScalarProperty Name="Education" ColumnName="Education" />
+                <ScalarProperty Name="CivicActivities" ColumnName="CivicActivities" />
+                <ScalarProperty Name="Adoption" ColumnName="Adoption" />
+                <ScalarProperty Name="AquireCitizenship" ColumnName="AquireCitizenship" />
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="FormId" ColumnName="FormId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NonIncarceratedStep7">
+            <EntityTypeMapping TypeName="BoardofPardonsModel.NonIncarceratedStep7">
+              <MappingFragment StoreEntitySet="NonIncarceratedStep7">
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="date2" ColumnName="date2" />
+                <ScalarProperty Name="sign2" ColumnName="sign2" />
+                <ScalarProperty Name="date1" ColumnName="date1" />
+                <ScalarProperty Name="sign1" ColumnName="sign1" />
+                <ScalarProperty Name="FormId" ColumnName="FormId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Reviews">
+            <EntityTypeMapping TypeName="BoardofPardonsModel.Review">
+              <MappingFragment StoreEntitySet="Reviews">
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="ReviewedAt" ColumnName="ReviewedAt" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="ReviewerId" ColumnName="ReviewerId" />
+                <ScalarProperty Name="FormId" ColumnName="FormId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="BoardofPardonsModel.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="PlaceOfBirth" ColumnName="PlaceOfBirth" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="CellPhone" ColumnName="CellPhone" />
+                <ScalarProperty Name="Homephone" ColumnName="Homephone" />
+                <ScalarProperty Name="Zip" ColumnName="Zip" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Apartment" ColumnName="Apartment" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="SSNumber" ColumnName="SSNumber" />
+                <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="Suffix" ColumnName="Suffix" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="webpages_Membership">
+            <EntityTypeMapping TypeName="BoardofPardonsModel.webpages_Membership">
+              <MappingFragment StoreEntitySet="webpages_Membership">
+                <ScalarProperty Name="PasswordVerificationTokenExpirationDate" ColumnName="PasswordVerificationTokenExpirationDate" />
+                <ScalarProperty Name="PasswordVerificationToken" ColumnName="PasswordVerificationToken" />
+                <ScalarProperty Name="PasswordSalt" ColumnName="PasswordSalt" />
+                <ScalarProperty Name="PasswordChangedDate" ColumnName="PasswordChangedDate" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="PasswordFailuresSinceLastSuccess" ColumnName="PasswordFailuresSinceLastSuccess" />
+                <ScalarProperty Name="LastPasswordFailureDate" ColumnName="LastPasswordFailureDate" />
+                <ScalarProperty Name="IsConfirmed" ColumnName="IsConfirmed" />
+                <ScalarProperty Name="ConfirmationToken" ColumnName="ConfirmationToken" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="webpages_OAuthMembership">
+            <EntityTypeMapping TypeName="BoardofPardonsModel.webpages_OAuthMembership">
+              <MappingFragment StoreEntitySet="webpages_OAuthMembership">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="ProviderUserId" ColumnName="ProviderUserId" />
+                <ScalarProperty Name="Provider" ColumnName="Provider" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="webpages_Roles">
+            <EntityTypeMapping TypeName="BoardofPardonsModel.webpages_Roles">
+              <MappingFragment StoreEntitySet="webpages_Roles">
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="webpages_UsersInRoles" TypeName="BoardofPardonsModel.webpages_UsersInRoles" StoreEntitySet="webpages_UsersInRoles">
+            <EndProperty Name="User">
+              <ScalarProperty Name="Id" ColumnName="UserId" />
+            </EndProperty>
+            <EndProperty Name="webpages_Roles">
+              <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer>
+    <edmx:Connection>
+      <edmx:DesignerInfoPropertySet>
+        <edmx:DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </edmx:DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <edmx:DesignerInfoPropertySet>
+        <edmx:DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <edmx:DesignerProperty Name="EnablePluralization" Value="true" />
+        <edmx:DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <edmx:DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <edmx:DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </edmx:DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams />
+  </edmx:Designer>
+</edmx:Edmx>

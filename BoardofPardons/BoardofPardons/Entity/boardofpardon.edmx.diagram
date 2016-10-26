@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="06ceda5253cf42399f04f648c13678fd" Name="Diagram1" ZoomLevel="74">
+        <EntityTypeShape EntityType="BoardofPardonsModel.Form" Width="1.5" PointX="3" PointY="57.875" />
+        <EntityTypeShape EntityType="BoardofPardonsModel.IncarceratedStep1" Width="1.5" PointX="5.25" PointY="7.875" />
+        <EntityTypeShape EntityType="BoardofPardonsModel.IncarceratedStep2" Width="1.5" PointX="5.25" PointY="41.375" />
+        <EntityTypeShape EntityType="BoardofPardonsModel.IncarceratedStep3" Width="1.5" PointX="5.25" PointY="70.875" />
+        <EntityTypeShape EntityType="BoardofPardonsModel.IncarceratedStep4" Width="1.5" PointX="5.25" PointY="29.375" />
+        <EntityTypeShape EntityType="BoardofPardonsModel.IncarceratedStep5" Width="1.5" PointX="5.25" PointY="77.25" />
+        <EntityTypeShape EntityType="BoardofPardonsModel.IncarceratedStep6" Width="1.5" PointX="5.25" PointY="23.75" />
+        <EntityTypeShape EntityType="BoardofPardonsModel.IncarceratedStep7" Width="1.5" PointX="5.25" PointY="47.75" />
+        <EntityTypeShape EntityType="BoardofPardonsModel.NonIncarceratedStep1" Width="1.5" PointX="5.25" PointY="92.625" />
+        <EntityTypeShape EntityType="BoardofPardonsModel.NonIncarceratedStep2" Width="1.5" PointX="5.25" PointY="17.375" />
+        <EntityTypeShape EntityType="BoardofPardonsModel.NonIncarceratedStep3" Width="1.5" PointX="5.25" PointY="51.25" />
+        <EntityTypeShape EntityType="BoardofPardonsModel.NonIncarceratedStep4" Width="1.5" PointX="5.25" PointY="64.375" />
+        <EntityTypeShape EntityType="BoardofPardonsModel.NonIncarceratedStep5" Width="1.5" PointX="5.25" PointY="101.75" />
+        <EntityTypeShape EntityType="BoardofPardonsModel.NonIncarceratedStep6" Width="1.5" PointX="5.25" PointY="35.75" />
+        <EntityTypeShape EntityType="BoardofPardonsModel.NonIncarceratedStep7" Width="1.5" PointX="5.25" PointY="60.875" />
+        <EntityTypeShape EntityType="BoardofPardonsModel.Review" Width="1.5" PointX="8.25" PointY="59.25" />
+        <EntityTypeShape EntityType="BoardofPardonsModel.User" Width="1.5" PointX="3" PointY="1.125" />
+        <EntityTypeShape EntityType="BoardofPardonsModel.webpages_Membership" Width="1.5" PointX="0.75" PointY="58.75" />
+        <EntityTypeShape EntityType="BoardofPardonsModel.webpages_OAuthMembership" Width="1.5" PointX="5.75" PointY="0.75" />
+        <EntityTypeShape EntityType="BoardofPardonsModel.webpages_Roles" Width="1.5" PointX="0.75" PointY="2.875" />
+        <AssociationConnector Association="BoardofPardonsModel.FK_Forms_webpages_Membership" />
+        <AssociationConnector Association="BoardofPardonsModel.FK_IncarceratedStep1_Forms" />
+        <AssociationConnector Association="BoardofPardonsModel.FK_IncarceratedStep2_Forms" />
+        <AssociationConnector Association="BoardofPardonsModel.FK_IncarceratedStep3_Forms" />
+        <AssociationConnector Association="BoardofPardonsModel.FK_IncarceratedStep4_Forms" />
+        <AssociationConnector Association="BoardofPardonsModel.FK_IncarceratedStep5_Forms" />
+        <AssociationConnector Association="BoardofPardonsModel.FK_IncarceratedStep6_Forms" />
+        <AssociationConnector Association="BoardofPardonsModel.FK_IncarceratedStep7_IncarceratedStep7" />
+        <AssociationConnector Association="BoardofPardonsModel.FK_NonIncarceratedStep2_Forms" />
+        <AssociationConnector Association="BoardofPardonsModel.FK_NonIncarceratedStep3_Forms" />
+        <AssociationConnector Association="BoardofPardonsModel.FK_NonIncarceratedStep4_Forms" />
+        <AssociationConnector Association="BoardofPardonsModel.FK_NonIncarceratedStep5_Forms" />
+        <AssociationConnector Association="BoardofPardonsModel.FK_NonIncarceratedStep6_Forms" />
+        <AssociationConnector Association="BoardofPardonsModel.FK_NonIncarceratedStep7_NonIncarceratedStep7" />
+        <AssociationConnector Association="BoardofPardonsModel.FK_NotIncarceratedStep1_Forms" />
+        <AssociationConnector Association="BoardofPardonsModel.FK_Reviews_Forms" />
+        <AssociationConnector Association="BoardofPardonsModel.FK_Reviews_webpages_Membership" />
+        <AssociationConnector Association="BoardofPardonsModel.webpages_UsersInRoles" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

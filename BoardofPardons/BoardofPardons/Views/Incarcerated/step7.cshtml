@@ -1,0 +1,158 @@
+﻿@model BoardofPardons.Entity.IncarceratedStep7
+@{
+    ViewBag.Title = "IncarceratedStep 7";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .kbw-signature {
+        height: 200px;
+    }
+</style>
+<div class="container">
+    <div class="well">
+        <div class="text-center">
+            <h4>Pennsylvania Board of Pardons Commonwealth of Pennsylvania Application for Clemency</h4>
+        </div>
+        <p><strong>Important:</strong>This application should be completed by non-incarcerated applicants only. All questions must be answered. Please answer "N/A" for questions that are not applicable to you. </p>
+        <div class="row" id="formContent">
+        </div>
+        @using (Html.BeginForm("step7", "InCarcerated", FormMethod.Post, new { novalidate = "novalidate", @id = "insertInCarceratedStep7" }))
+        {
+            <div class="panel panel-default">
+                <div class="panel-heading">SECTION 6: Submitting Your Application</div>
+                <div class="panel-body">
+                    <div class="col-lg-12">
+                        <ul>
+                            <li>Your Application will not be transmitted without attaching the required documents</li>
+                            <li>Your Application will not be transmitted without paying the filing fee</li>
+                            <li>Emailed or mailed applications created from this web application will not be accepted</li>
+                            <li>Written notification must be provided to Board Of Pardons office of any changes to the following information prior to the final disposition of this application:<br><br>Address<br>Telephone Number<br>Place of Employment<br>Education<br><br></li>
+                            <li>Written notification must be provided to Board Of Pardons office if you decide to withdraw your application at any time</li>
+                        </ul>
+
+                    </div>
+                    <div class="clearfix"></div>
+
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">SECTION 7: Attaching your Signature</div>
+                <div class="panel-body">
+                    <div class="col-lg-12">
+                        <p>
+                            My signature is verification that I have completed this application truthfully and accurately, and I understand that my statements herein are made subject to the penalties of 18 Pa.C.S. §4904 (relating to unsworn falsification to authorities)
+                        </p>
+                        <p>
+                            By attaching my signature I acknowledge that I understand the following:
+                        </p>
+                        <ul>
+                            <li> Only the conviction provideed in section 3 of this application will be considered for clemency by the board</li>
+                            <li>This application will not be completed and filed electronically until all questions have been answered (make sure you put N/A on and input that does not apply to you)</li>
+                            <li>This application will not be completed and filed electronically until all the required documents (scanned) are attached</li>
+                            <li>This application will not be completed and filed electronically until the filing fee has been paid PAY FEE</li>
+                            <li>This application will not be completed and filed electronically until the rules of the Board of Pardons have been met</li>
+                        </ul>
+                        <p> <strong> SIGNATURE:</strong> On touch screens and tablets, use a stylus. On computer screens that are not touch screen, use your mouse</p>
+                        <div class="col-lg-6 form-group">
+                            @Html.HiddenFor(model => model.sign1, new { @class = "form-control", id = "txtSignature1" })
+                            <div id="sig1" class="col-lg-12"></div><br />
+                            <button id="clearButton1" type="button" class="btn btn-danger">Clear</button><br />
+                            <label><strong>Signature</strong></label>
+                        </div>
+                        <div class="col-lg-6 form-group">
+                            @*<input id="txtDate" type="text" class="form-control" />*@
+                            @Html.TextBoxFor(model => model.date1, new { @class = "form-control", id = "txtDate" })
+                            <label><b>Date</b></label>
+                        </div>
+                        <div class="clearfix"></div>
+                        <hr />
+                        <p>
+                            In accordance to the Board's regulation 37 Pa. code §81.282: <br>
+                            The applicant may be represented by legal counsel or another person designated by the applicant. The applicant may also be represented by legal guardian, next friend, or other person authorized by law to act on behalf of applicant. If confined, the applicant may request representation from the Department of Corrections.
+                        </p>
+                        <div class="col-lg-6 form-group">
+                            @*<input id="txtSignature" type="hidden" class="form-control" />*@
+
+                            @Html.HiddenFor(model => model.sign2, new { @class = "form-control", id = "txtSignature2" })
+                            <div id="sig2" class="col-lg-12"></div><br />
+                            <button id="clearButton2" type="button" class="btn btn-danger">Clear</button><br />
+                            <label> <b> Signature </b> of legal guardian, next friend, or other person authorized by law</label>
+
+
+                        </div>
+                        <div class="col-lg-6 form-group">
+                            @*<input id="txtDate2" type="text" class="form-control" />*@
+                            @Html.TextBoxFor(model => model.date2, new { @class = "form-control", id = "txtDate2" })
+                            <label> <b>Date</b></label>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <div class="col-sm-2 ">
+                    <button type="submit" name="Command" value="back" class="btn btn-primary">Back</button>
+                </div>
+                <div class="col-sm-2 col-lg-offset-3">
+                    <button type="submit" name="Command" value="submit" class="btn btn-warning">Save &amp; Quit</button>
+                </div>
+            </div>
+
+        }
+    </div>
+</div>
+@section scripts {
+    <script src="~/Scripts/jquery-ui.min.js"></script>
+    <script src="~/Scripts/jquery.signature.min.js"></script>
+    <script src="~/Scripts/excanvas.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#insertInCarceratedStep7").validate({
+                ignore: "",
+                rules: {
+                    sign1: { required: true },
+                    date1: {
+                        required: true
+                    },
+                    sign2: { required: true },
+                    date2: {
+                        required: true
+                    }
+                },
+                highlight: function (element) {
+                    $(element).closest('.form-group').addClass('has-error');
+                },
+                unhighlight: function (element) {
+                    $(element).closest('.form-group').removeClass('has-error');
+                }
+            });
+        });
+        $('#sig1').signature({
+            change: function (event, ui) {
+                $("#txtSignature1").val($('#sig1').signature('toJSON'));
+            }
+        });
+        $('#clearButton1').click(function () {
+            $('#sig1').signature('clear');
+        });
+        $('#sig2').signature({
+            change: function (event, ui) {
+                $("#txtSignature2").val($('#sig2').signature('toJSON'));
+            }
+        });
+        $('#clearButton2').click(function () {
+            $('#sig2').signature('clear');
+        });
+        $("#txtDate,#txtDate2").datepicker();
+        @if(Model != null){
+            <text>
+        var sign1 = @Model.sign1.Replace('"',' ')
+                $('#sig1').signature('draw', sign1);
+        var sign2 = @Model.sign2.Replace('"',' ')
+        $('#sig2').signature('draw', sign2);
+        </text>
+        }
+
+    </script>
+
+}

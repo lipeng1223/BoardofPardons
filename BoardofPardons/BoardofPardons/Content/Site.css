@@ -1,0 +1,112 @@
+﻿.navbar-inverse {
+    background-color: #4caf50 !important;
+}
+
+    .navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
+        background-color: #469B4A;
+    }
+
+    .navbar-inverse .navbar-nav > li > a {
+        color: white;
+    }
+
+    .navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
+        background-color: #469B4A;
+    }
+
+.navbar {
+    margin-bottom: 0px;
+}
+
+.bg-image {
+    position: relative;
+}
+
+    .bg-image img {
+        display: block;
+        width: 100%;
+        max-width: 100%; /* corresponds to max height of 450px */
+        margin: 0 auto;
+        max-height: 286px;
+    }
+
+    .bg-image h1 {
+        position: absolute;
+        text-align: center;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        color: white;
+    }
+
+
+.footerStyle h5 {
+    color: white;
+}
+
+footer {
+    /*height:45px;*/
+    background-color: #4caf50 !important;
+}
+
+.textIndent30 {
+    text-indent: 30px;
+}
+
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+    border-color: #469B4A;
+}
+@media (min-width: 768px) {
+  .navbar-nav > li > a {
+        padding-top: 10px !important;
+        padding-bottom: 10px !important;
+    }
+}
+
+@media (max-width: 767px) {
+    .navbar-inverse .navbar-nav .open .dropdown-menu > li > a {
+        color: white;
+    }
+
+  
+}
+.form-control {
+    border: 1px solid rgba(165, 166, 167, 0.64) !important;
+    padding: 5px !important;
+}
+.navbar {
+    min-height: 1px;
+}
+hr {
+  -moz-border-bottom-colors: none;
+  -moz-border-image: none;
+  -moz-border-left-colors: none;
+  -moz-border-right-colors: none;
+  -moz-border-top-colors: none;
+  border-color: #EEEEEE -moz-use-text-color #FFFFFF;
+  border-style: solid none;
+  border-width: 1px 0;
+  margin: 18px 0;
+}
+.hrsmall{
+  margin-top: 10px !important;
+  margin-bottom: 10px !important;
+}
+
+
+.mTop5 { margin-top:5px; }
+.mTop25 { margin-top:25px; }
+.mBottom10 {margin-bottom:10px;}
+.lead {
+    margin-bottom: 10px;
+}
+
+
+
+
+@media (min-width:768px) {
+    .radio input[type="radio"], .radio-inline input[type="radio"], .checkbox input[type="radio"], .checkbox-inline input[type="radio"], .radio input[type="checkbox"], .radio-inline input[type="checkbox"], .checkbox input[type="checkbox"], .checkbox-inline input[type="checkbox"]
+    {
+        margin-left:-40px;
+    }
+}

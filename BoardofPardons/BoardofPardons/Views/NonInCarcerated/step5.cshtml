@@ -1,0 +1,718 @@
+﻿@model BoardofPardons.Entity.NonIncarceratedStep5
+@{
+    ViewBag.Title = "NonIncarcerated Step 5";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container">
+    <div class="well">
+        <div class="text-center">
+            <h4>Pennsylvania Board of Pardons Commonwealth of Pennsylvania Application for Clemency</h4>
+        </div>
+        <p><strong>Important:</strong>This application should be completed by non-incarcerated applicants only. All questions must be answered. Please answer "N/A" for questions that are not applicable to you. </p>
+        <div class="row" id="formContent">
+        </div>
+        @using (Html.BeginForm("step5", "NonInCarcerated", FormMethod.Post, new { novalidate = "novalidate", @id = "insertStep5" }))
+        {
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h5>SECTION 4:  Additional Criminal History For Which Clemency not Requested</h5>
+                    <h6>Subsection 4A:  Adult Charges and/or Convictions</h6>
+                </div>
+                <div class="panel-body">
+                    <div class="col-lg-12">
+                        <div class="row">
+                            <div class="col-lg-8">
+                                <p><b>Do you have other charges (convictions and non-convictions) that are NOT TO BE INCLUDED in your clemency request?</b></p>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="radio-inline">
+                                    <label>
+                                        @*<input type="radio" name="OtherCharges" id="rbtnPrevAppYes" checked="checked">*@
+                                        @Html.RadioButtonFor(model => model.OtherCharges, "True", new { @checked = "checked" })
+                                        Yes
+                                    </label>
+                                </div>
+                                <div class="radio-inline">
+                                    <label>
+                                        @*<input type="radio" name="OtherCharges" id="rbtnPrevAppNo" checked="">*@
+                                        @Html.RadioButtonFor(model => model.OtherCharges, "True")
+                                        No
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <p>If you answered YES, complete the following information for each federal and state charge. Charges which resulted in ARD should not be included in this subsection</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <b>Date of Incident</b>
+                            </div>
+                            <div class="col-lg-3">
+                                <b>Federal/State Charges</b>
+                            </div>
+                            <div class="col-lg-4">
+                                <b>Offenses</b>
+                            </div>
+                            <div class="col-lg-2">
+                                <b>Disposition or Sentence </b>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-3 form-group">
+
+                                @Html.TextBoxFor(model => model.DateIncident1, new { @class = "form-control", id = "DateIncident1" })
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="radio-inline">
+                                    <label>
+
+                                        @Html.RadioButtonFor(model => model.OtherSF1, "State", new { id = "rbtnState" })
+                                        State
+                                    </label>
+                                </div>
+                                <div class="radio-inline">
+                                    <label>
+
+                                        @Html.RadioButtonFor(model => model.OtherSF1, "Federal", new { id = "rbtnFederal" })
+                                        Federal
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 form-group">
+
+                                @Html.TextBoxFor(model => model.OffensesAdditional1, new { @class = "form-control", id = "OffensesAdditional1" })
+                            </div>
+                            <div class="col-lg-2 form-group">
+
+                                @Html.TextBoxFor(model => model.DispositionAdditional1, new { @class = "form-control", id = "DispositionAdditional1" })
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <hr class="hrsmall">
+                        <div class="row">
+                            <div class="col-lg-3 form-group">
+
+                                @Html.TextBoxFor(model => model.DateIncident2, new { @class = "form-control", id = "DateIncident2" })
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="radio-inline">
+                                    <label>
+
+                                        @Html.RadioButtonFor(model => model.OtherSF2, "State", new { id = "OtherSF2" })
+                                        State
+                                    </label>
+                                </div>
+                                <div class="radio-inline">
+                                    <label>
+
+                                        @Html.RadioButtonFor(model => model.OtherSF2, "Federal", new { id = "OtherSF2" })
+                                        Federal
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 form-group">
+
+                                @Html.TextBoxFor(model => model.OffensesAdditional2, new { @class = "form-control", id = "OffensesAdditional2" })
+                            </div>
+                            <div class="col-lg-2 form-group">
+
+                                @Html.TextBoxFor(model => model.DispositionAdditional2, new { @class = "form-control", id = "DispositionAdditional2" })
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <hr class="hrsmall">
+                        <div class="row">
+                            <div class="col-lg-3 form-group">
+
+                                @Html.TextBoxFor(model => model.DateIncident3, new { @class = "form-control", id = "DateIncident3" })
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="radio-inline">
+                                    <label>
+
+                                        @Html.RadioButtonFor(model => model.OtherSF3, "State", new { id = "OtherSF3" })
+                                        State
+                                    </label>
+                                </div>
+                                <div class="radio-inline">
+                                    <label>
+
+                                        @Html.RadioButtonFor(model => model.OtherSF3, "Federal", new { id = "OtherSF3" })
+                                        Federal
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 form-group">
+
+                                @Html.TextBoxFor(model => model.OffensesAdditional3, new { @class = "form-control", id = "OffensesAdditional3" })
+                            </div>
+                            <div class="col-lg-2 form-group">
+
+                                @Html.TextBoxFor(model => model.DispositionAdditional3, new { @class = "form-control", id = "DispositionAdditional3" })
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <hr class="hrsmall">
+                        <div class="row">
+                            <div class="col-lg-3 form-group">
+
+                                @Html.TextBoxFor(model => model.DateIncident4, new { @class = "form-control", id = "DateIncident4" })
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="radio-inline">
+                                    <label>
+
+                                        @Html.RadioButtonFor(model => model.OtherSF4, "State", new { id = "OtherSF4" })
+                                        State
+                                    </label>
+                                </div>
+                                <div class="radio-inline">
+                                    <label>
+
+                                        @Html.RadioButtonFor(model => model.OtherSF4, "Federal", new { id = "OtherSF4" })
+                                        Federal
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 form-group">
+
+                                @Html.TextBoxFor(model => model.OffensesAdditional4, new { @class = "form-control", id = "OffensesAdditional4" })
+                            </div>
+                            <div class="col-lg-2 form-group">
+
+                                @Html.TextBoxFor(model => model.DispositionAdditional4, new { @class = "form-control", id = "DispositionAdditional4" })
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <hr class="hrsmall">
+                        <div class="row">
+                            <div class="col-lg-3 form-group">
+
+                                @Html.TextBoxFor(model => model.DateIncident5, new { @class = "form-control", id = "DateIncident5" })
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="radio-inline">
+                                    <label>
+
+                                        @Html.RadioButtonFor(model => model.OtherSF5, "State", new { id = "OtherSF5" })
+                                        State
+                                    </label>
+                                </div>
+                                <div class="radio-inline">
+                                    <label>
+
+                                        @Html.RadioButtonFor(model => model.OtherSF5, "Federal", new { id = "OtherSF5" })
+                                        Federal
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 form-group">
+
+                                @Html.TextBoxFor(model => model.OffensesAdditional5, new { @class = "form-control", id = "OffensesAdditional5" })
+                            </div>
+                            <div class="col-lg-2 form-group">
+
+                                @Html.TextBoxFor(model => model.DispositionAdditional5, new { @class = "form-control", id = "DispositionAdditional5" })
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Subsection 4B:   Juvenile Charges and/or adjudications of delinquency
+                </div>
+                <div class="panel-body">
+                    <div class="col-lg-12">
+                        <div class="row">
+                            <div class="col-lg-8">
+                                <p><b>Do you have juvenile charges and/or adjudications of delinquency that are NOT TO BE INCLUDED in your clemency request?</b></p>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="radio-inline">
+                                    <label>
+
+                                        @Html.RadioButtonFor(model => model.JuvineleCharges, "True", new { id = "JuvineleCharges" })
+                                        Yes
+                                    </label>
+                                </div>
+                                <div class="radio-inline">
+                                    <label>
+
+                                        @Html.RadioButtonFor(model => model.JuvineleCharges, "False", new { id = "JuvineleCharges" })
+                                        No
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                If you answered YES, complete the following information for each charge. Charges which resulted in Consent Decree should be included in this subsection
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-2">
+                                <b>Date of Incident</b>
+                            </div>
+                            <div class="col-lg-3">
+                                <b>County & State</b>
+                            </div>
+                            <div class="col-lg-3">
+                                <b>Offenses</b>
+                            </div>
+                            <div class="col-lg-2">
+                                <b>Adjudicated Delinquent </b>
+                            </div>
+                            <div class="col-lg-2">
+                                <b>Disposition </b>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2 form-group">
+
+                                @Html.TextBoxFor(model => model.DateJuvenile1, new { @class = "form-control", id = "DateJuvenile1" })
+                            </div>
+                            <div class="col-lg-3 form-group">
+
+                                @Html.TextBoxFor(model => model.JuvenileCountyState1, new { @class = "form-control", id = "JuvenileCountyState1" })
+                            </div>
+                            <div class="col-lg-3 form-group">
+
+                                @Html.TextBoxFor(model => model.OffensesJuvenile1, new { @class = "form-control", id = "OffensesJuvenile1" })
+                            </div>
+                            <div class="col-lg-2">
+                                <div class="radio-inline">
+                                    <label>
+
+                                        @Html.RadioButtonFor(model => model.JuvenileDelinquent1, "False", new { id = "JuvenileDelinquent1" })
+                                        Yes
+                                    </label>
+                                </div>
+                                <div class="radio-inline">
+                                    <label>
+
+                                        @Html.RadioButtonFor(model => model.JuvenileDelinquent1, "False", new { id = "JuvenileDelinquent1" })
+                                        No
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 form-group">
+
+                                @Html.TextBoxFor(model => model.DispositionJuvenile1, new { @class = "form-control", id = "DispositionJuvenile1" })
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <hr class="hrsmall">
+                        <div class="row">
+                            <div class="col-lg-2 form-group">
+
+                                @Html.TextBoxFor(model => model.DateJuvenile2, new { @class = "form-control", id = "DateJuvenile2" })
+                            </div>
+                            <div class="col-lg-3 form-group">
+
+                                @Html.TextBoxFor(model => model.JuvenileCountyState2, new { @class = "form-control", id = "JuvenileCountyState2" })
+                            </div>
+                            <div class="col-lg-3 form-group">
+
+                                @Html.TextBoxFor(model => model.OffensesJuvenile2, new { @class = "form-control", id = "OffensesJuvenile2" })
+                            </div>
+                            <div class="col-lg-2">
+                                <div class="radio-inline">
+                                    <label>
+
+                                        @Html.RadioButtonFor(model => model.JuvenileDelinquent2, "True", new { id = "JuvenileDelinquent2True" })
+                                        Yes
+                                    </label>
+                                </div>
+                                <div class="radio-inline">
+                                    <label>
+
+                                        @Html.RadioButtonFor(model => model.JuvenileDelinquent2, "False", new { id = "JuvenileDelinquent2False" })
+                                        No
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 form-group">
+
+                                @Html.TextBoxFor(model => model.DispositionJuvenile2, new { @class = "form-control", id = "DispositionJuvenile2" })
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Subsection 4C: Non-Traffic Citations
+                </div>
+                <div class="panel-body">
+                    <div class="col-lg-12">
+                        <div class="row">
+                            <div class="col-lg-8">
+                                <p><b>Have you been issued Non-Traffic Citations (i.e. Harassment, Underage Drinking, Disorderly Conduct) NOT TO BE INCLUDED in your clemency request ?</b></p>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="radio-inline">
+                                    <label>
+
+                                        @Html.RadioButtonFor(model => model.NonTraffic, "True", new { id = "NonTrafficYes" })
+                                        Yes
+                                    </label>
+                                </div>
+                                <div class="radio-inline">
+                                    <label>
+
+                                        @Html.RadioButtonFor(model => model.NonTraffic, "False", new { id = "NonTrafficNo" })
+                                        No
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                If you answered YES, complete the following information for each charge. Charges which resulted in Consent Decree should be included in this subsection
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <b>Date of Citation</b>
+                            </div>
+                            <div class="col-lg-3">
+                                <b>County & State</b>
+                            </div>
+                            <div class="col-lg-3">
+                                <b>Offenses</b>
+                            </div>
+                            <div class="col-lg-3">
+                                <b>Disposition/Penalty</b>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-3 form-group">
+
+                                @Html.TextBoxFor(model => model.DatenNonTraffic1, new { @class = "form-control", id = "DatenNonTraffic1" })
+                            </div>
+                            <div class="col-lg-3 form-group">
+
+                                @Html.TextBoxFor(model => model.CountyNonTraffic1, new { @class = "form-control", id = "CountyNonTraffic1" })
+                            </div>
+                            <div class="col-lg-3 form-group">
+
+                                @Html.TextBoxFor(model => model.OffensesNonTraffic1, new { @class = "form-control", id = "OffensesNonTraffic1" })
+                            </div>
+                            <div class="col-lg-3 form-group">
+
+                                @Html.TextBoxFor(model => model.DispositionNonTraffic1, new { @class = "form-control", id = "DispositionNonTraffic1" })
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <hr class="hrsmall">
+                        <div class="row mTop5">
+                            <div class="col-lg-3 form-group">
+
+                                @Html.TextBoxFor(model => model.DatenNonTraffic2, new { @class = "form-control", id = "DatenNonTraffic2" })
+                            </div>
+                            <div class="col-lg-3 form-group">
+
+                                @Html.TextBoxFor(model => model.CountyNonTraffic2, new { @class = "form-control", id = "CountyNonTraffic2" })
+                            </div>
+                            <div class="col-lg-3 form-group">
+
+                                @Html.TextBoxFor(model => model.OffensesNonTraffic2, new { @class = "form-control", id = "OffensesNonTraffic2" })
+                            </div>
+                            <div class="col-lg-3 form-group">
+
+                                @Html.TextBoxFor(model => model.DispositionNonTraffic2, new { @class = "form-control", id = "DispositionNonTraffic2" })
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <hr class="hrsmall">
+                        <div class="row mTop5">
+                            <div class="col-lg-3 form-group">
+
+                                @Html.TextBoxFor(model => model.DatenNonTraffic3, new { @class = "form-control", id = "DatenNonTraffic3" })
+                            </div>
+                            <div class="col-lg-3 form-group">
+
+                                @Html.TextBoxFor(model => model.CountyNonTraffic3, new { @class = "form-control", id = "CountyNonTraffic3" })
+                            </div>
+                            <div class="col-lg-3 form-group">
+
+                                @Html.TextBoxFor(model => model.OffensesNonTraffic3, new { @class = "form-control", id = "OffensesNonTraffic3" })
+                            </div>
+                            <div class="col-lg-3 form-group">
+
+                                @Html.TextBoxFor(model => model.DispositionNonTraffic3, new { @class = "form-control", id = "DispositionNonTraffic3" })
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <hr class="hrsmall">
+                        <div class="row mTop5">
+                            <div class="col-lg-3 form-group">
+
+                                @Html.TextBoxFor(model => model.DatenNonTraffic4, new { @class = "form-control", id = "DatenNonTraffic4" })
+                            </div>
+                            <div class="col-lg-3 form-group">
+
+                                @Html.TextBoxFor(model => model.CountyNonTraffic4, new { @class = "form-control", id = "CountyNonTraffic4" })
+                            </div>
+                            <div class="col-lg-3 form-group">
+
+                                @Html.TextBoxFor(model => model.OffensesNonTraffic4, new { @class = "form-control", id = "OffensesNonTraffic4" })
+                            </div>
+                            <div class="col-lg-3 form-group">
+
+                                @Html.TextBoxFor(model => model.DispositionNonTraffic4, new { @class = "form-control", id = "DispositionNonTraffic4" })
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Subsection 4C: Traffic Citations
+                </div>
+                <div class="panel-body">
+                    <div class="col-lg-12">
+                        <div class="row">
+                            <div class="col-lg-8">
+                                <p><b>Have you been issued Traffic Citations?</b></p>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="radio-inline">
+                                    <label>
+
+                                        @Html.RadioButtonFor(model => model.Traffic, "True", new { @checked = "checked" })
+                                        Yes
+                                    </label>
+                                </div>
+                                <div class="radio-inline">
+                                    <label>
+
+                                        @Html.RadioButtonFor(model => model.Traffic, "False")
+                                        No
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                If you answered YES, complete the following information for each charge. Charges which resulted in Consent Decree should be included in this subsection
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <b>Date of Citation</b>
+                            </div>
+                            <div class="col-lg-3">
+                                <b>County & State</b>
+                            </div>
+                            <div class="col-lg-3">
+                                <b>Offenses</b>
+                            </div>
+                            <div class="col-lg-3">
+                                <b>Disposition/Penalty</b>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-3 form-group">
+
+                                @Html.TextBoxFor(model => model.DateTraffic1, new { @class = "form-control", id = "DateTraffic1" })
+                            </div>
+                            <div class="col-lg-3 form-group">
+
+                                @Html.TextBoxFor(model => model.CountyTraffic1, new { @class = "form-control", id = "CountyTraffic1" })
+                            </div>
+                            <div class="col-lg-3 form-group">
+
+                                @Html.TextBoxFor(model => model.OffensesTraffic1, new { @class = "form-control", id = "OffensesTraffic1" })
+                            </div>
+                            <div class="col-lg-3 form-group">
+
+                                @Html.TextBoxFor(model => model.DispositionTraffic1, new { @class = "form-control", id = "DispositionTraffic1" })
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <hr class="hrsmall">
+                        <div class="row mTop5">
+                            <div class="col-lg-3 form-group">
+
+                                @Html.TextBoxFor(model => model.DateTraffic2, new { @class = "form-control", id = "DateTraffic2" })
+                            </div>
+                            <div class="col-lg-3 form-group">
+
+                                @Html.TextBoxFor(model => model.CountyTraffic2, new { @class = "form-control", id = "CountyTraffic2" })
+                            </div>
+                            <div class="col-lg-3 form-group">
+
+                                @Html.TextBoxFor(model => model.OffensesTraffic2, new { @class = "form-control", id = "OffensesTraffic2" })
+                            </div>
+                            <div class="col-lg-3 form-group">
+
+                                @Html.TextBoxFor(model => model.DispositionTraffic2, new { @class = "form-control", id = "DispositionTraffic2" })
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <hr class="hrsmall">
+                        <div class="row mTop5">
+                            <div class="col-lg-3 form-group">
+
+                                @Html.TextBoxFor(model => model.DateTraffic3, new { @class = "form-control", id = "DateTraffic3" })
+                            </div>
+                            <div class="col-lg-3 form-group">
+
+                                @Html.TextBoxFor(model => model.CountyTraffic3, new { @class = "form-control", id = "CountyTraffic3" })
+                            </div>
+                            <div class="col-lg-3 form-group">
+
+                                @Html.TextBoxFor(model => model.OffensesTraffic3, new { @class = "form-control", id = "OffensesTraffic3" })
+                            </div>
+                            <div class="col-lg-3 form-group">
+
+                                @Html.TextBoxFor(model => model.DispositionTraffic3, new { @class = "form-control", id = "DispositionTraffic3" })
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <hr class="hrsmall">
+                        <div class="row mTop5">
+                            <div class="col-lg-3 form-group">
+
+                                @Html.TextBoxFor(model => model.DateTraffic4, new { @class = "form-control", id = "DateTraffic4" })
+                            </div>
+                            <div class="col-lg-3 form-group">
+
+                                @Html.TextBoxFor(model => model.CountyTraffic4, new { @class = "form-control", id = "CountyTraffic4" })
+                            </div>
+                            <div class="col-lg-3 form-group">
+
+                                @Html.TextBoxFor(model => model.OffensesTraffic4, new { @class = "form-control", id = "OffensesTraffic4" })
+                            </div>
+                            <div class="col-lg-3 form-group">
+
+                                @Html.TextBoxFor(model => model.DispositionTraffic4, new { @class = "form-control", id = "DispositionTraffic4" })
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-12">
+                <div class="col-sm-2 ">
+                    <button type="submit" name="Command" value="Back" class="btn btn-primary">Back</button>
+                </div>
+                <div class="col-sm-2  col-sm-offset-2">
+                    <button type="submit" name="Command" value="save" class="btn btn-success">Save &amp; Continue</button>
+                </div>
+                <div class="col-sm-2">
+                    <button type="submit" name="Command" value="submit" class="btn btn-warning">Save &amp; Quit</button>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+@section scripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            //-- Date Validation Variables --
+            var currentDate = new Date();
+            var startDate = new Date();
+            var futureDate = new Date();
+
+            startDate.setDate(startDate.getDate() - (365 * 18));
+            futureDate.setDate(startDate.getDate() + 5);
+
+            $("#insertStep5").validate({
+
+                ignore: "",
+                rules: {
+                    OtherCharges: { required: true },
+                    //DateIncident1: { required: true },
+                    //DateIncident2: { required: true },
+                    //DateIncident3: { required: true },
+                    //DateIncident4: { required: true },
+                    //DateIncident5: { required: true },
+                    //OtherSF1: { required: true },
+                    //OtherSF2: { required: true },
+                    //OtherSF3: { required: true },
+                    //OtherSF4: { required: true },
+                    //OtherSF5: { required: true },
+                    //OffensesAdditional1: { required: true },
+                    //OffensesAdditional2: { required: true },
+                    //OffensesAdditional3: { required: true },
+                    //OffensesAdditional4: { required: true },
+                    //OffensesAdditional5: { required: true },
+                    //DispositionAdditional1: { required: true },
+                    //DispositionAdditional2: { required: true },
+                    //DispositionAdditional3: { required: true },
+                    //DispositionAdditional4: { required: true },
+                    //DispositionAdditional5: { required: true },
+                    JuvineleCharges: { required: true },
+                    //DateJuvenile1: { required: true },
+                    //DateJuvenile2: { required: true },
+                    //OffensesJuvenile1: { required: true },
+                    //OffensesJuvenile2: { required: true },
+                    //JuvenileDelinquent1: { required: true },
+                    //JuvenileDelinquent2: { required: true },
+                    //DispositionJuvenile1: { required: true },
+                    //DispositionJuvenile2: { required: true },
+                    nonTraffic: { required: true },
+                    //DatenNonTraffic1: { required: true },
+                    //DatenNonTraffic2: { required: true },
+                    //DatenNonTraffic3: { required: true },
+                    //DatenNonTraffic4: { required: true },
+                    //CountyNonTraffic1: { required: true },
+                    //CountyNonTraffic2: { required: true },
+                    //CountyNonTraffic3: { required: true },
+                    //CountyNonTraffic4: { required: true },
+                    //OffensesNonTraffic1: { required: true },
+                    //OffensesNonTraffic2: { required: true },
+                    //OffensesNonTraffic3: { required: true },
+                    //OffensesNonTraffic4: { required: true },
+                    //DispositionNonTraffic1: { required: true },
+                    //DispositionNonTraffic2: { required: true },
+                    //DispositionNonTraffic3: { required: true },
+                    //DispositionNonTraffic4: { required: true },
+                    //DateTraffic1: { required: true },
+                    //DateTraffic2: { required: true },
+                    //DateTraffic3: { required: true },
+                    //DateTraffic4: { required: true },
+                    //CountyTraffic1: { required: true },
+                    //CountyTraffic2: { required: true },
+                    //CountyTraffic3: { required: true },
+                    //CountyTraffic4: { required: true },
+                    //OffensesTraffic1: { required: true },
+                    //OffensesTraffic2: { required: true },
+                    //OffensesTraffic3: { required: true },
+                    //OffensesTraffic4: { required: true },
+                    //DispositionTraffic1: { required: true },
+                    //DispositionTraffic2: { required: true },
+                    //DispositionTraffic3: { required: true },
+                    //DispositionTraffic4: { required: true }
+                },
+
+
+                messages: {
+                    txtoffensesadditional1: "offenses is required and limited to 25 characters!",
+                },
+                highlight: function (element) {
+                    $(element).closest('.form-group').addClass('has-error');
+                },
+                unhighlight: function (element) {
+                    $(element).closest('.form-group').removeClass('has-error');
+                }
+            });
+
+        });
+    </script>
+}

@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+
+
+</head>
+<body>
+    <div class="bg-image">
+        <img src="~/Content/image/header.jpg">
+    </div>
+    <nav class="navbar navbar-inverse">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+                <ul class="nav navbar-nav">
+                    <li class="home"><a href="@Url.Action("index","Home")">Home </a></li>
+
+                    <li class="dropdown information">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Information <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="@Url.Action("index","About")">About Board Of Pardons</a></li>
+                            <li><a href="@Url.Action("index","Faq")">FAQ</a></li>
+                            <li><a href="@Url.Action("index","Privacy")">Privacy Policy</a></li>
+
+                        </ul>
+                    </li>
+                    @if (Request.IsAuthenticated)
+                    {
+                        <li class="clemency"><a href="@Url.Action("Index","FormSelect")">Clemency Applications</a></li>
+                    }
+
+                    <li class="Accounts dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">My Accounts <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            @if (!Request.IsAuthenticated)
+                            {
+                                <li><a href="@Url.Action("Login", "Account")">Login</a></li>
+                                <li><a href="@Url.Action("Register", "Account")">Register</a></li>
+
+                            }
+                            else
+                            {
+                                <li><a href="@Url.Action("Index", "Status")">Check Status</a></li>
+                            }
+
+
+                        </ul>
+                    </li>
+                    @if (Request.IsAuthenticated && User.IsInRole("Administrator"))
+                    {
+                       <li class="role"><a href="@Url.Action("DisplayAllUserroles", "Account")">User Manage</a></li>
+
+                    }
+                    @*&& (User.IsInRole("moderator") || User.IsInRole("moderator"))*@
+                    @if (Request.IsAuthenticated && (User.IsInRole("moderator") || User.IsInRole("moderator")))
+                    {
+                        <li class="role"><a href="@Url.Action("Index", "ReviewForm")">Review Form</a></li>
+
+                    }
+                    <li class="contact"><a href="@Url.Action("Index","Contact")">Contact Us</a></li>
+                    @if (Request.IsAuthenticated)
+                    {
+                        <li class="contact"><a href="@Url.Action("LogOff", "Account")">Logout</a></li>
+                    }
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    @RenderBody()
+
+
+    <footer>
+        <div class="container">
+            <div class="text-center footerStyle">
+                <h5>© Pennsylvania Board of Pardons 2016</h5>
+            </div>
+        </div>
+    </footer>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
