@@ -45,23 +45,24 @@ namespace BoardofPardons.Models
             catch (System.Data.Entity.Validation.DbEntityValidationException dbEx)
             {
                 Exception raise = dbEx;
+                string message = string.Empty;
                 foreach (var validationErrors in dbEx.EntityValidationErrors)
                 {
                     foreach (var validationError in validationErrors.ValidationErrors)
                     {
-                        string message = string.Format("{0}:{1}", validationErrors.Entry.Entity.ToString(), validationError.ErrorMessage);
+                        message = string.Format("{0}:{1}", validationErrors.Entry.Entity.ToString(), validationError.ErrorMessage);
                         //raise a new exception inserting the current one as the InnerException
                         raise = new InvalidOperationException(message, raise);
                     }
                 }
                 isSuccess = false;
-                result = dbEx.Message;
+                result = message;
                 return null;
             }
             catch (Exception ex)
             {
                 using (StreamWriter writer =
-                            new StreamWriter(HostingEnvironment.MapPath("errLog.txt")))
+                            new StreamWriter(HostingEnvironment.MapPath("~/errLog.txt")))
                 {
                     writer.WriteLine("==========================");
                     writer.WriteLine("Date " + DateTime.Now);
@@ -122,7 +123,7 @@ namespace BoardofPardons.Models
             catch (Exception ex)
             {
                 using (StreamWriter writer =
-                            new StreamWriter(HostingEnvironment.MapPath("errLog.txt")))
+                            new StreamWriter(HostingEnvironment.MapPath("~/errLog.txt")))
                 {
                     writer.WriteLine("==========================");
                     writer.WriteLine("Date " + DateTime.Now);
@@ -184,7 +185,7 @@ namespace BoardofPardons.Models
             catch (Exception ex)
             {
                 using (StreamWriter writer =
-                            new StreamWriter(HostingEnvironment.MapPath("errLog.txt")))
+                            new StreamWriter(HostingEnvironment.MapPath("~/errLog.txt")))
                 {
                     writer.WriteLine("==========================");
                     writer.WriteLine("Date " + DateTime.Now);
@@ -246,7 +247,7 @@ namespace BoardofPardons.Models
             catch (Exception ex)
             {
                 using (StreamWriter writer =
-                            new StreamWriter(HostingEnvironment.MapPath("errLog.txt")))
+                            new StreamWriter(HostingEnvironment.MapPath("~/errLog.txt")))
                 {
                     writer.WriteLine("==========================");
                     writer.WriteLine("Date " + DateTime.Now);
@@ -308,7 +309,7 @@ namespace BoardofPardons.Models
             catch (Exception ex)
             {
                 using (StreamWriter writer =
-                            new StreamWriter(HostingEnvironment.MapPath("errLog.txt")))
+                            new StreamWriter(HostingEnvironment.MapPath("~/errLog.txt")))
                 {
                     writer.WriteLine("==========================");
                     writer.WriteLine("Date " + DateTime.Now);
@@ -370,7 +371,7 @@ namespace BoardofPardons.Models
             catch (Exception ex)
             {
                 using (StreamWriter writer =
-                            new StreamWriter(HostingEnvironment.MapPath("errLog.txt")))
+                            new StreamWriter(HostingEnvironment.MapPath("~/errLog.txt")))
                 {
                     writer.WriteLine("==========================");
                     writer.WriteLine("Date " + DateTime.Now);
@@ -427,7 +428,7 @@ namespace BoardofPardons.Models
             catch (Exception ex)
             {
                 using (StreamWriter writer =
-                            new StreamWriter(HostingEnvironment.MapPath("errLog.txt")))
+                            new StreamWriter(HostingEnvironment.MapPath("~/errLog.txt")))
                 {
                     writer.WriteLine("==========================");
                     writer.WriteLine("Date " + DateTime.Now);

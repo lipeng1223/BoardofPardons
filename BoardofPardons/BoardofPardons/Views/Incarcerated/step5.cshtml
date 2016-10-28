@@ -11,7 +11,7 @@
         <p><strong>Important:</strong>This application should be completed by non-incarcerated applicants only. All questions must be answered. Please answer "N/A" for questions that are not applicable to you. </p>
         <div class="row" id="formContent">
         </div>
-        @using (Html.BeginForm("step5insert", "InCarcerated", FormMethod.Post, new { novalidate = "novalidate", @id = "insertInCarceratedStep5" }))
+        @using (Html.BeginForm("step5", "InCarcerated", FormMethod.Post, new { novalidate = "novalidate", @id = "insertInCarceratedStep5" }))
         {
 
             <div class="panel panel-default">
@@ -29,13 +29,13 @@
                                 <div class="radio-inline">
                                     <label>
 
-                                        @Html.RadioButtonFor(model => model.OtherCharges, "True", new { @checked = "checked" })
+                                        @Html.RadioButtonFor(model => model.OtherCharges, "True")
                                         Yes
                                     </label>
                                 </div>
                                 <div class="radio-inline">
                                     <label>
-                                        @Html.RadioButtonFor(model => model.OtherCharges, "True")
+                                        @Html.RadioButtonFor(model => model.OtherCharges, "False", new { @checked = "checked" })
                                         No
                                     </label>
                                 </div>
@@ -215,7 +215,7 @@
                                 </div>
                                 <div class="radio-inline">
                                     <label>
-                                        @Html.RadioButtonFor(model => model.JuvineleCharges, "False", new { id = "JuvineleCharges" })
+                                        @Html.RadioButtonFor(model => model.JuvineleCharges, "False", new { id = "JuvineleCharges", @checked = "checked" })
                                         No
                                     </label>
                                 </div>
@@ -341,7 +341,7 @@
                                 <div class="radio-inline">
                                     <label>
 
-                                        @Html.RadioButtonFor(model => model.NonTraffic, "False", new { id = "NonTrafficNo" })
+                                        @Html.RadioButtonFor(model => model.NonTraffic, "False", new { id = "NonTrafficNo", @checked = "checked" })
                                         No
                                     </label>
                                 </div>

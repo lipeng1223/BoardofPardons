@@ -35,7 +35,7 @@
                                 <div class="radio-inline">
                                     <label>
                                         @*<input type="radio" name="OtherCharges" id="rbtnPrevAppNo" checked="">*@
-                                        @Html.RadioButtonFor(model => model.OtherCharges, "True")
+                                        @Html.RadioButtonFor(model => model.OtherCharges, "False")
                                         No
                                     </label>
                                 </div>
@@ -242,7 +242,7 @@
                                 <div class="radio-inline">
                                     <label>
 
-                                        @Html.RadioButtonFor(model => model.JuvineleCharges, "False", new { id = "JuvineleCharges" })
+                                        @Html.RadioButtonFor(model => model.JuvineleCharges, "False", new { id = "JuvineleCharges",@checked="checked" })
                                         No
                                     </label>
                                 </div>
@@ -368,7 +368,7 @@
                                 <div class="radio-inline">
                                     <label>
 
-                                        @Html.RadioButtonFor(model => model.NonTraffic, "False", new { id = "NonTrafficNo" })
+                                        @Html.RadioButtonFor(model => model.NonTraffic, "False", new { id = "NonTrafficNo" , @checked="checked"})
                                         No
                                     </label>
                                 </div>

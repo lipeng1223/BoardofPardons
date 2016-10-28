@@ -162,23 +162,23 @@
                 ignore: "",
                 rules: {
                     chkother: { required: true },
-                    txtspecifications: {
+                    Specifications: {
                         minlength: 3,
                         required: true
                     },
-                    txtrehabilitations: {
+                    Rehabilitations: {
                         minlength: 3,
                         required: true
                     },
-                    txtcontributions: {
+                    Contributions: {
                         minlength: 3,
                         required: true
                     },
                 },
                 messages: {
-                    txtspecifications: "specifications is required",
-                    txtrehabilitations: "rehabilitations is required",
-                    txtcontributions: "contributions is required",
+                    Specifications: "specifications is required",
+                    Rehabilitations: "rehabilitations is required",
+                    Contributions: "contributions is required",
                 },
                 highlight: function (element) {
                     $(element).closest('.form-group').addClass('has-error');

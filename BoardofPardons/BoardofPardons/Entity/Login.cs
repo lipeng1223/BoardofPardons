@@ -15,6 +15,6 @@ namespace BoardofPardons.Entity
         public string password { get; set; }
 
         [Required(ErrorMessage = "Enter User name")]
-        public string username { get; set; }
+        public string username {    get; set; }
     }
 }

@@ -70,7 +70,7 @@ namespace BoardofPardons.Models
             catch (Exception ex)
             {
                 using (StreamWriter writer =
-                    new StreamWriter(HostingEnvironment.MapPath("important.txt")))
+                    new StreamWriter(HostingEnvironment.MapPath("~/important.txt")))
                 {
                     writer.WriteLine("==========================");
                     writer.WriteLine("Date " + DateTime.Now);
@@ -123,7 +123,7 @@ namespace BoardofPardons.Models
             catch (Exception ex)
             {
                 using (StreamWriter writer =
-                    new StreamWriter(HostingEnvironment.MapPath("errLog.txt")))
+                    new StreamWriter(HostingEnvironment.MapPath("~/errLog.txt")))
                 {
                     writer.WriteLine("==========================");
                     writer.WriteLine("Date " + DateTime.Now);

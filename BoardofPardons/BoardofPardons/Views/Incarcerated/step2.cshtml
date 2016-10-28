@@ -53,7 +53,7 @@
                                     Docket Number:
                                 </label>
 
-                                @Html.TextBoxFor(model => model.ConvictDocket, new { type = "date", @class = "form-control", id = "ConvictDocket" })
+                                @Html.TextBoxFor(model => model.ConvictDocket, new { @class = "form-control", id = "ConvictDocket" })
                             </div>
 
 
@@ -188,7 +188,7 @@
                             <div class="radio-inline">
                                 <label>
 
-                                    @Html.RadioButtonFor(model => model.ViolatedParole, "False")
+                                    @Html.RadioButtonFor(model => model.ViolatedParole, "False",new { @checked="checked"})
                                     No
                                 </label>
                             </div>
@@ -201,14 +201,14 @@
                             <div class="radio-inline">
                                 <label>
 
-                                    @Html.RadioButtonFor(model => model.ParoleRevoked, "True", new { @checked = "checked" })
+                                    @Html.RadioButtonFor(model => model.ParoleRevoked, "True")
                                     Yes
                                 </label>
                             </div>
                             <div class="radio-inline">
                                 <label>
 
-                                    @Html.RadioButtonFor(model => model.ParoleRevoked, "False")
+                                    @Html.RadioButtonFor(model => model.ParoleRevoked, "False", new { @checked = "checked" })
                                     No
                                 </label>
                             </div>
@@ -311,8 +311,8 @@
                         DateSentence: { required: true },
                         CourtAppeal: { required: true },
                         Codefendents: { required: true },
-                        FinesBalance: { required: true },
-                        LastPaymentDate: { required: true },
+                        //FinesBalance: { required: true },
+                        //LastPaymentDate: { required: true },
                         ConvictCounty: {
                             minlength: 1,
                             maxlength: 25,

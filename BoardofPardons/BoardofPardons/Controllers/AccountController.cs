@@ -469,8 +469,8 @@ namespace BoardofPardons.Controllers
             Response.Redirect("~/Account/Login");
             return View();
         }
-        [Authorize(Roles = "Administrator")]
 
+        [Authorize(Roles = "Administrator")]
         public ActionResult deactivate(int id)
         {
 

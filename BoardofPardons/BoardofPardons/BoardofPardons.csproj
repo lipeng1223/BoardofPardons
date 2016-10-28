@@ -161,6 +161,7 @@
     <Compile Include="Controllers\ReviewFormController.cs" />
     <Compile Include="Controllers\StatusController.cs" />
     <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Controllers\UserManagerController.cs" />
     <Compile Include="Entity\AllFormReview.cs" />
     <Compile Include="Entity\AllUser.cs" />
     <Compile Include="Entity\AssignRoleVM.cs" />
@@ -431,6 +432,7 @@
     <Content Include="Views\ReviewForm\Index.cshtml" />
     <Content Include="Views\ReviewForm\review.cshtml" />
     <Content Include="Views\Error\Index.cshtml" />
+    <Content Include="Views\UserManager\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

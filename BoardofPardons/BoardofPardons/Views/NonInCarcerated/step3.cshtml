@@ -69,14 +69,14 @@
                             <div class="radio">
                                 <label>
                                     
-                                    @Html.RadioButtonFor(model => model.Guilty, "Pled Guilty", new { @checked = "checked" })
+                                    @Html.RadioButtonFor(model => model.Guilty, "Pled Guilty")
                                     Pled Guilty
                                 </label>
                             </div>
                             <div class="radio">
                                 <label>
                                     
-                                    @Html.RadioButtonFor(model => model.Guilty, "Pled Nolo Contendre (no contest)", new { @checked = "checked" })
+                                    @Html.RadioButtonFor(model => model.Guilty, "Pled Nolo Contendre (no contest)")
                                     Pled Nolo Contendre (no contest)
                                 </label>
                             </div>
@@ -150,7 +150,7 @@
                         <div class="radio-inline">
                             <label>
                                 
-                                @Html.RadioButtonFor(model => model.HavePaid, "False", new { @checked = "checked" })
+                                @Html.RadioButtonFor(model => model.HavePaid, "False")
                                 No
                             </label>
                         </div>
@@ -177,7 +177,7 @@
                         <div class="radio-inline">
                             <label>
                              
-                                @Html.RadioButtonFor(model => model.ViolatedParole, "True")
+                                @Html.RadioButtonFor(model => model.ViolatedParole, "True",new {@checked="checked" })
                                 Yes
                             </label>
                         </div>
@@ -225,7 +225,7 @@
                         <div class="radio-inline">
                             <label>
                              
-                                @Html.RadioButtonFor(model => model.RevokedAppeal, "False", new { @checked = "checked" })
+                                @Html.RadioButtonFor(model => model.RevokedAppeal, "False")
                                 No
                             </label>
                         </div>
@@ -305,8 +305,8 @@
                     DateSentence: { required: true },
                     CourtAppeal: { required: true },
                     Codefendents: { required: true },
-                    FinesBalance: { required: true },
-                    LastPaymentDate: { required: true },
+                    //FinesBalance: { required: true },
+                    //LastPaymentDate: { required: true },
                     ConvictCounty: {
                         minlength: 1,
                         maxlength: 25,

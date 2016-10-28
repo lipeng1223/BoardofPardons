@@ -1,0 +1,314 @@
+﻿@model BoardofPardons.Entity.User
+@{
+    ViewBag.Title = "Create new user";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container well">
+    <div class="row">
+        @using (Html.BeginForm("Create", "UserManager", FormMethod.Post, new { @id = "registerform", novalidate = "novalidate" }))
+        {
+            <fieldset>
+                <div class="form-group text-center">
+                    <h4 class="form-signin-heading">Create User</h4>
+                </div>
+                <hr />
+                <div class="row ">
+                    <div class="col-lg-4 col-sm-3 form-group">
+                        <label>User Name</label>
+                        <input type="text" class="form-control username" name="username" id="username" placeholder="User Name" />
+                    </div>
+                    <div class="col-lg-3 col-sm-3 form-group">
+                        <label>Password</label>
+                        <input type="password" class="form-control password" name="password" id="password" placeholder="Password" />
+                    </div>
+                    <div class="col-lg-4 col-sm-3 form-group">
+                        <label>Confirm Password</label>
+                        <input type="password" class="form-control " name="confirmPassword" id="confirmPassword" placeholder="Confirm Password" />
+                    </div>
+                </div>
+                <hr />
+                <div class="row ">
+                    <div class="col-lg-1 col-md-1 col-sm-2 form-group">
+                        <label>Suffix</label>
+                        @*<input type="text" class="form-control" name="suffix" placeholder="Suffix" autofocus="" />*@
+                        <select id="suffix" class="form-control" name="suffix">
+                            <option>Mr</option>
+                            <option>Mrs</option>
+                            <option>Miss</option>
+                        </select>
+                    </div>
+                    <div class="col-lg-4 col-sm-3 form-group">
+                        <label>First Name</label>
+                        <input type="text" class="form-control firstname" name="firstname" id="firstname" placeholder="First Name" />
+                    </div>
+                    <div class="col-lg-3 col-sm-3 form-group">
+                        <label>Middle Name</label>
+                        <input type="text" class="form-control middlename" name="middlename" id="middlename" placeholder="Middle Name" />
+                    </div>
+                    <div class="col-lg-4 col-sm-3 form-group">
+                        <label>Last Name</label>
+                        <input type="text" class="form-control lastname" name="lastname" id="lastname" placeholder="Last Name" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-2 col-md-2 col-sm-2  form-group">
+                        <label>Birth Date</label>
+                        <input type="date" class="form-control birthdate" name="birthdate" id="birthdate" placeholder="Date" />
+                    </div>
+                    <div class="col-lg-4 col-md-2 col-sm-3  form-group">
+                        <label>Place of Birth</label>
+                        <input type="text" class="form-control" name="PlaceOfBirth" id="PlaceOfBirth" placeholder="Place of Birth" />
+                    </div>
+                    <div class="col-lg-3 col-sm-3  form-group">
+                        <label>Gender</label><br />
+                        <div class="radio-inline">
+                            <label>
+                                <input type="radio" name="gender" id="optionsRadios1" value="M" checked="">
+                                Male
+                            </label>
+                        </div>
+                        <div class="radio-inline">
+                            <label>
+                                <input type="radio" name="gender" id="optionsRadios2" value="F">
+                                Female
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-3  form-group">
+                        <label>SS Number</label>
+                        <input type="text" class="form-control SSN" name="ssnumber" id="ssnumber" placeholder="SS Number" />
+                    </div>
+                </div>
+                <div class="row ">
+                    <div class="col-lg-8 col-sm-8  form-group">
+                        <label>Address</label>
+                        <input type="text" class="form-control" name="address" placeholder="Address" />
+                    </div>
+                    <div class="col-lg-4 col-sm-4  form-group">
+                        <label>Apartment/Floor</label>
+                        <input type="text" class="form-control" name="apartment" id="apartment" placeholder="Apartment/Floor" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-sm-4  form-group">
+                        <label>City</label>
+                        <input type="text" class="form-control" name="city" placeholder="City" />
+                    </div>
+                    <div class="col-lg-4 col-sm-4  form-group">
+                        <label>State</label>
+                        <input type="text" class="form-control" name="state" placeholder="State" />
+                    </div>
+                    <div class="col-lg-4 col-sm-4  form-group">
+                        <label>Zip</label>
+                        <input type="text" class="form-control" name="zip" placeholder="zip" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-sm-4 form-group ">
+                        <label>Home Phone</label>
+                        <input type="text" class="form-control applicantphone" name="homephone" placeholder="Home Phone" />
+
+                    </div>
+                    <div class="col-lg-4 col-sm-4  form-group">
+                        <label>Cell Phone</label>
+                        <input type="text" class="form-control cellphone" name="cellphone" placeholder="Cell Phone" />
+                    </div>
+                    <div class="col-lg-4 col-sm-4  form-group">
+                        <label>Email</label>
+                        <input type="text" class="form-control" name="email" placeholder="Email" />
+                    </div>
+                </div>
+                <div class="row m-t-10">
+                    <div class="col-lg-4 col-sm-4">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </div>
+            </fieldset>
+        }
+    </div>
+</div>
+@section scripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //-- Date Validation Variables --
+            var currentDate = new Date();
+            var startDate = new Date();
+            var futureDate = new Date();
+
+            startDate.setDate(startDate.getDate() - (365 * 18));
+            futureDate.setDate(startDate.getDate() + 5);
+
+            $.validator.addMethod("dobRangeCheck", function (value, element) {
+                if (value == "") {
+                    return false;
+                }
+
+                var dateOfBirth = new Date(value);
+                if (dateOfBirth > startDate) {
+                    return false;
+                }
+                return true;
+            }, "The Date of Birth must before" + startDate.toDateString("mm/dd/yyyy") + "!");
+            $.validator.addClassRules("birthdate", {
+                required: true,
+                dobRangeCheck: true
+            });
+
+
+            jQuery.validator.addMethod("FirstNameValidate", function (fname) {
+                if (fname.match(/^[a-zA-Z-']{1,32}$/)) {
+                    return true
+                }
+            }, "First Name is required and must be characters a-z, A-Z, -, ', and 1-32 characters long");
+
+            $.validator.addClassRules("firstname", {
+                required: true,
+                FirstNameValidate: true
+            });
+
+            //// -- MIDDLE NAME --
+            jQuery.validator.addMethod("MiddleNameValidate", function (mname) {
+                if (mname.match(/^[a-zA-Z-]{1,32}$/)) {
+                    return true
+                }
+            }, "Middle name is required and must be characters a-z, A-Z,");
+
+            $.validator.addClassRules("middlename", {
+                required: true,
+                MiddleNameValidate: true
+            });
+
+            //// -- LAST NAME --
+            jQuery.validator.addMethod("LastNameValidate", function (lname) {
+                if (lname.match(/^[a-zA-Z-']{1,32}$/)) {
+                    return true
+                }
+            }, "Last Name is required and must be characters a-z, A-Z, -, ', and 1-32 characters long");
+
+            $.validator.addClassRules("lastname", {
+                required: true,
+                LastNameValidate: true
+            });
+
+
+            //// -- PHONE NUMBER --
+            jQuery.validator.addMethod("PhoneNumberValidate", function (pNumber) {
+                if (pNumber.match(/^[01]?[- .]?\(?[2-9]\d{2}\)?[- .]?\(?[1-9]\d{2}\)?[- .]?\d{4}$/)) {
+                    return true
+                }
+            }, "Please enter valid phone number");
+
+            $.validator.addClassRules("applicantphone", {
+                // required: true,
+                PhoneNumberValidate: true
+            });
+
+
+            //// -- CELL NUMBER --
+            jQuery.validator.addMethod("CellNumberValidate", function (pNumber) {
+                if (pNumber.match(/^[01]?[- .]?\(?[2-9]\d{2}\)?[- .]?\(?[1-9]\d{2}\)?[- .]?\d{4}$/)) {
+                    return true
+                }
+            }, "Please enter valid Cell number");
+
+            $.validator.addClassRules("cellphone", {
+                required: true,
+                CellNumberValidate: true
+            });
+            //// -- SSN --
+            jQuery.validator.addMethod("SSNValidate", function (ssn) {
+                if (ssn.match(/[0-9]{3}?[-]?[0-9]{2}?[-]?[0-9]{4}/)) {
+                    return true
+                }
+            });
+            jQuery.validator.addMethod("passwordMatch", function (pwd) {
+                console.log(pwd);
+                if (pwd.match($("#confirmPassword").val())) {
+                    return true;
+                }
+            }, "Password and Confirm Password must be same.");
+
+            $("#registerform").validate({
+                rules: {
+                    username: {
+                        required: true,
+                        minlength: 6,
+                        maxlength: 12
+                    },
+                    password: {
+                        required: true,
+                        passwordMatch: true,
+                        minlength: 6,
+                        maxlength: 12
+                    }, confirmPassword: {
+                        required: true,
+                        minlength: 6,
+                        maxlength: 12
+                    },
+
+                    apartment: {
+                        required: true,
+                        minlength: 0,
+                        maxlength: 26
+                    },
+                    city: {
+                        required: true,
+                        minlength: 1,
+                        maxlength: 23
+                    },
+                    state: {
+                        required: true
+                    },
+                    zip: {
+                        required: true,
+                        digits: true,
+                        minlength: 5,
+                        maxlength: 5
+                    },
+                    PlaceOfBirth: {
+                        required: true,
+                        minlength: 3,
+                        maxlength: 32
+                    },
+                    email: {
+                        required: true,
+                        minlength: 3,
+                        maxlength: 80
+                    },
+                    address: {
+                        required: true,
+                        minlength: 3
+                    },
+                    appartment: {
+                        required: true,
+                        minlength: 3
+                    }, ssnumber: {
+                        SSNValidate: true
+                    }
+                },
+                messages: {
+
+                    address: "Address1 is required and limited to 26 characters!",
+                    apartment: "if no appartment number enter N/A ",
+                    title: "enter N/A if person representing you does not have a title",
+
+                    city: "City is required!",
+                    state: "State is required!",
+                    zip: "Zip is required and must be 5 digits long!",
+                    PlaceOfBirth: "your birth place is required!",
+
+                    email: "Email address required",
+                    cellphone: "cell phone required 1-999-999-9999 or 1(999)999-9999",
+                    phone: "phone required 1-999-999-9999 or 1(999)999-9999 or N/A",
+                    ssnumber: "Please specify a valid SSN in the format 999999999 or 999-99-9999"
+                },
+                highlight: function (element) {
+                    $(element).closest('.form-group').addClass('has-error');
+                },
+                unhighlight: function (element) {
+                    $(element).closest('.form-group').removeClass('has-error');
+                }
+            });
+        });
+    </script>
+}

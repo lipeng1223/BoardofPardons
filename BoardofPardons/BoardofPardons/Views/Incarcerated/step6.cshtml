@@ -11,7 +11,7 @@
         <p><strong>Important:</strong>This application should be completed by non-incarcerated applicants only. All questions must be answered. Please answer "N/A" for questions that are not applicable to you. </p>
         <div class="row" id="formContent">
         </div>
-        @using (Html.BeginForm("step6insert", "InCarcerated", FormMethod.Post, new { novalidate = "novalidate", @id = "insertInCarceratedStep6" }))
+        @using (Html.BeginForm("step6", "InCarcerated", FormMethod.Post, new { novalidate = "novalidate", @id = "insertInCarceratedStep6" }))
         {
             <div class="panel panel-default">
                 <div class="panel-heading">SECTION 5: Purpose of Application</div>
@@ -162,23 +162,23 @@
                 ignore: "",
                 rules: {
                     chkother: { required: true },
-                    txtspecifications: {
+                    Specifications: {
                         minlength: 3,
                         required: true
                     },
-                    txtrehabilitations: {
+                    Rehabilitations: {
                         minlength: 3,
                         required: true
                     },
-                    txtcontributions: {
+                    Contributions: {
                         minlength: 3,
                         required: true
                     },
                 },
                 messages: {
-                    txtspecifications: "specifications is required",
-                    txtrehabilitations: "rehabilitations is required",
-                    txtcontributions: "contributions is required",
+                    Specifications: "specifications is required",
+                    Rehabilitations: "rehabilitations is required",
+                    Contributions: "contributions is required",
                 },
                 highlight: function (element) {
                     $(element).closest('.form-group').addClass('has-error');

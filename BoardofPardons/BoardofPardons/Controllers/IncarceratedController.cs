@@ -66,6 +66,7 @@ namespace BoardofPardons.Controllers
             }
             else
             {
+                Session["formNo"] = null;
                 return RedirectToAction("Index", "FormSelect");
             }
 

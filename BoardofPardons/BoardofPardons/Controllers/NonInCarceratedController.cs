@@ -31,6 +31,7 @@ namespace BoardofPardons.Controllers
             else
             {
                 int formId = (int)Session["formNo"];
+                Session["formNo"] = formId;
                 NonIncarceratedStep1 step1 = objNonIncarc.getNonIncarceratedStep1(formId);
                 if (step1 != null)
                     return View(step1);
@@ -83,6 +84,7 @@ namespace BoardofPardons.Controllers
             }
             else
             {
+                Session["formNo"]=null;
                 return RedirectToAction("Index", "FormSelect");
             }
 

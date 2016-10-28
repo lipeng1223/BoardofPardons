@@ -174,8 +174,7 @@
                         <div class="col-lg-3 form-group">
                             <label>
                                 First Name
-                            </label>
-                            
+                            </label>                            
                             @Html.TextBoxFor(model => model.FirstName, new { @class = "form-control", id = "txtfirstname" })
                         </div>
                         <div class="col-lg-3 form-group">
@@ -436,7 +435,8 @@
             futureDate.setDate(startDate.getDate() + 5);
 
             // -- DATE OF BIRTH --
-            $.validator.addMethod("dobRangeCheck", function (value, element) {
+            $.validator.addMethod("dobRangeCheck", function (value, element)
+            {
                 if (value == "") {
                     return false;
                 }
@@ -544,6 +544,9 @@
                     WhoRep: { required: true },
                     Suffix: { required: true },
                     Aliases: { required: true },
+                    MiddleName: { required: true },
+                    FirstName: { required: true },
+                    LastName: { required: true },
                     txtprevious: {
                         required: true,
                         minlength: 1,
