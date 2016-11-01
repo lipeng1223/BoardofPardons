@@ -44,6 +44,13 @@ namespace BoardofPardons.Controllers
             {
                 objIncarc = new InCarceratedManger();
                 int mu1 = (int)WebSecurity.CurrentUserId;
+                try
+                {
+                    mu1= Session["UserId"] == null ? WebSecurity.CurrentUserId : (int)Session["UserId"];
+                }
+                catch (Exception)
+                {
+                }
                 step1 = objIncarc.insertStep1(step1, mu1, Command, out returnMessage, out isSuccess);
                 if (isSuccess)
                 {
@@ -77,7 +84,15 @@ namespace BoardofPardons.Controllers
         {
             objAccountMgr = new AccountManager();
             objIncarc = new InCarceratedManger();
-            if (objAccountMgr.checkFormOwner(id, WebSecurity.CurrentUserId))
+            int CurrentUserId = WebSecurity.CurrentUserId;
+            try
+            {
+                CurrentUserId = Session["UserId"] == null ? WebSecurity.CurrentUserId : (int)Session["UserId"];
+            }
+            catch (Exception)
+            {
+            }
+            if (objAccountMgr.checkFormOwner(id, CurrentUserId))
             {
                 Session["formNo"] = id;
                 return RedirectToAction("step1");
@@ -112,6 +127,14 @@ namespace BoardofPardons.Controllers
             {
                 objIncarc = new InCarceratedManger();
                 int mu1 = (int)WebSecurity.CurrentUserId;
+                try
+                {
+                    mu1= Session["UserId"] == null ? WebSecurity.CurrentUserId : (int)Session["UserId"];
+                }
+                catch (Exception)
+                {
+
+                }
                 step2.FormId = (int)Session["formNo"];
                 step2 = objIncarc.insertStep2(step2, mu1, Command, out returnMessage, out isSuccess);
                 if (isSuccess)
@@ -167,6 +190,14 @@ namespace BoardofPardons.Controllers
             {
                 objIncarc = new InCarceratedManger();
                 int mu1 = (int)WebSecurity.CurrentUserId;
+                try
+                {
+                    mu1 = Session["UserId"] == null ? WebSecurity.CurrentUserId : (int)Session["UserId"];
+                }
+                catch (Exception)
+                {
+
+                }
                 step3.FormId = (int)Session["formNo"];
                 step3 = objIncarc.insertStep3(step3, mu1, Command, out returnMessage, out isSuccess);
                 if (isSuccess)
@@ -222,6 +253,13 @@ namespace BoardofPardons.Controllers
             {
                 objIncarc = new InCarceratedManger();
                 int mu1 = (int)WebSecurity.CurrentUserId;
+                try
+                {
+                    mu1 = Session["UserId"] == null ? WebSecurity.CurrentUserId : (int)Session["UserId"];
+                }
+                catch (Exception)
+                {
+                }
                 step4.FormId = (int)Session["formNo"];
                 step4 = objIncarc.insertStep4(step4, mu1, Command, out returnMessage, out isSuccess);
                 if (isSuccess)
@@ -277,6 +315,13 @@ namespace BoardofPardons.Controllers
             {
                 objIncarc = new InCarceratedManger();
                 int mu1 = (int)WebSecurity.CurrentUserId;
+                try
+                {
+                    mu1= Session["UserId"] == null ? WebSecurity.CurrentUserId : (int)Session["UserId"];
+                }
+                catch (Exception)
+                {
+                }
                 step5.FormId = (int)Session["formNo"];
                 step5 = objIncarc.insertStep5(step5, mu1, Command, out returnMessage, out isSuccess);
                 if (isSuccess)
@@ -324,7 +369,6 @@ namespace BoardofPardons.Controllers
                 else
                     return View();
             }
-
         }
         [HttpPost]
         public ActionResult step6(IncarceratedStep6 step6, string Command)
@@ -334,6 +378,12 @@ namespace BoardofPardons.Controllers
                 objIncarc = new InCarceratedManger();
                 step6.FormId = (int)Session["formNo"];
                 int mu1 = (int)WebSecurity.CurrentUserId;
+                try
+                {
+                    mu1= Session["UserId"] == null ? WebSecurity.CurrentUserId : (int)Session["UserId"];
+                }
+                catch (Exception){
+                }
                 step6 = objIncarc.insertStep6(step6, mu1, Command, out returnMessage, out isSuccess);
                 if (isSuccess)
                 {
@@ -388,6 +438,12 @@ namespace BoardofPardons.Controllers
             {
                 objIncarc = new InCarceratedManger();
                 int mu1 = (int)WebSecurity.CurrentUserId;
+                try
+                {
+                    mu1= Session["UserId"] == null ? WebSecurity.CurrentUserId : (int)Session["UserId"];
+                }
+                catch (Exception){
+                }
                 step7.FormId = (int)Session["formNo"];
                 step7 = objIncarc.insertStep7(step7, mu1, Command, out returnMessage, out isSuccess);
                 if (isSuccess)

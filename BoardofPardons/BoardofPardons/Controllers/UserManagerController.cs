@@ -40,18 +40,21 @@ namespace BoardofPardons.Controllers
                     }
                     else
                     {
+                        Session["UserId"] = null;
                         ViewBag.Message = "Registration Failed ! Please Try After Sometime..";
                         return View("Create", register);
                     }
                 }
                 else
                 {
+                    Session["UserId"] = null;
                     ViewBag.Message = "UserName Already Exist";
                     return View("Create", register);
                 }
             }
             else
             {
+                Session["UserId"] = null;
                 ModelState.AddModelError("Error", "Please enter all details");
             }
             return View();
