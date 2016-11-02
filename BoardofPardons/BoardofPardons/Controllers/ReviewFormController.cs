@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using WebMatrix.WebData;
 using BoardofPardons.Entity;
 using BoardofPardons.Models;
+using Rotativa;
 
 namespace BoardofPardons.Controllers
 {
@@ -62,6 +63,8 @@ namespace BoardofPardons.Controllers
                 return RedirectToAction("Index");
             }
         }
+
+      
         [HttpPost]
         public ActionResult submitReview(FormCollection collection, string Command)
         {

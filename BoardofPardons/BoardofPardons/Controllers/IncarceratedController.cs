@@ -57,13 +57,13 @@ namespace BoardofPardons.Controllers
                     Session["formNo"] = step1.FormId;
                     if (Command == "save")
                     {
-
                         return RedirectToAction("step2");
                     }
                     else
                     {
-                         sendSubmitEmail();
-                        return RedirectToAction("index", "FormSelect");
+                        sendSubmitEmail();
+                        return RedirectToAction("PDFView", "PDFReport",new {id=step1.FormId }); //PDFView(int id)
+                         //return RedirectToAction("index", "FormSelect");
                     }
                 }
                 else
@@ -147,7 +147,8 @@ namespace BoardofPardons.Controllers
                     {
                         sendSubmitEmail();
                         Session["formNo"] = null;
-                        return RedirectToAction("index", "FormSelect");
+                        return RedirectToAction("PDFView", "PDFReport", new { id = step2.FormId }); //PDFView(int id)
+                        //return RedirectToAction("index", "FormSelect");
                     }
                     else
                     {
@@ -210,7 +211,8 @@ namespace BoardofPardons.Controllers
                     {
                         sendSubmitEmail();
                         Session["formNo"] = null;
-                        return RedirectToAction("index", "FormSelect");
+                        return RedirectToAction("PDFView", "PDFReport", new { id = step3.FormId }); //PDFView(int id)
+                        //return RedirectToAction("index", "FormSelect");
                     }
                     else
                     {
@@ -272,7 +274,8 @@ namespace BoardofPardons.Controllers
                     {
                         sendSubmitEmail();
                         Session["formNo"] = null;
-                        return RedirectToAction("index", "FormSelect");
+                        return RedirectToAction("PDFView", "PDFReport", new { id = step4.FormId }); //PDFView(int id)
+                        //return RedirectToAction("index", "FormSelect");
                     }
                     else
                     {
@@ -334,7 +337,8 @@ namespace BoardofPardons.Controllers
                     {
                         sendSubmitEmail();
                         Session["formNo"] = null;
-                        return RedirectToAction("index", "FormSelect");
+                        return RedirectToAction("PDFView", "PDFReport", new { id = step5.FormId }); //PDFView(int id)
+                        //return RedirectToAction("index", "FormSelect");
                     }
                     else
                     {
@@ -395,7 +399,8 @@ namespace BoardofPardons.Controllers
                     {
                         sendSubmitEmail();
                         Session["formNo"] = null;
-                        return RedirectToAction("index", "FormSelect");
+                        return RedirectToAction("PDFView", "PDFReport", new { id = step6.FormId }); //PDFView(int id)
+                        //return RedirectToAction("index", "FormSelect");
                     }
                     else
                     {
@@ -456,7 +461,8 @@ namespace BoardofPardons.Controllers
                     {
                         sendSubmitEmail();
                         Session["formNo"] = null;
-                        return RedirectToAction("index", "FormSelect");
+                        return RedirectToAction("PDFView", "PDFReport", new { id = step7.FormId }); //PDFView(int id)
+                        //return RedirectToAction("index", "FormSelect");
                     }
                     else
                     {

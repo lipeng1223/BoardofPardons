@@ -72,9 +72,7 @@ namespace BoardofPardons.Models
                 Form form = new Form();
                 using (BoardofPardonsEntities1 dbcontext = new BoardofPardonsEntities1())
                 {
-
                     form = dbcontext.Forms.Where(a => a.id == step2.FormId).FirstOrDefault();
-
                     if (Command == "save")
                     {
                         form.Status = 0;
@@ -83,8 +81,6 @@ namespace BoardofPardons.Models
                     {
                         form.Status = 1;
                     }
-
-
                     var _step2 = dbcontext.IncarceratedStep2.Where(a => a.FormId == step2.FormId).FirstOrDefault();
                     if (_step2 == null)
                     {
@@ -96,7 +92,6 @@ namespace BoardofPardons.Models
                         _step2 = step2;
                         _step2.UpdatedAt = DateTime.Now;
                     }
-
 
                     //step2.FormId = form.id;
 

@@ -90,7 +90,8 @@ namespace BoardofPardons.Controllers
                     {
                         sendSubmitEmail();
                         Session["formNo"] = null;
-                        return RedirectToAction("index", "FormSelect");
+                        return RedirectToAction("PDFView", "PDFReport", new { id = step1.FormId }); //PDFView(int id)
+                        //return RedirectToAction("index", "FormSelect");
                     }
                 }
                 else
@@ -152,7 +153,8 @@ namespace BoardofPardons.Controllers
                     {
                         sendSubmitEmail();
                         Session["formNo"] = null;
-                        return RedirectToAction("index", "FormSelect");
+                        return RedirectToAction("PDFView", "PDFReport", new { id = step2.FormId }); //PDFView(int id)
+                        //return RedirectToAction("index", "FormSelect");
                     }
                     else
                     {
@@ -214,7 +216,8 @@ namespace BoardofPardons.Controllers
                     {
                         sendSubmitEmail();
                         Session["formNo"] = null;
-                        return RedirectToAction("index", "FormSelect");
+                        return RedirectToAction("PDFView", "PDFReport", new { id = step3.FormId }); //PDFView(int id)
+                        //return RedirectToAction("index", "FormSelect");
                     }
                     else
                     {
@@ -277,7 +280,8 @@ namespace BoardofPardons.Controllers
                     {
                         sendSubmitEmail();
                         Session["formNo"] = null;
-                        return RedirectToAction("index", "FormSelect");
+                        return RedirectToAction("PDFView", "PDFReport", new { id = step4.FormId }); //PDFView(int id)
+                        //return RedirectToAction("index", "FormSelect");
                     }
                     else
                     {
@@ -340,7 +344,8 @@ namespace BoardofPardons.Controllers
                     {
                         sendSubmitEmail();
                         Session["formNo"] = null;
-                        return RedirectToAction("index", "FormSelect");
+                        return RedirectToAction("PDFView", "PDFReport", new { id = step5.FormId }); //PDFView(int id)
+                        //return RedirectToAction("index", "FormSelect");
                     }
                     else
                     {
@@ -404,7 +409,8 @@ namespace BoardofPardons.Controllers
                     {
                         sendSubmitEmail();
                         Session["formNo"] = null;
-                        return RedirectToAction("index", "FormSelect");
+                        return RedirectToAction("PDFView", "PDFReport", new { id = step6.FormId }); //PDFView(int id)
+                        //return RedirectToAction("index", "FormSelect");
                     }
                     else
                     {
@@ -467,7 +473,8 @@ namespace BoardofPardons.Controllers
                     {
                         sendSubmitEmail();
                         Session["formNo"] = null;
-                        return RedirectToAction("index", "FormSelect");
+                        return RedirectToAction("PDFView", "PDFReport", new { id = step7.FormId }); //PDFView(int id)
+                        //return RedirectToAction("index", "FormSelect");
                     }
                     else
                     {
