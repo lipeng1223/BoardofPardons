@@ -1,4 +1,3 @@
 ==========================
-Date 10/28/2016 1:05:29 PM
-ErrorThe parameter 'address' cannot be an empty string.
-Parameter name: address
+Date 11/4/2016 1:16:30 PM
+ErrorService not available, closing transmission channel. The server response was: Cannot connect to SMTP server 70.35.204.111 (70.35.204.111:25), connect error 10060
